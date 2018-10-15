@@ -1,8 +1,8 @@
 // https://ugurkoltuk.wordpress.com/2010/03/04/an-extreme-simple-pgm-io-api/
-#include <stdlib.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include <cstdlib>
+#include <cstdio>
+#include <cctype>
+#include <cstring>
 #include "image.h" 
 
 // Rotina para ignorar comentarios em arquivos PGM

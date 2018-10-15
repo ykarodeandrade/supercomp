@@ -1,5 +1,5 @@
 // referencia https://ugurkoltuk.wordpress.com/2010/03/04/an-extreme-simple-pgm-io-api/
-#include <stdlib.h>
+#include <cstdio>
 
 // Estrutura de dados para as imagens PGM
 typedef struct _PGMData {
