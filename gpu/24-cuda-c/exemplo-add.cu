@@ -19,7 +19,7 @@ __global__ void add(double *a, double *b, double *c, int N) {
 
 /* Programa cria dois vetores e soma eles em GPU */
 int main() {
-    int n =    n=1<<23;
+    int n = 1<<23;
     int blocksize = 256;
     
     thrust::host_vector<double> A(n), B(n);
