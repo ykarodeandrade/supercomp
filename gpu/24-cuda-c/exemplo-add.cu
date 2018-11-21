@@ -29,7 +29,7 @@ int main() {
     }
     
     thrust::device_vector<double> A_d(A), B_d(B), C_d(n);
-    add<<<ceil(n/blocksize),blocksize>>>(thrust::raw_pointer_cast(A_d.data()),
+    add<<<ceil((double) n/blocksize),blocksize>>>(thrust::raw_pointer_cast(A_d.data()),
                                          thrust::raw_pointer_cast(B_d.data()),
                                          thrust::raw_pointer_cast(C_d.data()), 
                                          n
