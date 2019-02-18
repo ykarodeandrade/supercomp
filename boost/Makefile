@@ -1,7 +1,7 @@
 CXX=g++
 FLAGS=-std=c++11
 
-all : exemplo-scoped_ptr exemplo-shared_ptr exemplo-distribuicao_normal exemplo-any exemplo-salvando_aleatorios tarefa1 tarefa2 
+all : exemplo-scoped_ptr exemplo-shared_ptr exemplo-distribuicao_normal exemplo-any exemplo-salvando_aleatorios exemplo-matrizes tarefa1 tarefa2 
 
 exemplo-scoped_ptr : exemplo-scoped_ptr.cpp
 	$(CXX) $(FLAGS) -o $@ $^
@@ -18,6 +18,9 @@ exemplo-any : exemplo-any.cpp
 exemplo-salvando_aleatorios : exemplo-salvando_aleatorios.cpp
 	$(CXX) $(FLAGS) -o $@ $^ -lboost_serialization -lboost_program_options
 
+exemplo-matrizes : exemplo-matrizes.cpp
+	$(CXX) $(FLAGS) -o $@ $^
+
 tarefa1 : tarefa1.cpp
 	$(CXX) $(FLAGS) -o $@ $^
 
@@ -25,6 +28,6 @@ tarefa2 : tarefa2.cpp
 	$(CXX) $(FLAGS) -o $@ $^
 
 clean:
-	rm -f exemplo-scoped_ptr exemplo-shared_ptr exemplo-distribuicao_normal exemplo-any exemplo-salvando_aleatorios tarefa1 tarefa2 
+	rm -f exemplo-scoped_ptr exemplo-shared_ptr exemplo-distribuicao_normal exemplo-any exemplo-salvando_aleatorios exemplo-matrizes tarefa1 tarefa2 
 
 

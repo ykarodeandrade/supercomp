@@ -1,3 +1,8 @@
+// Exemplo de uso de recursos do Boost
+// Compilar: g++ serializar.cpp -std=c++14 -lboost_serialization
+// Referência: https://www.quantlib.org/slides/dima-boost-intro.pdf
+// Autor: Luciano Soares <lpsoares@insper.edu.br>
+
 #include <iostream>
 #include <fstream>
 #include <ostream>
