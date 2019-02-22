@@ -10,7 +10,7 @@
 int main() {
     boost::timer::cpu_timer timer;
 
-    const long long size = 2'147'483'647;
+    const std::uint64_t size = 2'147'483'647;
  
     std::cout << timer.format();
     std::cout << size*(size+1)/2 << '\n';

@@ -10,32 +10,34 @@
 #include <boost/thread.hpp>
 #include <boost/chrono.hpp>
 
-void thread(std::uint64_t *parcial, uint64_t inicio, uint64_t fim) {
-    for (uint64_t i = inicio; i < fim; ++i)
-        *parcial += i+1;
+void thread(std::uint64_t *parcial, std::uint64_t inicio, std::uint64_t fim) {
+    std::uint64_t tmp = 0;
+    for (std::uint64_t i = inicio; i < fim; ++i)
+        tmp += i+1;
+    *parcial = tmp;
 }
 
 int main() {
 
     std::uint8_t n_th = boost::thread::hardware_concurrency();
-
+    
     boost::timer::cpu_timer timer;
 
     std::uint64_t total = 0;
 
     std::uint64_t *parcial = new std::uint64_t[n_th];
 
-    const uint64_t size = 2'147'483'647;
+    const std::uint64_t size = 2'147'483'647;
     boost::thread *t[n_th];
-    for (uint64_t i = 0, j = 0; i < n_th; ++i, j+=size/n_th) {
+    for (std::uint64_t i = 0, j = 0; i < n_th; ++i, j+=size/n_th) {
         parcial[i]=0;
         t[i] = new boost::thread{thread,&parcial[i],j,(i+1==n_th?size:j+size/n_th)};
     }
 
-    for (uint8_t i = 0; i < n_th; ++i)
+    for (std::uint8_t i = 0; i < n_th; ++i)
         t[i]->join();
 
-    for (uint8_t i = 0; i < n_th; ++i)
+    for (std::uint8_t i = 0; i < n_th; ++i)
         total += parcial[i];
 
     std::cout << timer.format();
