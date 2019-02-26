@@ -19,8 +19,6 @@ inline void normal_sqrt()
 __m256 __attribute__((aligned(32))) vectorized[V]; //Vectorized array
 inline void avx_sqrt()
 {
-    for (int i = 0; i < V; ++i)
-        vectorized[i] = _mm256_sqrt_ps(vectorized[i]);
   //****** Insira o codigo AVX aqui *******
 }
 
