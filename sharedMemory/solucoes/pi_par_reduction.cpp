@@ -22,7 +22,7 @@ int main() {
 	double start_time, run_time;
 
 	step = 1.0 / (double)num_steps;
-    omp_set_num_threads(NUM_THREADS);
+    omp_set_num_threads(NUM_THREADS);
 	start_time = omp_get_wtime();
 
     #pragma omp parallel
