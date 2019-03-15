@@ -2,19 +2,19 @@
 
 int main() {
 
-	std::cout << "I think ";
+	std::cout << "I think";
 	
 	#pragma omp parallel
 	{
 		#pragma omp master
 		{
 			#pragma omp task
-			std::cout << "car ";
+			std::cout << " car";
 			#pragma omp task
-			std::cout << "races ";
+			std::cout << " race";
 		}
 	}
 
-	std::cout << "are fun\n";
+	std::cout << "s are fun\n";
 
 }
