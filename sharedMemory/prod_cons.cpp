@@ -39,7 +39,7 @@ int main() {
   double *A, sum, runtime;
   int flag = 0;
 
-  A = (double *)malloc(N*sizeof(double));
+  A = new double[N];
 
   runtime = omp_get_wtime();
 

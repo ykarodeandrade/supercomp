@@ -42,7 +42,7 @@ int main() {
 
   omp_set_num_threads(Nthreads);
 
-  A = (double *)malloc(N*sizeof(double));
+  A = new double[N];
 
   #pragma omp parallel
   {
