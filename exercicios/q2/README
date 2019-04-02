@@ -1,0 +1,14 @@
+2)	O gradiente descendente é um método muito popular de otimização na área de Aprendizado de Máquina e de implementação muito simples. O objetivo deste exercício é otimizar um código que usa este método para encontrar a solução de um problema de regressão linear. Apesar de funcional, a versão do código disponibilizada é sequencial e não atende aos requisitos de desempenho necessários. Use seus conhecimentos de paralelização em memória compartilhada pelo OpenMP para acelerar esta implementação. O diretório q2 possui as implementações de todos os cálculos necessários mais exemplos de algumas entradas. 
+a.	O seu programa deve ser mais eficiente ou igual à implementação sequencial para todas as entradas. 
+b.	Comente seu código sobre as decisões que tomou. Especialmente justifique seu uso, ou não, dos pragmas omp que colocou no código.
+
+
+A pasta `exemplos` contém algumas entradas usadas para testar o código de vocês. Colocamos abaixo  sugestões de parâmetros usadas para testar cada uma delas.
+
+> ./q2 2000 0.01 < exemplos/entrada1
+> ./q2 10000 0.01  < exemplos/entrada2
+> ./q2  10000 0.01 < exemplos/entrada3
+> ./q2 1500 0.01 < exemplos/entrada4
+> ./q2 1000 0.001  < exemplos/entrada5
+
+Os programas acima demoram no máximo 5 minutos para rodar em suas versões sequenciais e chegam em valores respeitáveis de erro. 
