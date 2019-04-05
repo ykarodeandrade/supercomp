@@ -1,5 +1,5 @@
 #Makefile para programas do curso do Supercomputação
-CXX=g++-6
+CXX=g++
 FLAGS=-std=c++11 -fopenmp -O3 -Wall -I/usr/local/include
 PROGS=blur
 OBJS=blur.o image.o
