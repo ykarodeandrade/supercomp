@@ -2,8 +2,7 @@
 // Criado por: Luciano P. Soares
 // atualizado em: 15/04/2019
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
 /* Rotina para somar dois vetores na GPU */ 
 __global__ void add(double *a, double *b, double *c, int N) {
@@ -38,19 +37,19 @@ int main() {
    // Aloca vetores na memoria da GPU
    error = cudaMalloc((void **)&d_a,n*sizeof(double));
    if(error!=cudaSuccess) {
-      printf("Memory Allocation CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Allocation CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
    error = cudaMalloc((void **)&d_b,n*sizeof(double));
    if(error!=cudaSuccess) {
-      printf("Memory Allocation CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Allocation CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
    error = cudaMalloc((void **)&d_c,n*sizeof(double));
    if(error!=cudaSuccess) {
-      printf("Memory Allocation CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Allocation CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
@@ -58,13 +57,13 @@ int main() {
    // Copia valores da CPU para a GPU
    error = cudaMemcpy(d_a, h_a, n*sizeof(double), cudaMemcpyHostToDevice);
    if(error!=cudaSuccess) {
-      printf("Memory Copy CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Copy CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
    error = cudaMemcpy(d_b, h_b, n*sizeof(double), cudaMemcpyHostToDevice);
    if(error!=cudaSuccess) {
-      printf("Memory Copy CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Copy CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
@@ -75,7 +74,7 @@ int main() {
    // Retorna valores da memoria da GPU para a CPU
    error = cudaMemcpy(h_c, d_c, n*sizeof(double), cudaMemcpyDeviceToHost);
    if(error!=cudaSuccess) {
-      printf("Memory Copy CUDA failure %s:%d: '%s'\n",__FILE__,__LINE__,cudaGetErrorString(error));
+      std::cout << "Memory Copy CUDA failure " << __FILE__ << ":" << __LINE__ << ": '" << cudaGetErrorString(error) << "'\n";
       exit(EXIT_FAILURE);
    }
 
@@ -85,10 +84,11 @@ int main() {
    cudaFree(d_c);
 
    // Exibe um resultado para checar se valores conferem
+   std::cout.precision(7);
    for(i=0;i<n;i++) {
       if(!(i%(n/8))) {
-         printf("a[%d] + b[%d] = c[%d] => ",i,i,i);
-         printf("%6.1f + %6.1f = %6.1f\n",h_a[i],h_b[i],h_c[i]);
+         std::cout << "a[" << i << "] + b[" << i << "] = c[" << i << "]  =>  ";
+         std::cout << h_a[i] << " + " << h_b[i] << " = " << h_c[i] << std::endl;
       }
    }
    
