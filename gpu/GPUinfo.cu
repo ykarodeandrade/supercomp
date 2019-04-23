@@ -1,31 +1,31 @@
 // Exemplo para o curso de Super Computação
 // Criado por: Luciano P. Soares (10 de Abril de 2018)
+// Atualizado em 22 de Abril de 2019
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
-//#include <cuda.h>
-//#include <cuda_runtime.h>
+#include <cuda.h>
+#include <cuda_runtime.h>
 
 /* Informacoes da GPU */
 int main() {
 
    int dev_count;
    cudaGetDeviceCount(&dev_count);
-   printf("Numero de devices (GPU) = %d\n\n", dev_count );
+   std::cout << "Numero de devices (GPU) = " << dev_count << std::endl;
 
    cudaDeviceProp dev_prop;
    for (int i = 0; i < dev_count; i++) {
-      printf("\tDevice (%d)\n", i);
+      std::cout << "\n\tDevice (" << i << ")\n";
       
       cudaGetDeviceProperties(&dev_prop, i);
-      printf("\t\tNumero maximo de Bloco\n");
-      printf("\t\t\t Dimensao maxima em x = %d, y = %d, z = %d\n", dev_prop.maxGridSize[0],dev_prop.maxGridSize[1],dev_prop.maxGridSize[2] );
-      printf("\t\tNumero maximo de Threads por Bloco = %d\n", dev_prop.maxThreadsPerBlock );
-      printf("\t\t\t Dimensao maxima em x = %d, y = %d, z = %d\n", dev_prop.maxThreadsDim[0],dev_prop.maxThreadsDim[1],dev_prop.maxThreadsDim[2] );
-      printf("\t\tNumero maximo de Streaming Multiprocessors (SMs) = %d\n", dev_prop.multiProcessorCount );
-      printf("\t\tFrequencia de Clock = %d\n", dev_prop.clockRate );
-      printf("\t\tTamanho do Warp = %d\n", dev_prop.warpSize );
+
+      std::cout << "\t\tDimensão máxima de blocos em x = " <<  dev_prop.maxGridSize[0] << ", y = " <<  dev_prop.maxGridSize[1] << ", z = " <<  dev_prop.maxGridSize[2] << std::endl;
+      std::cout << "\t\tNúmero máximo de Threads por Bloco = " << dev_prop.maxThreadsPerBlock << std::endl;
+      std::cout << "\t\tDimensão máxima em x = " << dev_prop.maxThreadsDim[0] << ", y = " << dev_prop.maxThreadsDim[1] << ", z = " << dev_prop.maxThreadsDim[0] << std::endl;
+      std::cout << "\t\tNúmero máximo de Streaming Multiprocessors (SMs) = " << dev_prop.multiProcessorCount << std::endl;
+      std::cout << "\t\tFrequência de Clock = " << dev_prop.clockRate << std::endl;
+      std::cout << "\t\tTamanho do Warp = " << dev_prop.warpSize << std::endl;
    
    }
 
