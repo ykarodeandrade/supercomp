@@ -3,13 +3,6 @@
 // Copyright 2013 www.mpitutorial.com
 // Atualizado: 15 de Maio de 2019 (Luciano Soares)
 
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <mpi.h>
-#include <math.h>
-#include <assert.h>
-
 #include <iostream>
 #include <mpi.h>
 #include <assert.h>
