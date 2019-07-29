@@ -99,23 +99,16 @@ Use as classes acima para medir o tempo de execução do cálculo da distância 
 
 \newpage
 
-## Exercício para entrega
+## Exercício para próxima aula
 
-Vamos iniciar nosso curso com uma comparação de desempenho no uso de números fracionários com precisão simples (`float`) ou dupla (`double`). Seu trabalho será:
+Vamos iniciar nosso curso com uma comparação de desempenho de funções matemáticas. Seu trabalho será:
 
-1. criar uma função `gera_vetor` que recebe um inteiro `n` e devolve um vetor de dados aleatório de tamanho `n`. Você precisará de versões para `float` e `double`.
-1. criar uma função `dist_euclid` que computa a distância euclidiana entre dois vetores. 
-1. criar um `main` que cria vetores de tamanho incrementalmente maior e computa o tempo necessário para o cálculo da distância euclidiana entre dois vetores.
+1. criar uma função `gera_vetor` que recebe um inteiro `n` e devolve um vetor de dados aleatório de tamanho `n` com tipo `double`. 
+1. criar funções `log`, `sqrt`, `pow3` (usando a biblioteca `math`) e `pow3mult` (usando o operador `*` duas vezes) que computam as operações correspondentes em cada elemento do vetor.
+1. criar uma função `sum` que calcula a soma do vetor. 
+1. criar um `main` que cria vetores de tamanho incrementalmente maior e computa o tempo necessário para cada função rodar. 
 
-Com este programa pronto compare os desempenhos entre `float` e `double` e gere um gráfico. 
+Gere um gráfico mostrando as diferenças de desempenho.
 
+#### O nome da disciplina é **Super**Computação. Honre esse nome ao escolher tamanhos de vetores. 
 
-### Dicas:
-
-1. Na aula comentamos sobre o tipo de variáveis `auto`. Como você pode usá-lo em seu programa para que não seja necessário criar várias cópias das funções acima.
-1. Tente manter somente uma versão do código e utilizar macros `#define` e opções de compilação para criar executáveis diferentes a partir do mesmo código. 
-1. O nome da disciplina é **Super**Computação. Honre esse nome ao escolher tamanhos de vetores. 
-
-### Entrega:
-
-Entregue seu código, um documento contendo os tempos para `double` e `float` e um gráfico que mostre as diferenças de tempo para cada tamanho de vetor.
