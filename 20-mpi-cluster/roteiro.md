@@ -9,10 +9,13 @@ Objetivos de aprendizagem:
 3. Realizar testes de latencia de comunicaçao local e via rede.
 
 Neste roteiro iremos configurar um conjunto de PCs linux para funcionar como 
-um cluster MPI e rodar nossos primeiros programas. Junto com este roteiro você
-está recebendo um cartão com uma lista de IPs e chaves que funcionam em todos eles.
+um cluster MPI e rodar nossos primeiros programas. 
 
-# Configuraçao inicial
+# Parte 0 - criação das máquinas
+
+Crie três máquinas *t3.micro* na AWS usando sua conta e coloque-as no mesmo security group. Anote abaixo os ips públicos e privados destas máquinas. \vspace{3em}
+
+# Parte 1 - Configuraçao inicial
 
 O primeiro passo para configurar um cluster MPI é permitir a autenticaçao 
 sem senha entre o nó mestre e os restantes. A lista de máquinas contém uma
@@ -27,14 +30,14 @@ A primeira etapa de configuração do cluster é criar usuários em cada máquin
 O processo abaixo deverá ser feito em 3 máquinas do cluster: sua principal mais duas a sua escolha.
 
 1. Faça o login usando a chave disponibilizada no blackboard. 
-2. Crie um usuário com seu nome;
+2. Crie um usuário `mpi`;
 3. Crie uma chave criptográfica usando `ssh-keygen`;
 
 Com todos os usuários criados, logue em cada máquina e copie sua chave pública para o *~/.ssh/authorized_keys* das outras duas máquinas e faça um login de teste. 
 
 **Importante**: estas instruções permitem o ssh sem senha de uma máquinas para todas as outras. É importante testar a conexão antes de executar os processos usando MPI. 
 
-Estes passos são necessários para criar um cluster seguro em clouds públicas. 
+Estes passos são necessários para criar um cluster seguro em clouds públicas. Não se esqueça de checar se os security groups permite SSH entre as máquinas!
 
 ## Instalação de software
 
@@ -46,9 +49,11 @@ Para compartilhar dados entre nossas máquinas iremos configurar uma partição 
 
 Siga [este guia](http://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/#step-4-setting-up-nfs) para configurar o compartilhamento de arquivos. A máquina **master** dele é sua máquina principal e a parte **client** deve ser replicada para as duas máquinas que você escolheu.
 
+Ao testar, não se esqueça de permitir acesso *NFS* entre as máquinas do mesmo security group. **Não permita *NFS* para máquinas de fora!**. 
+
 Com tudo configurado, copie os arquivos *hello_cluster.cpp*, *mpi_bandwidth.c* e *mpi_latency.c* para a área compartilhada e passe para a próxima seção. 
 
-# Primeiros usos do cluster
+# Parte 2 - Primeiros usos do cluster
 
 Vamos então rodar o programa *hello_cluster.cpp* em várias máquinas. Para isto é necessário criar um arquivo *hostfiles* em que cada linha descreve o ip de uma máquina remota e quantos processos ela pode rodar. Neste roteiro iremos rodar todos os exemplos a partir da nossa máquina principal na AWS. Criem um arquivo com o seguinte formato e os IPs de todas as máquinas do nosso cluster. Note que estamos enviando dois processos para cada máquina do cluster
 
