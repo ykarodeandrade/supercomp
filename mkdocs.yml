@@ -20,6 +20,11 @@ theme:
 docs_dir: material
 site_dir: docs
 
+repo_url: https://github.com/insper/supercomp
+repo_name: "SuperComp"
+site_url: https://insper.github.io/supercomp/
+
+
 nav:
     - Home: index.md
     - Sobre: sobre.md
@@ -29,12 +34,11 @@ nav:
         - '02 - Templates e STL': aulas/02-stl.md
         - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
         - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
-        - '05 - SIMD: Funções Intrínsecas': aulas/05-simd-intrinsics.md 
 
 
     - Projetos:
         - 'Índice': projetos/index.md
-        - 'Multi-core': projetos/projeto-multi-core.md
+        
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
     - translate-admonitions.js
