@@ -95,6 +95,9 @@ O cabeçalho `<chrono>` disponibiliza diversas classes e funções para mediçã
 
 A parte inicial de nosso curso foca na compreensão e implementação de funções matemáticas. Para isso vamos iniciar uma sequência de atividades que farão comparações de desempenho de funções do cabeçalho `cmath` (que é o mesmo `math.h` que usávamos em *C*, mas agora exportado para usar em *C++*). 
 
+!!! warning
+    O projeto 0 é individual e deverá ser entregue via blackboard. **Este projeto não deverá estar hospedado no github.** 
+
 
 !!! example 
     Cria um arquivo chamado *parte0.c* contendo
