@@ -1,0 +1,80 @@
+site_name: 7s - SuperComputação - Insper 2020/1
+
+extra:
+    materia: SuperComputação
+    professor: Igor Montagner
+    semestre: 2020/1
+    
+theme:
+  feature:
+    tabs: true
+  name: 'material'
+  palette:
+      primary: 'grey'
+      accent: 'red'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  custom_dir: 'custom_theme'
+
+docs_dir: material
+site_dir: docs
+
+nav:
+    - Home: index.md
+    - Sobre: sobre.md
+    - Aulas:
+        - 'Organização do repositório': aulas/00-organizacao.md
+        - '01 - Introdução a C++': aulas/01-intro-cpp.md
+        - '02 - Templates e STL': aulas/02-stl.md
+        - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
+        - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
+        - '05 - SIMD: Funções Intrínsecas': aulas/05-simd-intrinsics.md 
+
+
+    - Projetos:
+        - 'Índice': projetos/index.md
+        - 'Multi-core': projetos/projeto-multi-core.md
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
+    - translate-admonitions.js
+
+extra_css:
+    - css/printing.css
+        
+markdown_extensions:
+  - markdown.extensions.tables
+  - tables
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets:
+      base_path: code
+      check_paths: true
+plugins:
+    - search

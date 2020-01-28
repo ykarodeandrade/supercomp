@@ -1,0 +1,40 @@
+```{python, echo=False}
+import tabulate
+import pandas as pd
+```
+# Burocracias 
+
+## Turma 1
+
+* TER 09:45 - 11:45
+* SEX 07:30 - 09:30
+
+* Atendimento: 
+
+### Plano de aulas
+
+```{python, results='md', echo=False}
+t1 = pd.read_excel('plano-de-aulas-t1.xlsx')
+t1['Data'] = t1['Data'].apply(lambda x: x.strftime('%d/%m'))
+print(tabulate.tabulate(t1[['Data', 'Questão/Problema',
+'Conteúdo/Atividade']], headers=['Data', 'Questão/Problema',
+'Conteúdo/Atividade'], tablefmt='pipe', showindex=False))
+```
+
+## Turma 2
+
+* QUA 13:30 - 15:30
+* SEX 13:30 - 15:30
+* Atendimento: 
+
+
+### Plano de aulas
+
+```{python, results='md', echo=False}
+t2 = pd.read_excel('plano-de-aulas-t2.xlsx')
+t2['Data'] = t2['Data'].apply(lambda x: x.strftime('%d/%m'))
+print(tabulate.tabulate(t2[['Data', 'Questão/Problema',
+'Conteúdo/Atividade']], headers=['Data', 'Questão/Problema',
+'Conteúdo/Atividade'], tablefmt='pipe', showindex=False))
+```
+
