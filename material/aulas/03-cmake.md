@@ -56,6 +56,7 @@ Podemos também usar `#define` para fazer compilação condicional do nosso cód
 !!! bug "Exercício" 
     Crie um novo *target* `vector_ops_no_opt` que compile os mesmos arquivos de `vector_ops` mas use a opção de compilação `O0`.
     
+
 ## Projeto 0 - Benchmarking e comparações de desempenho
 
 Vamos agora fazer um pequeno resumo dos resultados dos experimentos. Este resumo deverá conter os seguintes itens e deverá ser entregue em formato *PDF*. 

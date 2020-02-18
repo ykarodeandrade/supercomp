@@ -15,38 +15,36 @@ Uma das grandes dificuldades de desenvolver em C++ é evitar vazamentos de memó
 **shared_ptr**: Um smart pointer para um único objeto e pode ter vários donos. Ou seja, este smart pointer aponta para um objeto que pode ter vários apontamentos de cada vez. Ao realizarmos atribuições adicionamos uma nova referência a este dado. Quando não existem mais referências o dado é automaticamente liberado usando `delete`
 
 !!! example
-    Corrija o uso de memória absurdo do programa abaixo (arquivo *tarefa1.cpp*) usando smart pointers.
-
+    O programa abaixo (*tarefa1.cpp*) tem problemas de memória devido a alocação feita na função `cria_vetor` e não liberada a cada iteração do for. Conserte o programa usando `shared_ptr` para que a memória alocada por `cria_vetor` seja liberada automaticamente. 
     ```cpp
     #include <iostream>
+    #include <memory>
+    #include <vector>
+
+    double *cria_vetor(int n) {
+        double *ptr = new double[n];
+        for (int i = 0; i < n; i++) {
+            prt[i] = 0.0;
+        }
+        return ptr;
+    }
+
+    void processa(double *ptr, int n) {
+        for (int i = 0; i < n; i++) {
+            ptr[i] *= 2;
+        }
+    }
 
     int main() {
-    int *ptr = new int(0);
-    for(int f=0;f<1024*1024*1024;f++) {
-        ptr = new int(f);
-    }
-    std::cout << "valor final = " << *ptr << std::endl;
-    delete ptr;
-    }
-    ```
-
-!!! example
-    Corrija o uso de memória absurdo do programa abaixo (arquivo *tarefa2.cpp*) usando smart pointers.
-
-    ```cpp
-    #include <iostream>
-
-    int foo(int x) {
-        int *vec1 = new int[8];
-        for(int f=0;f<8;f++) vec1[f]=f*x;
-        int *vec2 = vec1;
-        int tmp = vec1[0]+vec1[4]+vec1[7]-vec1[5];
-        return tmp;
-    }
-    int main() {
-        long int tmp = 0;
-        for(int f=0;f<1024*1024*512;f++)  tmp += foo(f);
-        std::cout << tmp << std::endl;
+        std::cout << "Hello!\n";
+        
+        for (int i = 0; i < 10; i++) {
+            double *vec = cria_vetor(1000);
+            processa(vec, 1000);
+            // vetor não é deletado no fim do main!
+        }
+        
+        return 0;
     }
     ```
 
