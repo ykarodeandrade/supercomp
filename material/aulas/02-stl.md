@@ -94,7 +94,7 @@ Podemos inclusive, passar essas funções como argumentos e devolvê-las como re
     
     ```cpp
     int c = 2;
-    std::functional<double(int)> by_two = [=](int n) {
+    std::function<double(int)> by_two = [=](int n) {
         return double(n) / c; 
     };
     std::cout << by_two(5) << "\n";

@@ -14,7 +14,7 @@ Em *CMake*, um projeto é definido por um arquivo nomeado *CMakeLists.txt*. Este
 Um arquivo *CMakeLists.txt* básico pode conter apenas três linhas (pasta [03-cmake](https://github.com/insper/supercomp/code/03-cmake)):
 
 ```
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 project (projeto_basico)
 add_executable(hello hello.cpp) 
 ```
@@ -43,11 +43,11 @@ E um executável de nome *hello* deverá aparecer na pasta *build*.
 
 Além da criação de executáveis o CMake também permite adicionar opções de compilação específicas para cada *target* com a diretiva [`target_compile_options`](https://cmake.org/cmake/help/latest/command/target_compile_options.html). No contexto desta matéria isto será especialmente interessante pois o `g++` oferece flags para ativar otimizações que podem melhorar significativamente o desempenho de nosso programa. Portanto, podemos facilmente compilar o mesmo programa com e sem otimizações no mesmo projeto! O exemplo abaixo ativa a flag `O3` no *target* `hello` criado no exemplo anterior. 
 
-    target_compile_options(hello O3)
+    target_compile_options(hello PUBLIC -O3)
 
 Podemos também usar `#define` para fazer compilação condicional do nosso código. Usar a [diretiva abaixo](https://cmake.org/cmake/help/latest/command/target_compile_definitions.html) equivale e colocar um `#define OPT` no topo de cada arquivo do target `hello`.
 
-    target_compile_definitions(hello OPT)
+    target_compile_definitions(hello PUBLIC OPT)
     
 !!! bug "Exercício" 
     Modifique seu *target* `vector_ops` para que ele use a opção de compilação `O2`.
