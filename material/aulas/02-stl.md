@@ -123,7 +123,7 @@ Podemos inclusive, passar essas funções como argumentos e devolvê-las como re
     * `sum`
     
 !!! example
-    Crie uma função `std::vector<double> teste_incremental(`**tipo aqui**`)` que recebe as funções acima e as executa. Sua função deverá devolver os tempos (em segundos) para todas as execuções feitas. Ou seja, a função teste_incremental deverá funcionar como uma "casquinha" que gera vetores, roda as funções matemáticas testadas e retorna seus tempos de execução.
+    Crie uma função `std::vector<double> teste_incremental(`**tipo aqui**`)` que recebe um ponteiro para o tipo das funções acima e executa a função recebida com tamanhos de vetores incrementalmente maiores. Sua função deverá devolver os tempos (em segundos) para todas as execuções feitas. Ou seja, a função teste_incremental deverá funcionar como uma "casquinha" que gera vetores, roda as funções matemáticas testadas e retorna seus tempos de execução.
 
 !!! example 
     você deve ter notado que a função `sum` não possui a mesma assinatura das outras. Use uma função `lambda` para adaptar os tipos e usar a função acima para testar a função `sum` também. 
