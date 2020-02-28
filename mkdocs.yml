@@ -34,6 +34,7 @@ nav:
         - '02 - Templates e STL': aulas/02-stl.md
         - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
         - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
+        - aulas/05-intro-multi-core.md
 
 
     - Projetos:
