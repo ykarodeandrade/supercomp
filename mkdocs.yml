@@ -1,8 +1,9 @@
 site_name: 7s - SuperComputação - Insper 2020/1
+site_author: Igor Montagner, Lucianos Soares
 
 extra:
     materia: SuperComputação
-    professor: Igor Montagner
+    professor: Igor Montagner, Luciano Soares
     semestre: 2020/1
     
 theme:
@@ -35,6 +36,7 @@ nav:
         - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
         - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
         - aulas/05-intro-multi-core.md
+        - aulas/06-intro-openmp.md
 
 
     - Projetos:
