@@ -13,7 +13,7 @@ A atividade hoje será debugar um programa paralelo que deu errado!
 
 **Curiosidade**: fractais são estruturas matemáticas que são definidas por sua auto-similaridade. Eles são úteis para modelar objetos e fenômenos que possuem as mesmas características em escalas completamente diferentes, como nuvens, montanhas e [compressão de arquivos](https://en.wikipedia.org/wiki/Fractal_compression). 
 
-![Exemplos de fractais, Fonte: mathworld.wolfram.com.](http://mathworld.wolfram.com/images/eps-gif/Fractal1_1000.gif){width=250px}
+![Exemplos de fractais, Fonte: mathworld.wolfram.com.](http://mathworld.wolfram.com/images/eps-gif/Fractal1_1000.gif)
 
 ----
 
