@@ -20,7 +20,7 @@ Nesta parte iremos aprender a criar threads e esperar sua finalização usando C
 ```
 
 !!! example
-	Compile e roda o programa acima. O resultado é o esperado?
+	Compile e roda o programa acima. Você precisará passar a flag `-pthread` para o `g++`. O resultado é o esperado?
 
 !!! example
 	Modifique o programa acima para criar 4 threads e atribuir a cada uma um *id* de 0 a 3. Cada thread deve executar uma função que imprime "Thread: " + id. (Você precisa ainda da variável `int *b`?)

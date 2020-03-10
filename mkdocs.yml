@@ -37,6 +37,7 @@ nav:
         - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
         - aulas/05-intro-multi-core.md
         - aulas/06-intro-openmp.md
+        - aulas/07-openmp-for.md
 
 
     - Projetos:
