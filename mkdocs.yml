@@ -38,6 +38,7 @@ nav:
         - aulas/05-intro-multi-core.md
         - aulas/06-intro-openmp.md
         - aulas/07-openmp-for.md
+        - aulas/08-efeitos-colaterais.md
 
 
     - Projetos:
