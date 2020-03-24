@@ -24,7 +24,7 @@ Nesta parte do roteiro iremos analisar o código exemplo, testar uma paraleliza�
 !!! example
     Faça uma paralelização ingênua deste código.
 
-!! example 
+!!! example 
     Teste a paralelização ingênua do exercício anterior. Ela retorna os mesmos resultados em todas execuções? Se não, comente por que isto é um problema.
 
 Dado que não encontramos problemas no arquivo *pi_mc.c*, vamos olhar então os arquivos *random.c/h*. 

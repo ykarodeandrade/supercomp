@@ -78,7 +78,7 @@ Este item é o principal da entrega, mas ele se apoia inteiramente em cima dos i
 
 A entrega será dividida em duas partes:
 
-1. entrega do algoritmo sequencial em *C++*, comparando-o com a implementação em Python (20/03) 
+1. entrega do algoritmo sequencial em *C++*, comparando-o com a implementação em Python (30/03) 
 1. entrega final (antes da prova)
 
 Na primeira entrega são esperados os seguintes itens:

@@ -18,7 +18,7 @@ As atividades estão descritas nas aulas 1-5 e o projeto deve ser entregue até 
 Nestes três projetos resolveremos o problema da [Alocação de alunos para o PFE](projeto-pfe.md) usando diferentes técnicas de computação paralela. 
 
 * Projeto 1: [programação multi-core](projeto-multi-core.md)
-    - Parte 1: implementação sequencial
-    - Parte 2: multi-core
+    - Parte 1: implementação sequencial (31/03)
+    - Parte 2: multi-core (14/04)
 * Projeto 2: GPGPU
 * Projeto 3: computação distribuída
