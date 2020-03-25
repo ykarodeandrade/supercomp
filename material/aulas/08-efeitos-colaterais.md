@@ -40,7 +40,7 @@ Dado que não encontramos problemas no arquivo *pi_mc.c*, vamos olhar então os 
 
 Só prossiga após validar as respostas do item anterior com o professor ou com um colega que já tenha finalizado esta parte.
 
-# Parte 3 - exclusão mútua
+# Parte 1: exclusão mútua
 
 Identificamos na parte anterior que a função `drandom` possui efeitos colaterais e estes efeitos colaterais estão atrapalhando a paralelização do código. Esta implementação é parecida com as funções do cabeçalho `<random>`: temos um estado do gerador de números que é passado para toda função que faz sorteios. Neste caso, o resultado do próximo número sorteado depende dos valores globais `MULTIPLIER`, `ADDEND`, `PMOD` e da variável estática `random_last`.
 
