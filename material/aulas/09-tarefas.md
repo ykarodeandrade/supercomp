@@ -52,7 +52,7 @@ int main() {
 ```
 
 !!! example
-    Crie uma nova função `int fib_par1(int n);` e paraleliza as chamadas recursivas usando `task`s. Faça com que cada chamada recursiva seja executada como uma tarefa. **Dica**: é preciso esperar as tarefas lançarem antes do `return`?
+    Crie uma nova função `int fib_par1(int n);` e paraleliza as chamadas recursivas usando `task`s. Faça com que cada chamada recursiva seja executada como uma tarefa. **Dica**: é preciso esperar as tarefas acabarem antes do `return`?
 
 !!! example short
     Compare com o código original. Houve melhora? Por que?
@@ -60,7 +60,7 @@ int main() {
 O exercício acima exemplifica o custo de criar e escalonar tarefas. Vamos melhorar esta paralelização agora limitando o número de tarefas criadas.
 
 !!! example 
-    Crie uma nova função `int fib_par2(int n)` e paraleliza as chamadas recursivas. Faça com que sejam criadas no máximo `max_threads` tarefas. **Dica**: passar como argumento o nível da recursão pode ajudar. 
+    Crie uma nova função `int fib_par2(int n)` e paraleliza as chamadas recursivas. Faça com que sejam criadas no máximo `max_tasks` tarefas. **Dica**: passar como argumento o nível da recursão pode ajudar. 
 
 # Parte 2 - estratégias de paralelização
 
@@ -86,7 +86,3 @@ A etapa final de nossa aula trabalhará o algoritmo de cálculo do *pi* usando i
 !!! question long
     Resuma, com suas palavras, a estratégia de paralelização usada na parte 3. Qual a relação entre `MIN_BLK` e o número de `thread`s disponíveis em um sistema? Devemos modificar `MIN_BLK` baseado na entrada?
     
-    
-
-Nosso programa limita o paralelismo via `MIN_BLK`. Como você faria para ele aproveitar ao máximo o número de processadores disponíveis em tempo de execução?
-
