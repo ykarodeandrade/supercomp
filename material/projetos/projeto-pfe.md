@@ -32,15 +32,15 @@ Porém, nem sempre é fácil paralelizar estas técnicas e este será um dos des
 O formato de entrada do programa estará no formato abaixo.
 
 ```
-n_alunos n_projetos
-p1 p2 p3 p4 p5
+n_alunos n_projetos n_choices
+p(1) p(2) ... p(n_choices)
 ..... # repetido n_alunos vezes
 ```
 
 * `n_alunos` é o número de alunos
 * `n_projetos` é o número de projetos existentes
 * cada linha seguinte representa as cinco prioridades de um aluno.    
-* `p1, ..., p5` é um número entre `0` e `n_projetos-1`, sem repetições
+* `p(1), ..., p(n_choices)` é um número entre `0` e `n_projetos-1`, sem repetições
 
 A saída do programa deverá estar no formato abaixo.
 

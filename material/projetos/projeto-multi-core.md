@@ -101,7 +101,7 @@ Cada funcionalidade do projeto corretamente implementada de maneira sequencia **
 * **Conceito B+**: implementou uma heurística de busca no algoritmo sequencial e no paralelo e mostrou que há grandes ganhos de desempenho em seu uso. Você deverá produzir executáveis nomeados `branch_bound_heuristico_seq` e `branch_bound_heuristico_par`.
 * **Conceito A+**: implementou uma solução híbrida, com uma thread rodando busca local e as restantes executando o *Branch and Bound*. Você deverá produzir executáveis nomeados `branch_bound_hibrido_seq` e `branch_bound_hibrido_par`.
 
-Os conceitos acima estão apresentados em ordem de dificuldade. Em geral, o programa de um conceito se apoia nas implementações dos conceitos anteriores.
+Os conceitos acima estão apresentados em ordem de dificuldade. Em geral, a implementação de um conceito se apoia nas implementações dos conceitos anteriores.
 
 ### Relatório
 
