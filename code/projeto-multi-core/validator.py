@@ -18,7 +18,7 @@ def check_format(data_out):
     pa1 pa2 pa3 ... pa(n_alunos)
     """
     return re.fullmatch(r"\d* (0|1)", data_out[0]) and re.fullmatch(
-        r"(\d+ )+[\d]+", data_out[1]) and len(data_out) == 2
+        r"(\d+ )+[\d]+", data_out[1]) and len(data_out) >= 2
 
 
 def check_solution(data_inp, data_out):
@@ -27,21 +27,22 @@ def check_solution(data_inp, data_out):
     cada projeto tem exatamente 3 alunos.
     """
     st, _ = [int(x) for x in data_out[0].split(" ")]
-    n_alun, n_proj = [int(x) for x in data_inp[0].split(" ")]
+    n_alun, n_proj, n_choices = [int(x) for x in data_inp[0].split(" ")]
 
     proj = defaultdict(lambda: [])
     alun = defaultdict(lambda: [])
 
+    n_choices = int(data_inp[0].split()[2])
     for i, c in enumerate(data_out[1].split(" ")):
         alun[i] += [c]
         proj[c] += [i]
 
         try:
-            st -= pow(5 - data_inp[i + 1].split(" ").index(c), 2)
+            st -= pow(n_choices - data_inp[i + 1].split(" ").index(c), 2)
 
         except:
             pass
-
+        
     return not st and len(
         [len(x)
          for x in proj.values() if len(set(x)) == 3]) == n_proj and len(
