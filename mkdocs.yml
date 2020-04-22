@@ -40,6 +40,7 @@ nav:
         - aulas/07-openmp-for.md
         - aulas/08-efeitos-colaterais.md
         - aulas/09-tarefas.md
+        - aulas/10-gpu-I.md
 
 
     - Projetos:
