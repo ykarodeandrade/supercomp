@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding: utf8
 import numpy as np
 import sys
@@ -5,11 +6,13 @@ import sys
 def escolhe_alunos(prefs, aluno_projeto, vagas, satisfacao_atual=0, melhor=None, i=0):
     if i == len(aluno_projeto): # todos alunos tem projeto
         if melhor is None:
-            print('Melhor:', aluno_projeto, satisfacao_atual, file=sys.stderr)
+            aluno_projeto_str = str(aluno_projeto)[1:-1]
+            print('Melhor:', satisfacao_atual, aluno_projeto_str, file=sys.stderr)
             melhor = aluno_projeto.copy(), satisfacao_atual
         if satisfacao_atual > melhor[1]:
+            aluno_projeto_str = str(aluno_projeto)[1:-1]
             melhor = aluno_projeto.copy(), satisfacao_atual
-            print('Melhor:', melhor, file=sys.stderr)
+            print('Melhor:', satisfacao_atual, aluno_projeto_str, file=sys.stderr)
         return melhor
 
     for proj_atual in range(prefs.shape[1]):
@@ -32,8 +35,8 @@ if __name__ == '__main__':
         for j, p in enumerate(projs):
             prefs[i, p] = pow(n_choices - j, 2)
     
-    vagas = np.ones(n_projetos, np.uint) * 3 # 3 vagas por projeto
-    aluno_projeto = np.ones(n_alunos, np.uint) * -1 # não escolheu projeto ainda
+    vagas = np.ones(n_projetos, np.uint32) * 3 # 3 vagas por projeto
+    aluno_projeto = np.ones(n_alunos, np.uint32) * -1 # não escolheu projeto ainda
 
     melhor = escolhe_alunos(prefs, aluno_projeto, vagas)
 

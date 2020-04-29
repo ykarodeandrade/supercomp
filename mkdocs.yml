@@ -5,7 +5,7 @@ extra:
     materia: SuperComputação
     professor: Igor Montagner, Luciano Soares
     semestre: 2020/1
-    
+
 theme:
   feature:
     tabs: true
@@ -34,7 +34,7 @@ nav:
         - '01 - Introdução a C++': aulas/01-intro-cpp.md
         - '02 - Templates e STL': aulas/02-stl.md
         - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
-        - '04 - SIMD: Autovetorização': aulas/04-autovec.md 
+        - '04 - SIMD: Autovetorização': aulas/04-autovec.md
         - aulas/05-intro-multi-core.md
         - aulas/06-intro-openmp.md
         - aulas/07-openmp-for.md
@@ -45,17 +45,16 @@ nav:
 
     - Projetos:
         - 'Índice': projetos/index.md
-        - projetos/checklist.md
         - projetos/projeto-pfe.md
-        - projetos/projeto-multi-core.md
-        
-extra_javascript: 
+        - projetos/checklist.md
+
+extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
     - translate-admonitions.js
 
 extra_css:
     - css/printing.css
-        
+
 markdown_extensions:
   - markdown.extensions.tables
   - tables
