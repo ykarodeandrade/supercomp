@@ -15,7 +15,7 @@ As atividades estão descritas nas aulas 1-5 e o projeto deve ser entregue até 
 
 # Alocação de alunos no PFE
 
-Nestes três projetos resolveremos o problema da [Alocação de alunos para o PFE](projeto-pfe.md) usando diferentes técnicas de computação paralela.
+Nestes três projetos resolveremos o problema da [Alocação de alunos para o PFE](projeto-pfe.md) usando diferentes técnicas de computação paralela. Cada parte abaixo contém programas de validação da implementação feita. Esses programas serão atualizados continuamente durante o semestre. 
 
 * Parte 1: [algoritmos e estratégias de solução](projeto-algoritmos.md)
 * Parte 2: [programação multi-core](projeto-multi-core.md)

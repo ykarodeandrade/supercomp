@@ -1,7 +1,6 @@
 # Algoritmos para problemas NP-completo
 
-Na primeira etapa do projeto nos concentraremos na resolução do [problema proposto](projeto-pfe.md) de maneira eficiente.
-O arquivo `solucao-ingenua.py` contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é **extremamente ingênuo**. Por isso, ele também é **extremamente lento**.
+Na primeira etapa do projeto nos concentraremos na resolução do [problema proposto](projeto-pfe.md) de maneira eficiente. O arquivo `solucao-ingenua.py` contém uma solução simplista escrita em Python. Este programa sempre encontra a melhor solução, mas é **extremamente ingênuo**. Por isso, ele também é **extremamente lento**.
 
 ## Implementação em C++
 
@@ -18,12 +17,13 @@ Melhor: (sat) pa1 pa2 pa3 ... pa(n_alunos)
 
 Seu programa deverá encontrar exatamente as mesmas soluções que o programa em Python, pois ele é uma tradução fiel do algoritmo utilizado e deveria percorrer as soluções possíveis na mesma ordem.
 
+### Validação
+
 Para validar sua implementação deste item você deverá usar o script `code/projeto-validacao/validacao-exaustivo.py`. Este script recebe o seu executável e roda uma série de testes, verificando tanto a saída esperada quanto as informações de diagnóstico mostradas na saída de erros. As entradas usadas estão na pasta `entradas`.
 
-<!--
-**Busca local**:
+## Busca local:
 
-A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além dissto,
+A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além disto,
 
 1. a solução encontrada muda conforme a solução inicial
 1. nem todas as soluções são possíveis de serem encontradas.
@@ -39,8 +39,29 @@ Claramente se a solução é a melhor possível então isto não pode acontecer.
     * se existir faça a troca e repita o teste acima
     * se não existir retorne a solução atual
 
-Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca **local** pois seu resultado depende de qual solução inicial foi usada. Nem toda solução inicial resultará no ótimo **global** no fim do processo.
+Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidamente. Ele é uma busca **local** pois é feita usando apenas informações de dois alunos. Ou seja, não é possível garantir que essas soluções irão resultar na maior atribuição possível. Apenas que ao realizar trocas é possível encontrar uma solução melhor que a atual.
 
+### Validação
+
+O programa `code/projeto-validacao/validacao-exaustivo.py` recebe sua implementação e roda uma sequência de testes automatizados. Para funcionar ele espera que seu programa tenha o seguinte comportamento:
+
+1. É possível configurar o número de iterações que a busca local rodará usando a variável de ambiente `ITER`. Se ela não for passada assuma `ITER=100 000`.
+1. É possível configurar o seed do gerador de números aleatórios usando a variável de ambiente `SEED`. Se ela não for passada assuma `SEED=0`
+1. A cada troca seu algoritmo deverá mostrar na saída de erros a seguinte linha:
+
+```
+Iter: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+```
+
+Sua implementação está correta se obedece a duas condições:
+
+1. A solução melhora a cada iteração
+1. Ao final do processo não existe nenhuma dupla de alunos que, se trocada, melhoraria a satisfação.
+
+O programa acima checa essas duas condições para várias entradas. 
+
+
+<!--
 **Branch and Bound**:
 
 Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (*branches*) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:
