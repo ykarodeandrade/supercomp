@@ -9,7 +9,7 @@ Nosso primeiro passo será implementar esse mesmo programa em C++. O objetivo de
 Além de devolver a saída no [formato indicado no enunciado](projeto-pfe.md), seu programa também deverá mostrar informações de debug na saída de erros. Sempre que for encontrada uma solução melhor que a atual seu programa deverá mostrar uma linha como a abaixo na saída de erros:
 
 ```
-Melhor: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+Melhor: sat pa1 pa2 pa3 ... pa(n_alunos)
 ```
 
 * `(sat)` é a satisfação da solução encontrada.
@@ -43,14 +43,14 @@ Ao repertirmos este algoritmo conseguimos soluções razoáveis muito rapidament
 
 ### Validação
 
-O programa `code/projeto-validacao/validacao-exaustivo.py` recebe sua implementação e roda uma sequência de testes automatizados. Para funcionar ele espera que seu programa tenha o seguinte comportamento:
+O programa `code/projeto-validacao/validacao-busca-local.py` recebe sua implementação e roda uma sequência de testes automatizados. Para funcionar ele espera que seu programa tenha o seguinte comportamento:
 
 1. É possível configurar o número de iterações que a busca local rodará usando a variável de ambiente `ITER`. Se ela não for passada assuma `ITER=100 000`.
 1. É possível configurar o seed do gerador de números aleatórios usando a variável de ambiente `SEED`. Se ela não for passada assuma `SEED=0`
 1. A cada troca seu algoritmo deverá mostrar na saída de erros a seguinte linha:
 
 ```
-Iter: (sat) pa1 pa2 pa3 ... pa(n_alunos)
+Iter: sat pa1 pa2 pa3 ... pa(n_alunos)
 ```
 
 Sua implementação está correta se obedece a duas condições:

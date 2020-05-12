@@ -27,11 +27,11 @@ if __name__ == "__main__":
         solucao_sempre_melhora = True
         _, sat_atual, *attr_atual = err_proc[0].split(' ')
         sat_atual = int(sat_atual)
-        attr_atual = [int(x) for x in ' '.join(attr_atual)[1:-1].split()]
+        attr_atual = [int(x) for x in ' '.join(attr_atual).split()]
         for l in err_proc[1:]:
             _, sat_next, *attr_next = l.split(' ')
             sat_next = int(sat_next)
-            attr_next = [int(x) for x in ' '.join(attr_next)[1:-1].split()]
+            attr_next = [int(x) for x in ' '.join(attr_next).split()]
             if sat_next < sat_atual:
                 solucao_sempre_melhora = False
 

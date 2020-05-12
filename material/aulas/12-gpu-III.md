@@ -1,4 +1,4 @@
-# 11 - introdução a GPU - III
+# 12 - introdução a GPU - III
 
 Hoje o foco será operações customizadas. 
 
