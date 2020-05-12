@@ -4,6 +4,7 @@ import filecmp
 import re
 import os
 import numpy as np
+import subprocess
 
 
 class bcolors:
@@ -40,9 +41,6 @@ def parse_input(input_txt):
 
     return prefs, n_choices
 
-
-
-
 def list_all_input_files(preffix):
     inputs = []
     for entr in os.listdir('entradas'):
@@ -63,6 +61,13 @@ def list_all_input_files(preffix):
 
     return inputs
 
+
+def run_program(command, input_txt):
+    proc = subprocess.run([command], input=input_txt.encode('ascii'),
+                          capture_output=True, env=os.environ)
+    out_proc = str(proc.stdout, 'ascii').strip()
+    err_proc = str(proc.stderr, 'ascii').strip()
+    return out_proc, err_proc
 
 
 def check_format(data_out):

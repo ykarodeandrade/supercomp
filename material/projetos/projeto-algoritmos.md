@@ -12,7 +12,7 @@ Além de devolver a saída no [formato indicado no enunciado](projeto-pfe.md), s
 Melhor: sat pa1 pa2 pa3 ... pa(n_alunos)
 ```
 
-* `(sat)` é a satisfação da solução encontrada.
+* `sat` é a satisfação da solução encontrada.
 * `pa1` até `pa(n_alunos)` é o vetor contendo o projeto atribuído a cada aluno.
 
 Seu programa deverá encontrar exatamente as mesmas soluções que o programa em Python, pois ele é uma tradução fiel do algoritmo utilizado e deveria percorrer as soluções possíveis na mesma ordem.

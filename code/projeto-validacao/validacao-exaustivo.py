@@ -1,7 +1,7 @@
 import subprocess
 import sys
 
-from validator import valid_solution, list_all_input_files
+from grading_utils import valid_solution, list_all_input_files
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

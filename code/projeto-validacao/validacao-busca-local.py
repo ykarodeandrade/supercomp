@@ -1,7 +1,8 @@
 import sys
 import os
 import subprocess
-from validator import list_all_input_files, valid_solution, parse_input, satisfaction
+import re
+from grading_utils import list_all_input_files, valid_solution, parse_input, satisfaction, run_program
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -18,13 +19,11 @@ if __name__ == "__main__":
         arq, inp, out, ver = entr
 
         print(f'====================\nEntrada: {arq}')
-        proc = subprocess.run([nome_executavel], input=inp.encode('ascii'),
-                              capture_output=True, env=os.environ)
-        out_proc = str(proc.stdout, 'ascii').strip()
-        err_proc = str(proc.stderr, 'ascii').strip().split('\n')
+        out_proc, err_proc_all = run_program(nome_executavel, inp)
         print('Solução válida:', valid_solution(inp, out_proc))
 
         solucao_sempre_melhora = True
+        err_proc = err_proc_all.split('\n')
         _, sat_atual, *attr_atual = err_proc[0].split(' ')
         sat_atual = int(sat_atual)
         attr_atual = [int(x) for x in ' '.join(attr_atual).split()]
@@ -53,3 +52,5 @@ if __name__ == "__main__":
                     print('Troca entre', i, 'e', j, 'melhoraria solucao:', sat_teste)
         
         print('Solução é ótimo local', not pode_melhorar)
+        m = re.findall('Inicial', err_proc_all)
+        print('Só é feita uma iteração', len(m) == 1)
