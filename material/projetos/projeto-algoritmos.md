@@ -21,7 +21,7 @@ Seu programa deverá encontrar exatamente as mesmas soluções que o programa em
 
 Para validar sua implementação deste item você deverá usar o script `code/projeto-validacao/validacao-exaustivo.py`. Este script recebe o seu executável e roda uma série de testes, verificando tanto a saída esperada quanto as informações de diagnóstico mostradas na saída de erros. As entradas usadas estão na pasta `entradas`.
 
-## Busca local:
+## Busca local
 
 A estratégia de busca local visa encontrar boas soluções em um processo de melhora iterativa. A partir de uma solução inicial (que pode ser aleatória), tentamos aplicar uma heurística (truque) que pode melhorar a solução (mas nunca piorar). Note que isto somente garante que a solução irá melhorar iterativamente, porém não garante que eventualmente chegaremos na melhor solução possível. Além disto,
 
@@ -61,8 +61,7 @@ Sua implementação está correta se obedece a duas condições:
 O programa acima checa essas duas condições para várias entradas. 
 
 
-<!--
-**Branch and Bound**:
+## Branch and Bound
 
 Nosso algoritmo simplório no item anterior faz várias escolhas recursivas (*branches*) e atualiza a melhor solução encontrada até o momento. Imagine a seguinte situação:
 
@@ -84,7 +83,7 @@ Um algoritmo **branch and bound** leva em conta essas estimativas em seu funcion
 
 Esta técnica evita que nossa recursão entre em *branches* que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).
 
-**Heurísticas de busca**:
+## Heurísticas de busca
 
 O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.
 
@@ -92,6 +91,6 @@ Este item envolve modificar a ordem que as soluções são analisadas de maneira
 
 Será obrigatório implementar este item em cima do branch and bound. -->
 
-## Avaliação
+<!--## Avaliação
 
-* **Conceito D**: implementou o algoritmo exaustivo inocente em `C++`. O executável deverá ser nomeado `busca_exaustiva_seq`.
+* **Conceito D**: implementou o algoritmo exaustivo inocente em `C++`. O executável deverá ser nomeado `busca_exaustiva_seq`. -->

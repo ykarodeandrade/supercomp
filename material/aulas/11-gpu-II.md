@@ -27,7 +27,6 @@ Vamos agora nos preparar para a parte 2 criando um programa novamente em cima do
     Claramente `ganho_diario.size() == stocks.size() - 1`. Leve isto em conta ao utilizar a operação `transform` para criar o vetor `ganho_diario`.
 
 
-
 ## Parte 2 - reduções customizadas
 
 Com o vetor `ganho_diario` acima conseguimos saber se o valor da ação subiu ou caiu de um dia para o outro! Duas perguntas se seguem:
@@ -62,6 +61,9 @@ Em geral a documentação da `thrust` especifica que uma operação recebe um `U
 !!! example
     Use a função acima para calcular quantas vezes o valor da ação subiu.
 
+!!! details "Resposta"
+    `1309`
+
 Vamos agora para o segundo item: "Calcular o aumento médio, considerando somente as vezes em que o valor aumentou de fato". Uma estratégia possível é **zerar** todos os elementos negativos do vetor e depois calcular sua soma.
 
 !!! note short
@@ -73,4 +75,6 @@ Vamos agora para o segundo item: "Calcular o aumento médio, considerando soment
 !!! example
     Calcule agora e média dos valores positivos do vetor. Você já tem todos os que são positivos no exercício acima e a quantidade de valores positivos.
 
+!!! details "Resposta"
+    `5,25179`
 
