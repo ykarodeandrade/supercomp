@@ -54,3 +54,7 @@ if __name__ == "__main__":
         print('Solução é ótimo local', not pode_melhorar)
         m = re.findall('Inicial', err_proc_all)
         print('Só é feita uma iteração', len(m) == 1)
+        out_proc2, err_proc_all2 = run_program(nome_executavel, inp)
+        print('Uma segunda execução retorna os mesmos resultados', out_proc == out_proc2 and
+               err_proc_all == err_proc_all2)
+
