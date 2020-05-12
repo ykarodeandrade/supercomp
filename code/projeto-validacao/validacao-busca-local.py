@@ -50,5 +50,6 @@ if __name__ == "__main__":
                 sat_teste = satisfaction(attr_teste, prefs)
                 if sat_teste > sat_atual:
                     pode_melhorar = True
+                    print('Troca entre', i, 'e', j, 'melhoraria solucao:', sat_teste)
         
         print('Solução é ótimo local', not pode_melhorar)
