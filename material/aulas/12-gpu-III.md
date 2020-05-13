@@ -16,6 +16,8 @@ struct T {
 };
 ```
 
+A linha `T(int a): attr(a) {}` declara o construtor do `struct T`. Ela faz com que o atributo `attr` seja inicializado com o valor do parâmetro `a`. Se houver mais de uma atribuição parâmetro - atributo é só usar `,` para separar as inicializações. 
+
 !!! example
     Faça uma nova implementação da variância, dessa vez usando uma operação customizada e com a chamada `transform_reduce`. 
 
