@@ -43,6 +43,9 @@ nav:
         - aulas/10-gpu-I.md
         - aulas/11-gpu-II.md
         - aulas/12-gpu-III.md
+        - aulas/13-gpu-rand.md
+        - aulas/14-gpu-rand-II.md
+
 
 
     - Projetos:
