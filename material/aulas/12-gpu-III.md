@@ -65,12 +65,12 @@ Ambas as imagens tem o mesmo tamanho. Se o pixel acessado estiver fora da área 
     `$> convert imagem.png -compress None imagem.pgm`
 
 !!! example
+    Faça uma implementação em CPU do filtro de média. Chame-a de `media_cpu`. Ela deverá funcionar de maneira idêntica ao programa acima.
+
+!!! example
     Implemente um programa `media_gpu` que faz o processamento descrito acima usando `thrust`. Seu programa deverá funcionar como abaixo. 
 
     `$> media_gpu in.pgm out.pgm`
-
-!!! example
-    Faça uma implementação em CPU do filtro de média. Chame-a de `media_cpu`. Ela deverá funcionar de maneira idêntica ao programa acima.
 
 !!! example
     Teste seu programa com diferentes tamanhos de imagens e compare os tempos de execução. A partir de qual tamanho os tempos ficam equivalentes?

@@ -58,6 +58,9 @@ Em geral a documentação da `thrust` especifica que uma operação recebe um `U
 !!! note short
     A `thrust` já tem suporte a operações de redução que são contagens. Veja sua documentação oficial [neste link](https://thrust.github.io/doc/group__counting.html). Qual função dessa página você usaria para contar somente os elementos positivos de `ganhos_diarios`?
 
+!!! warning
+    A função `count_if` está atualmente com um erro em sua documentação ([link da issue](https://github.com/thrust/thrust/issues/1148)). Não se esqueça de colocar `const` no parâmetro de `operator()`.
+
 !!! example
     Use a função acima para calcular quantas vezes o valor da ação subiu.
 

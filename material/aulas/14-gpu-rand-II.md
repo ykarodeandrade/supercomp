@@ -1,4 +1,4 @@
-# 14 - Mais números aleatórios em
+# 14 - Mais números aleatórios em GPU
 
 Na última aula trabalhamos com algoritmos simples que faziam sorteios aleatórios. Neste aula exploraremos novamente o 
 
