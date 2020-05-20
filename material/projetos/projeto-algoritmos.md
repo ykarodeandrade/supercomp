@@ -83,6 +83,27 @@ Um algoritmo **branch and bound** leva em conta essas estimativas em seu funcion
 
 Esta técnica evita que nossa recursão entre em *branches* que não tem chance nenhuma de descobrir a melhor solução (pois eles já são piores que uma solução válida conhecida).
 
+### Validação
+
+O programa `code/projeto-validacao/validacao-branch-bound.py` recebe sua implementação e roda uma sequência de testes automatizados. Ele funciona 
+
+Ao encontrar uma solução melhor que a atual deverá enviar para a saída de erros:
+
+```
+Melhor: sat pa1 pa2 pa3 ... pa(n_alunos)
+```
+
+Sempre que o cálculo do *bound* evitar que a chamada recursiva seja feita seu programa deverá enviar para a saída de erros:
+
+```
+Bound: sat_melhor sat_max
+```
+
+* `sat_melhor` é a satisfação da melhor atribuição encontrada até o momento
+* `sat_max` é a satisfação máxima do caminho atual na recursão
+
+Note que sua saída de erros poderá alternar algumas linhas do tipo `Melhor` e muitas linhas do tipo `Bound`.
+
 ## Heurísticas de busca
 
 O algoritmo recursivo implementado em Python testa todas as possibilidades de maneira bastante inocente. Ele não leva em conta, por exemplo, as preferência dos alunos ou o fato de alocar um aluno em uma opção com satisfação 0 não mudar o valor global da solução.

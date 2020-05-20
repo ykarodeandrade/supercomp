@@ -6,6 +6,46 @@ import os
 import numpy as np
 import subprocess
 
+class ProgramTest:
+    def __init__(self, cmd, input_file_pattern=''):
+        self.program_cmd = cmd
+        self.input_file_pattern = input_file_pattern
+
+    def main(self):
+        pass_all = True
+        for entr in list_all_input_files(self.input_file_pattern):
+            arq, texto_entrada, saida_original, verificacoes_original = entr
+
+            print(f'====================\nEntrada: {arq}')
+            stdout, stderr = run_program(self.program_cmd, texto_entrada)
+            if not self.test_program_result(texto_entrada, saida_original, verificacoes_original, stdout, stderr):
+                pass_all = False
+        print('====================\nValidated:', pass_all)
+        
+    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
+                            stdout, stderr):
+        return True
+    
+
+
+class IOTest(ProgramTest):
+    def __init__(self, program, input_file_pattern=''):
+        super().__init__(program, input_file_pattern)
+
+    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
+                            stdout, stderr):
+        valido = valid_solution(stdin, stdout)
+        print('Solução válida', valido)
+        saida_ok = compare_outputs(stdout, expected_stdout)
+        print('Saída: ', saida_ok)
+        err_ok = compare_outputs(stderr, expected_stderr)
+        print('Verificações: ', err_ok)
+        return valido and saida_ok and err_ok
+
+#class PerformanceTest(ProgramTest):
+
+
+    
 
 class bcolors:
     OKGREEN = '\033[92m' + u'\u2713' + '\033[0m'
@@ -69,6 +109,14 @@ def run_program(command, input_txt):
     err_proc = str(proc.stderr, 'ascii').strip()
     return out_proc, err_proc
 
+
+def compare_outputs(out1, out2, ignore_whitespace=True):
+    if ignore_whitespace:
+        out1_chunks = out1.split()
+        out2_chunks = out2.split()
+        return out1_chunks == out2_chunks
+    else:
+        return out1.strip() == out2.strip()
 
 def check_format(data_out):
     """
