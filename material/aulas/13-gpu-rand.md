@@ -64,13 +64,14 @@ Usaremos o seguinte algoritmo: para cada ponto da imagem sortearemos um número 
 1. Se o número for `10` a cor atual deve ser substituída por branco.
 1. Caso contrário não mexa na cor atual.
 
+!!! warning
+    Mesmo que o exercício abaixo aparentemente não funcione, valide sua saída com o professor.
+
 !!! example
     Crie um programa que recebe uma imagem como argumento e escreva em uma segunda imagem o resultado do algoritmo de ruído acima. Seu programa deverá funcionar como abaixo:
 
     `$> ruido in.pgm out.pgm`
 
-!!! warning
-    Mesmo que seu programa aparentemente não funcione, valide sua saída com o professor.
 
 ## Parte 2 - seeds em programas paralelos
 
