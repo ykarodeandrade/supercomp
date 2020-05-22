@@ -5,47 +5,85 @@ import re
 import os
 import numpy as np
 import subprocess
+from dataclasses import dataclass
+from typing import Optional
+
+def get_file_contents(fname):
+    with open(fname) as f:
+        return f.read()
+
+@dataclass
+class TestConfiguration:
+    input: str
+    output: str
+    stderr: str
+    check_stderr: bool = True
+    time_limit: Optional[int] = None
+
+    @staticmethod
+    def from_pattern(dir, pattern, check_stderr=True):
+        tests = {}
+
+        for entry in os.listdir(dir):
+            if entry.startswith(pattern):
+                problema = '_'.join(entry.split('_')[1:])
+                entry = f'{dir}/{entry}'
+                output_file = f'{dir}/out_{problema}'
+                err_file = f'{dir}/err_{problema}'
+
+
+
+                tests[entry] = TestConfiguration(
+                                    get_file_contents(entry), 
+                                    get_file_contents(output_file), 
+                                    get_file_contents(err_file), 
+                                    check_stderr=check_stderr)
+        return tests
 
 class ProgramTest:
-    def __init__(self, cmd, input_file_pattern=''):
+    def __init__(self, cmd, tests={}):
         self.program_cmd = cmd
-        self.input_file_pattern = input_file_pattern
+        self.tests = tests
 
     def main(self):
         pass_all = True
-        for entr in list_all_input_files(self.input_file_pattern):
-            arq, texto_entrada, saida_original, verificacoes_original = entr
-
+        for arq, test in self.tests.items():
             print(f'====================\nEntrada: {arq}')
-            stdout, stderr = run_program(self.program_cmd, texto_entrada)
-            if not self.test_program_result(texto_entrada, saida_original, verificacoes_original, stdout, stderr):
-                pass_all = False
+            try:
+                stdout, stderr = run_program(self.program_cmd, test.input, test.time_limit)
+            except subprocess.TimeoutExpired:
+                self.timeout_event(test)
+            else:
+                if not self.test_program_result(test, stdout, stderr):
+                    pass_all = False
         print('====================\nValidated:', pass_all)
         
-    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
+    def timeout_event(self, test):
+        print(f'Timeout exceeded: {test.time_limit}')
+
+    def test_program_result(self, test, 
                             stdout, stderr):
         return True
-    
-
 
 class IOTest(ProgramTest):
-    def __init__(self, program, input_file_pattern=''):
-        super().__init__(program, input_file_pattern)
-
-    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
-                            stdout, stderr):
-        valido = valid_solution(stdin, stdout)
+    def test_program_result(self, test, stdout, stderr):
+        valido = valid_solution(test.input, stdout)
         print('Solução válida', valido)
-        saida_ok = compare_outputs(stdout, expected_stdout)
+        saida_ok = compare_outputs(test.output, stdout)
         print('Saída: ', saida_ok)
-        err_ok = compare_outputs(stderr, expected_stderr)
-        print('Verificações: ', err_ok)
+        err_ok = True
+        if test.check_stderr:
+            err_ok = compare_outputs(test.stderr, stderr)
+            print('Verificações: ', err_ok)
         return valido and saida_ok and err_ok
 
-#class PerformanceTest(ProgramTest):
+class PerformanceTest(ProgramTest):
+    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
+                            stdout, stderr, timeout):
+        saida_ok = compare_outputs(stdout, expected_stdout)
+        print('Saída:', saida_ok)
+        return saida_ok
 
-
-    
 
 class bcolors:
     OKGREEN = '\033[92m' + u'\u2713' + '\033[0m'
@@ -102,9 +140,9 @@ def list_all_input_files(preffix):
     return inputs
 
 
-def run_program(command, input_txt):
+def run_program(command, input_txt, time_limit=None):
     proc = subprocess.run([command], input=input_txt.encode('ascii'),
-                          capture_output=True, env=os.environ)
+                          capture_output=True, env=os.environ, timeout=time_limit)
     out_proc = str(proc.stdout, 'ascii').strip()
     err_proc = str(proc.stderr, 'ascii').strip()
     return out_proc, err_proc
