@@ -85,7 +85,7 @@ Esta técnica evita que nossa recursão entre em *branches* que não tem chance 
 
 ### Validação
 
-O programa `code/projeto-validacao/validacao-branch-bound.py` recebe sua implementação e roda uma sequência de testes automatizados. Ele funciona 
+O programa `code/projeto-validacao/validacao-branch-bound.py` recebe sua implementação e roda uma sequência de testes automatizados. 
 
 Ao encontrar uma solução melhor que a atual deverá enviar para a saída de erros:
 
@@ -110,7 +110,15 @@ O algoritmo recursivo implementado em Python testa todas as possibilidades de ma
 
 Este item envolve modificar a ordem que as soluções são analisadas de maneira a tentar encontrar primeiro as soluções de maior satisfação global. Combinada com o item anterior, está estratégia pode diminuir consideravelmente o tempo de execução.
 
-Será obrigatório implementar este item em cima do branch and bound. -->
+Será obrigatório implementar este item em cima do branch and bound. 
+
+### Validação
+
+O programa `code/projeto-validacao/validacao-heuristico.py` recebe sua implementação e roda uma sequência de testes automatizados. A única checagem que ele faz é o tempo que seu programa leva para executar. Ou seja, neste quesito estamos olhando puramente o desempenho dos algoritmos implementados. 
+
+Os tempos foram calibrados utilizando uma implementação em Python com bibliotecas de *JIT*. Para que valha a pena usar seu programa ele deverá ser mais rápido que a implementação "preguiçosa" em Python.
+
+
 
 <!--## Avaliação
 

@@ -19,9 +19,10 @@ class TestConfiguration:
     stderr: str
     check_stderr: bool = True
     time_limit: Optional[int] = None
+    ignore_whitespace: bool = True
 
     @staticmethod
-    def from_pattern(dir, pattern, check_stderr=True):
+    def from_pattern(dir, pattern, check_stderr=True, ignore_whitespace=True):
         tests = {}
 
         for entry in os.listdir(dir):
@@ -37,7 +38,8 @@ class TestConfiguration:
                                     get_file_contents(entry), 
                                     get_file_contents(output_file), 
                                     get_file_contents(err_file), 
-                                    check_stderr=check_stderr)
+                                    check_stderr=check_stderr,
+                                    ignore_whitespace=ignore_whitespace)
         return tests
 
 class ProgramTest:
@@ -69,11 +71,11 @@ class IOTest(ProgramTest):
     def test_program_result(self, test, stdout, stderr):
         valido = valid_solution(test.input, stdout)
         print('Solução válida', valido)
-        saida_ok = compare_outputs(test.output, stdout)
+        saida_ok = compare_outputs(test.output, stdout, test.ignore_whitespace)
         print('Saída: ', saida_ok)
         err_ok = True
         if test.check_stderr:
-            err_ok = compare_outputs(test.stderr, stderr)
+            err_ok = compare_outputs(test.stderr, stderr, test.ignore_whitespace)
             print('Verificações: ', err_ok)
         return valido and saida_ok and err_ok
 
