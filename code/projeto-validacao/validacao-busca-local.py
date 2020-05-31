@@ -2,59 +2,57 @@ import sys
 import os
 import subprocess
 import re
-from grading_utils import list_all_input_files, valid_solution, parse_input, satisfaction, run_program
+from grading_utils import ProgramTest, list_all_input_files, valid_solution, parse_input, satisfaction
+from grading_utils import IOTest, TestConfiguration, parse_output
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print('Uso: ./validacao-busca-local executavel')
-        sys.exit(-1)
-    
-    os.environ['ITER'] = '1'
-    os.environ['SEED'] = '10'
 
-    tudo_ok = True
+class BuscaLocalTest(ProgramTest):
+    def test_solucao_valida(self, test, stdout, stderr):
+        return valid_solution(test.input, stdout)
 
-    nome_executavel = sys.argv[1]
-    for entr in list_all_input_files('in_local_'):
-        arq, inp, out, ver = entr
+    def test_executa_ITER_vezes(self, test, stdout, stderr):
+        m = re.findall('Inicial', stderr)
+        return len(m) == int(test.environ['ITER'])
 
-        print(f'====================\nEntrada: {arq}')
-        out_proc, err_proc_all = run_program(nome_executavel, inp)
-        print('Solução válida:', valid_solution(inp, out_proc))
-
-        solucao_sempre_melhora = True
-        err_proc = err_proc_all.split('\n')
-        _, sat_atual, *attr_atual = err_proc[0].split(' ')
-        sat_atual = int(sat_atual)
-        attr_atual = [int(x) for x in ' '.join(attr_atual).split()]
-        for l in err_proc[1:]:
+    def test_solucao_sempre_melhora(self, test, stdout, stderr):
+        sempre_melhora = True
+        sat_atual = -1
+        for l in stderr.split('\n'):
             _, sat_next, *attr_next = l.split(' ')
             sat_next = int(sat_next)
-            attr_next = [int(x) for x in ' '.join(attr_next).split()]
+            
             if sat_next < sat_atual:
-                solucao_sempre_melhora = False
+                sempre_melhora = False
 
             sat_atual = sat_next
-            attr_atual = attr_next
+        
+        return sempre_melhora
 
-        print('Solução melhora a cada iteração', solucao_sempre_melhora)
-        prefs, n_choices = parse_input(inp)
-        n_alunos = prefs.shape[0]
-        pode_melhorar = False
-        for i in range(n_alunos):
-            for j in range(n_alunos):
+    def test_solucao_otimo_local(self, test, stdout, stderr):
+        sat_atual, opt, attr_atual = parse_output(stdout)
+        prefs, n_choices = parse_input(test.input)
+    
+        for i in range(prefs.shape[0]):
+            for j in range(prefs.shape[0]):
                 # NOTE: Isto está feito ruim de propósito para não entregar o algoritmo
                 attr_teste = attr_atual.copy()
                 attr_teste[i], attr_teste[j] = attr_teste[j], attr_teste[i]
                 sat_teste = satisfaction(attr_teste, prefs)
                 if sat_teste > sat_atual:
-                    pode_melhorar = True
                     print('Troca entre', i, 'e', j, 'melhoraria solucao:', sat_teste)
+                    return False
         
-        print('Solução é ótimo local', not pode_melhorar)
-        m = re.findall('Inicial', err_proc_all)
-        print('Só é feita uma iteração', len(m) == 1)
-        out_proc2, err_proc_all2 = run_program(nome_executavel, inp)
-        print('Uma segunda execução retorna os mesmos resultados', out_proc == out_proc2 and
-               err_proc_all == err_proc_all2)
+        return True
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print('Uso: ./validacao-busca-local executavel')
+        sys.exit(-1)
+
+    tests = TestConfiguration.from_pattern('entradas', 'in_local', check_stderr=False,
+                                           environ={'ITER': '1', 'SEED': '10'})
+    t = BuscaLocalTest(sys.argv[1], tests)
+    t.main()
+
 

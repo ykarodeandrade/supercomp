@@ -5,8 +5,8 @@ import re
 import os
 import numpy as np
 import subprocess
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from typing import Optional, Dict
 import psutil
 import inspect
 
@@ -19,12 +19,13 @@ def get_file_contents(fname):
 
 @dataclass
 class TestConfiguration:
-    input: str
-    output: str
-    stderr: str
+    input: str = ''
+    output: str = ''
+    stderr: str = ''
     check_stderr: bool = True
     time_limit: Optional[int] = None
     ignore_whitespace: bool = True
+    environ: Dict[str, str] = field(default_factory=dict)
 
     @staticmethod
     def from_file(input_path, output_path, stderr_path=None, **kwargs):
@@ -58,16 +59,26 @@ class ProgramTest:
         self.program_cmd = cmd
         self.tests = tests
 
+    def run_program(self, test):
+        env = os.environ.copy()
+        env.update(test.environ)
+        proc = subprocess.run([self.program_cmd], input=test.input.encode('ascii'),
+                          capture_output=True, env=env, timeout=test.time_limit)
+        out_proc = str(proc.stdout, 'ascii').strip()
+        err_proc = str(proc.stderr, 'ascii').strip()
+        return out_proc, err_proc
+
     def main(self):
         pass_all = True
         for arq, test in self.tests.items():
             print(f'====================\nEntrada: {arq}')
             try:
                 self.before_run(test)
-                stdout, stderr = run_program(self.program_cmd, test.input, test.time_limit)
+                stdout, stderr = self.run_program(test)
                 self.after_run(test, stdout, stderr)
             except subprocess.TimeoutExpired:
                 self.timeout(test)
+                pass_all = False
             else:
                 for name, method in inspect.getmembers(self, predicate=inspect.ismethod):
                     if name.startswith('test_'):
@@ -201,14 +212,6 @@ def list_all_input_files(preffix):
         inputs.append((entr, texto_entrada, saida_original, verificacoes_original))
 
     return inputs
-
-
-def run_program(command, input_txt, time_limit=None):
-    proc = subprocess.run([command], input=input_txt.encode('ascii'),
-                          capture_output=True, env=os.environ, timeout=time_limit)
-    out_proc = str(proc.stdout, 'ascii').strip()
-    err_proc = str(proc.stderr, 'ascii').strip()
-    return out_proc, err_proc
 
 
 def compare_outputs(out1, out2, ignore_whitespace=True):
