@@ -4,31 +4,20 @@ O primeiro projeto consiste em implementar uma solução multi-core para o probl
 
 Os algoritmos serão construídos em cima da [primeira parte](projeto-algoritmos.md), que tratou de estratégias eficientes de resolução do problema.
 
-## Avaliação
+## Estratégias de paralelização
 
-- [ ] [Requisitos básicos](checklist.md) cumpridos
-- [ ] Relatório comparando desempenho Python vs C++
-
-A entrega final será dividida em duas partes: estratégias de paralelização (55%) e relatório de desempenho (45%).
-
-!!! warning "Requisitos básicos de projeto"
-    Caso os [requisitos básicos de projeto](checklist.md) não sejam cumpridos sua nota será limitada a `D`.
-
-### Estratégias de paralelização
-
-Cada funcionalidade do projeto corretamente implementada de maneira sequencia **E** paralela corresponde a um conceito neste item.
+Cada funcionalidade do projeto corretamente implementada de maneira sequencial **E** paralela corresponde a um conceito neste item.
 
 * **Conceito D**: implementou a busca local e mostrou ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados `busca_local_seq` e `busca_local_par`.
 * **Conceito C**: implementou o algoritmo recursivo ingênuo, mostrando ganhos de desempenho proporcionais ao número de processadores disponíveis. Você deverá produzir executáveis nomeados `busca_exaustiva_seq` e `busca_exaustiva_par`.
-* **Conceito B**: implementou o *Branch and Bound* usando a função de *bound*  mostrada no enunciado e compartilhando a melhor solução entre as threads. Você deverá produzir executáveis nomeados `branch_bound_seq` e `branch_bound_par`.
-* **Conceito B+**: implementou uma heurística de busca no algoritmo sequencial e no paralelo e mostrou que há grandes ganhos de desempenho em seu uso. Você deverá produzir executáveis nomeados `branch_bound_heuristico_seq` e `branch_bound_heuristico_par`.
-* **Conceito A+**: implementou uma solução híbrida, com uma thread rodando busca local e as restantes executando o *Branch and Bound*. Você deverá produzir executáveis nomeados `branch_bound_hibrido_seq` e `branch_bound_hibrido_par`.
+* **Conceito A**: para alcançar este conceito seu programa deverá ter alto desempenho. Os tempos foram calibrados usando uma implementação do algoritmo heurístico sequencial, levando em conta que seu programa deveria cortar este tempo pela metade. Duas sugestões de paralelização são dadas abaixo. 
+    * Algoritmo heurístico implementado 
+    * Solução híbrida Branch and Bound + busca local.
 
-Os conceitos acima estão apresentados em ordem de dificuldade. Em geral, a implementação de um conceito se apoia nas implementações dos conceitos anteriores.
+## Validação
 
-### Relatório
+Cada conceito possui um validador individual que leva em conta particularidades de cada técnica implementada. 
 
-Você deverá produzir um relatório de desempenho seguindo os moldes do Projeto 1. Ele será avaliado de acordo com a [rubrica de relatórios da disciplina](rubrica.ods)
-
-Os testes de seu projeto poderão ser limitados por tempo. Você pode limitar seu programa para rodar até no máximo 20 minutos. O objetivo é rodar entradas o maiores possível dentre
-
+* **Conceito D**: a ser disponibilizado.
+* **Conceito C**: `validacao-paralelo-exaustivo.py`
+* **Conceito A**: `validacao-bb-heur.py`

@@ -7,10 +7,15 @@ import numpy as np
 import subprocess
 from dataclasses import dataclass
 from typing import Optional
+import psutil
+import inspect
 
 def get_file_contents(fname):
-    with open(fname) as f:
-        return f.read()
+    try:
+        with open(fname) as f:
+            return f.read()
+    except IOError:
+        return ''
 
 @dataclass
 class TestConfiguration:
@@ -22,7 +27,16 @@ class TestConfiguration:
     ignore_whitespace: bool = True
 
     @staticmethod
-    def from_pattern(dir, pattern, check_stderr=True, ignore_whitespace=True):
+    def from_file(input_path, output_path, stderr_path=None, **kwargs):
+        input_txt = get_file_contents(input_path)
+        output_txt = get_file_contents(output_path)
+        stderr = ''
+        if stderr_path:
+            stderr = get_file_contents(stderr_path)
+        return TestConfiguration(input_txt, output_txt, stderr, **kwargs)
+
+    @staticmethod
+    def from_pattern(dir, pattern, **kwargs):
         tests = {}
 
         for entry in os.listdir(dir):
@@ -32,14 +46,11 @@ class TestConfiguration:
                 output_file = f'{dir}/out_{problema}'
                 err_file = f'{dir}/err_{problema}'
 
-
-
                 tests[entry] = TestConfiguration(
                                     get_file_contents(entry), 
                                     get_file_contents(output_file), 
                                     get_file_contents(err_file), 
-                                    check_stderr=check_stderr,
-                                    ignore_whitespace=ignore_whitespace)
+                                    **kwargs)
         return tests
 
 class ProgramTest:
@@ -52,39 +63,89 @@ class ProgramTest:
         for arq, test in self.tests.items():
             print(f'====================\nEntrada: {arq}')
             try:
+                self.before_run(test)
                 stdout, stderr = run_program(self.program_cmd, test.input, test.time_limit)
+                self.after_run(test, stdout, stderr)
             except subprocess.TimeoutExpired:
-                self.timeout_event(test)
+                self.timeout(test)
             else:
-                if not self.test_program_result(test, stdout, stderr):
-                    pass_all = False
+                for name, method in inspect.getmembers(self, predicate=inspect.ismethod):
+                    if name.startswith('test_'):
+                        name = name[5:].replace('_', ' ').title()
+                        test_result = method(test, stdout, stderr)
+                        print(name, test_result)
+                        pass_all = test_result and pass_all
+
         print('====================\nValidated:', pass_all)
         
-    def timeout_event(self, test):
-        print(f'Timeout exceeded: {test.time_limit}')
+    def before_run(self, test):
+        pass
 
-    def test_program_result(self, test, 
-                            stdout, stderr):
-        return True
+    def after_run(self, test, stdout, stderr):
+        pass
 
-class IOTest(ProgramTest):
+    def timeout(self, test):
+        print(f'Timeout exceeded: {test.time_limit}s')
+
+class CheckOutputMixin:
+    ignore_whitespaces = False
+    def test_program_output(self, test, stdout, stderr):
+        if self.ignore_whitespaces:
+            output_tokens = test.output.strip().split()
+            stdout_tokens = stdout.strip().split()
+            return output_tokens == stdout_tokens
+        else:
+            return test.output.strip() == stdout.strip()
+
+class IOTest(ProgramTest, CheckOutputMixin):
     def test_program_result(self, test, stdout, stderr):
+        prefs, n_choices = parse_input(test.input)
+        sol_user = parse_output(stdout)
+        sol_expected = parse_output(test.output)
+
         valido = valid_solution(test.input, stdout)
         print('Solução válida', valido)
-        saida_ok = compare_outputs(test.output, stdout, test.ignore_whitespace)
+        saida_ok = False
+        if valido:  
+            saida_ok = sol_user[0] == sol_expected[0] and \
+                       sol_user[1] == sol_expected[1]
+
+        #saida_ok = compare_outputs(test.output, stdout, test.ignore_whitespace)
         print('Saída: ', saida_ok)
         err_ok = True
         if test.check_stderr:
             err_ok = compare_outputs(test.stderr, stderr, test.ignore_whitespace)
             print('Verificações: ', err_ok)
+            lines_stderr = stderr.split('\n')
+            for i, l in enumerate(lines_stderr):
+                if l.startswith('Melhor:'):
+                    sat, *attr = l.split()[1:]
+                    sat = int(sat)
+                    attr = [int(i) for i in attr]
+                    sat_comp = 0
+                    for k, p in enumerate(attr):
+                        sat_comp += prefs[k, p]
+                    if sat != sat_comp:
+                        print(f'Erro na verificação da linha {i}:')
+                        print(f'Satisfação lida: {sat}')
+                        print(f'Satisfação real: {sat_comp}')
+                        err_ok = False
+                        break
         return valido and saida_ok and err_ok
 
-class PerformanceTest(ProgramTest):
-    def test_program_result(self, stdin, expected_stdout, expected_stderr, 
-                            stdout, stderr, timeout):
-        saida_ok = compare_outputs(stdout, expected_stdout)
-        print('Saída:', saida_ok)
-        return saida_ok
+
+class PerformanceTest(IOTest):
+    def before_run(self, test):
+        psutil.cpu_percent(percpu=True)
+
+    def after_run(self, test, stdout, stderr):
+        self.cpu_percent = psutil.cpu_percent(percpu=True)
+    
+    def test_multi_core_performance(self, test, stdout, stderr):
+        total_cpu = len(self.cpu_percent)
+        multi_core_performance = (sum(self.cpu_percent) / total_cpu) > 0.5
+        print('Uso de CPUs acima de 50%', multi_core_performance)
+        return multi_core_performance
 
 
 class bcolors:

@@ -14,7 +14,7 @@ if __name__ == "__main__":
     tests_heur['entradas/in_heur_24_8_6'].time_limit = 1.5
     tests_heur['entradas/in_heur_27_9_5'].time_limit = 4
     tests_heur['entradas/in_heur_30_10_6'].time_limit = 2
-    tests_heur['entradas/in_heur_33_11_5'].time_limit = 5*60
+    tests_heur['entradas/in_heur_33_11_5'].time_limit = 300
     tests.update(tests_heur)
     t = IOTest(sys.argv[1], tests)
     t.main()
