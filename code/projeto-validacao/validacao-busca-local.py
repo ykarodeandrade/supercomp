@@ -2,8 +2,8 @@ import sys
 import os
 import subprocess
 import re
-from grading_utils import ProgramTest, list_all_input_files, valid_solution, parse_input, satisfaction
-from grading_utils import IOTest, TestConfiguration, parse_output
+from grading_utils import ProgramTest, valid_solution, parse_input, satisfaction
+from grading_utils import TestConfiguration, parse_output, RepeaterTest
 
 
 class BuscaLocalTest(ProgramTest):
@@ -54,5 +54,10 @@ if __name__ == "__main__":
                                            environ={'ITER': '1', 'SEED': '10'})
     t = BuscaLocalTest(sys.argv[1], tests)
     t.main()
+    
+    teste_grande = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False)
+    r = RepeaterTest(sys.argv[1], teste_grande, 10)
+    r.main()
+    
 
 

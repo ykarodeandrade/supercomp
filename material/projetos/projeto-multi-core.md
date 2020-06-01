@@ -18,6 +18,6 @@ Cada funcionalidade do projeto corretamente implementada de maneira sequencial *
 
 Cada conceito possui um validador individual que leva em conta particularidades de cada técnica implementada. 
 
-* **Conceito D**: a ser disponibilizado.
+* **Conceito D**:  Executar `validacao-paralelo-busca-local.py`. Este programa checa apenas a resposta e ignora os valores mostrados em `stderr`.
 * **Conceito C**: Executar `validacao-paralelo-exaustivo.py`. Este programa checa apenas a resposta e ignora os valores mostrados em `stderr`.
 * **Conceito A**: Executar `validacao-bb-heur.py`. Este programa checa apenas a resposta e ignora os valores mostrados em `stderr`.

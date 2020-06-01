@@ -99,16 +99,42 @@ class ProgramTest:
         print(f'Timeout exceeded: {test.time_limit}s')
 
 class CheckOutputMixin:
-    ignore_whitespaces = False
     def test_program_output(self, test, stdout, stderr):
-        if self.ignore_whitespaces:
+        if test.ignore_whitespace:
             output_tokens = test.output.strip().split()
             stdout_tokens = stdout.strip().split()
             return output_tokens == stdout_tokens
         else:
             return test.output.strip() == stdout.strip()
 
-class IOTest(ProgramTest, CheckOutputMixin):
+
+class CheckStderrMixin:
+    def test_program_stderr(self, test, stdout, stderr):
+        if test.ignore_whitespace:
+            tokens_expected = test.output.strip().split()
+            tokens_test = stdout.strip().split()
+            return tokens_expected == tokens_test
+        else:
+            return test.stderr.strip() == stderr.strip()
+
+
+class RepeaterTest(ProgramTest):
+    def test_same_result_as_last_execution(self, test, stdout, stderr):
+        try:
+            getattr(self, 'last_test')
+        except AttributeError:
+            self.last_test = (stdout, stderr)
+            return True
+
+        equal = stdout == self.last_test[0] and stderr == self.last_test[1]
+        self.last_test = (stdout, stderr)
+        return equal
+
+    def __init__(self, program_cmd, test, num_repetitions):
+        tests = {f'Execution {i}': test for i in range(num_repetitions)}
+        super().__init__(program_cmd, tests)
+
+class IOTest(ProgramTest):
     def test_program_result(self, test, stdout, stderr):
         prefs, n_choices = parse_input(test.input)
         sol_user = parse_output(stdout)
@@ -121,7 +147,7 @@ class IOTest(ProgramTest, CheckOutputMixin):
             saida_ok = sol_user[0] == sol_expected[0] and \
                        sol_user[1] == sol_expected[1]
 
-        #saida_ok = compare_outputs(test.output, stdout, test.ignore_whitespace)
+        saida_ok = compare_outputs(test.output, stdout, test.ignore_whitespace)
         print('Saída: ', saida_ok)
         err_ok = True
         if test.check_stderr:

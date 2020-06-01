@@ -1,4 +1,4 @@
-from grading_utils import PerformanceTest, TestConfiguration
+from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
 
 if __name__ == "__main__":
@@ -19,3 +19,7 @@ if __name__ == "__main__":
 
     t = PerformanceTest(sys.argv[1], tests)
     t.main()
+
+    teste_repetido = TestConfiguration.from_file('entradas/in_exaustivo_12_4_4', 'entradas/out_exaustivo_12_4_4', check_stderr=False)
+    r = RepeaterTest(sys.argv[1], teste_repetido, 10)
+    r.main()
