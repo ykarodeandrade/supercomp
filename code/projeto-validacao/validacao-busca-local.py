@@ -55,7 +55,8 @@ if __name__ == "__main__":
     t = BuscaLocalTest(sys.argv[1], tests)
     t.main()
     
-    teste_grande = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False)
+    teste_grande = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False,
+                                           environ={'ITER': '10', 'SEED': '1'})
     r = RepeaterTest(sys.argv[1], teste_grande, 10)
     r.main()
     

@@ -46,6 +46,8 @@ class SatisfacaoOtimaMixin:
 
 class ChecaSatisfacoesStderrMixin:
     def test_checa_satisfacoes_em_stderr(self, test, stdout, stderr):
+        prefs, n_choices = parse_input(test.input)
+
         for i, l in enumerate(stderr.split('\n')):
             if l.startswith('Melhor:') or l.startswith('Inicial') or \
                l.startswith('Iter:'):
