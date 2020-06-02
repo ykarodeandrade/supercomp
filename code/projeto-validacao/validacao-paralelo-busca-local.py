@@ -7,10 +7,10 @@ if __name__ == "__main__":
         sys.exit(-1)
 
     tests = TestConfiguration.from_pattern('entradas', 'in_heur', 
-        check_stderr=False, environ={'ITER': 10_000}, time_limit=2.0)
+        check_stderr=False, environ={'ITER': '10000'}, time_limit=2.0)
 
     teste_grande = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', 
-        check_stderr=False, environ={'ITER': 10_000}, time_limit=5)
+        check_stderr=False, environ={'ITER': '10000'}, time_limit=5)
     tests['Grande'] = teste_grande
 
     t = PerformanceTest(sys.argv[1], tests)
