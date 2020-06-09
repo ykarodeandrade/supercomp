@@ -1,8 +1,6 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
-
-class TestePFEHeuristicoParalelo(ProgramTest, SolucaoValidaMixin, SatisfacaoOtimaMixin):
-    pass
+from validacao_pfe import TestePFEHeuristicoParalelo
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -20,7 +18,7 @@ if __name__ == "__main__":
                                   time_limit=60)
     tests['entradas/in_bb_15_5_5'] = teste_grande
 
-    t = PerformanceTest(sys.argv[1], tests)
+    t = TestePFEHeuristicoParalelo(sys.argv[1], tests)
     t.main()
 
     teste_repetido = TestConfiguration.from_file('entradas/in_exaustivo_12_4_4', 'entradas/out_exaustivo_12_4_4', check_stderr=False)

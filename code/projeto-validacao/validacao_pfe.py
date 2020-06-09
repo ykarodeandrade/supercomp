@@ -72,6 +72,11 @@ class TestePFEExaustivo(ProgramTest, SolucaoValidaMixin, CheckStderrMixin,
                         CheckOutputMixin, ChecaSatisfacoesStderrMixin):
     pass
 
+
+class TestePFEHeuristicoParalelo(PerformanceTest, SolucaoValidaMixin, SatisfacaoOtimaMixin):
+    pass
+
+
 class TestePFERepeticaoParalela(ProgramTest, SolucaoValidaMixin):
     def test_same_result_as_last_execution(self, test, stdout, stderr):
         sat, opt, attr = parse_output(stdout)
