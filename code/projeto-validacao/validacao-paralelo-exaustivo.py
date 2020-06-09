@@ -1,6 +1,9 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
 
+class TestePFEHeuristicoParalelo(ProgramTest, SolucaoValidaMixin, SatisfacaoOtimaMixin):
+    pass
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print('Uso: ./validacao-exaustivo executavel')

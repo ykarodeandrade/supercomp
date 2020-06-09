@@ -1,5 +1,6 @@
-from grading_utils import ProgramTest, TestConfiguration, CheckStderrMixin, CheckOutputMixin
+from grading_utils import ProgramTest, TestConfiguration, CheckStderrMixin, CheckOutputMixin, PerformanceTest
 import numpy as np
+import re
 
 def parse_output(output):
     if not isinstance(output, list):
@@ -70,3 +71,60 @@ class ChecaSatisfacoesStderrMixin:
 class TestePFEExaustivo(ProgramTest, SolucaoValidaMixin, CheckStderrMixin, 
                         CheckOutputMixin, ChecaSatisfacoesStderrMixin):
     pass
+
+class TestePFERepeticaoParalela(ProgramTest, SolucaoValidaMixin):
+    def test_same_result_as_last_execution(self, test, stdout, stderr):
+        sat, opt, attr = parse_output(stdout)
+        esat, eopt, eattr = parse_output(test.output)
+        prefs, n_choices = parse_input(test.input)
+        
+        try:
+            getattr(self, 'last_test')
+        except AttributeError:
+            self.last_test = (sat, attr)
+            return True
+
+        equal = self.last_test[0] == sat
+        self.last_test = (sat, attr)
+        return equal
+
+class SolucaoOtimoLocalMixin:
+    def test_solucao_otimo_local(self, test, stdout, stderr):
+        sat_atual, opt, attr_atual = parse_output(stdout)
+        prefs, n_choices = parse_input(test.input)
+    
+        for i in range(prefs.shape[0]):
+            for j in range(prefs.shape[0]):
+                # NOTE: Isto está feito ruim de propósito para não entregar o algoritmo
+                attr_teste = attr_atual.copy()
+                attr_teste[i], attr_teste[j] = attr_teste[j], attr_teste[i]
+                sat_teste = satisfaction(attr_teste, prefs)
+                if sat_teste > sat_atual:
+                    print('Troca entre', i, 'e', j, 'melhoraria solucao:', sat_teste)
+                    return False
+        
+        return True
+
+
+class BuscaLocalParalelaTest(PerformanceTest, SolucaoOtimoLocalMixin, SolucaoValidaMixin):
+    pass
+
+class BuscaLocalTest(ProgramTest, SolucaoValidaMixin, SolucaoOtimoLocalMixin):
+    def test_executa_ITER_vezes(self, test, stdout, stderr):
+        m = re.findall('Inicial', stderr)
+        return len(m) == int(test.environ['ITER'])
+
+    def test_solucao_sempre_melhora(self, test, stdout, stderr):
+        sempre_melhora = True
+        sat_atual = -1
+        for l in stderr.split('\n'):
+            _, sat_next, *attr_next = l.split(' ')
+            sat_next = int(sat_next)
+            
+            if sat_next < sat_atual:
+                sempre_melhora = False
+
+            sat_atual = sat_next
+        
+        return sempre_melhora
+

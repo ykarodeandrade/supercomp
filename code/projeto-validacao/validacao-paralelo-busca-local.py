@@ -1,5 +1,6 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
+from validacao_pfe import BuscaLocalParalelaTest
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -13,7 +14,7 @@ if __name__ == "__main__":
         check_stderr=False, environ={'ITER': '10000'}, time_limit=5)
     tests['Grande'] = teste_grande
 
-    t = PerformanceTest(sys.argv[1], tests)
+    t = BuscaLocalParalelaTest(sys.argv[1], tests)
     t.main()
 
     teste_repetido = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False,

@@ -171,7 +171,7 @@ class IOTest(ProgramTest):
         return valido and saida_ok and err_ok
 
 
-class PerformanceTest(IOTest):
+class PerformanceTest(ProgramTest):
     def before_run(self, test):
         psutil.cpu_percent(percpu=True)
 
@@ -180,8 +180,7 @@ class PerformanceTest(IOTest):
     
     def test_multi_core_performance(self, test, stdout, stderr):
         total_cpu = len(self.cpu_percent)
-        multi_core_performance = (sum(self.cpu_percent) / total_cpu) > 0.5
-        print('Uso de CPUs acima de 50%', multi_core_performance)
+        multi_core_performance = (sum(self.cpu_percent) / total_cpu) > 50
         return multi_core_performance
 
 
