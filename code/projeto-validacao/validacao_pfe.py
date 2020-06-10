@@ -78,7 +78,7 @@ class TestePFEHeuristicoParalelo(PerformanceTest, SolucaoValidaMixin, Satisfacao
 
 
 class TestePFERepeticaoParalela(ProgramTest, SolucaoValidaMixin):
-    def test_same_result_as_last_execution(self, test, stdout, stderr):
+    def test_mesma_satisfacao_que_anterior(self, test, stdout, stderr):
         sat, opt, attr = parse_output(stdout)
         esat, eopt, eattr = parse_output(test.output)
         prefs, n_choices = parse_input(test.input)
@@ -109,7 +109,7 @@ class SolucaoOtimoLocalMixin:
                     return False
         
         return True
-
+        
 
 class BuscaLocalParalelaTest(PerformanceTest, SolucaoOtimoLocalMixin, SolucaoValidaMixin):
     pass

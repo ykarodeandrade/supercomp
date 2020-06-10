@@ -1,6 +1,6 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
-from validacao_pfe import TestePFEHeuristicoParalelo
+from validacao_pfe import TestePFEHeuristicoParalelo, TestePFERepeticaoParalela
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -22,5 +22,5 @@ if __name__ == "__main__":
     t.main()
 
     teste_repetido = TestConfiguration.from_file('entradas/in_exaustivo_12_4_4', 'entradas/out_exaustivo_12_4_4', check_stderr=False)
-    r = RepeaterTest(sys.argv[1], teste_repetido, 10)
+    r = TestePFERepeticaoParalela(sys.argv[1], {'Execucao %d'%i :teste_repetido for i in range(10)})
     r.main()

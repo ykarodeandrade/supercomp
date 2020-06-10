@@ -1,6 +1,6 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
-from validacao_pfe import BuscaLocalParalelaTest
+from validacao_pfe import BuscaLocalParalelaTest, TestePFERepeticaoParalela
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     teste_repetido = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False,
                                     environ={'ITER': '10', 'SEED': '10'})
-    r = RepeaterTest(sys.argv[1], teste_repetido, 10)
+    r = TestePFERepeticaoParalela(sys.argv[1], [teste_repetido]*10)
     r.main()
 
