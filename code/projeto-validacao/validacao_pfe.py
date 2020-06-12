@@ -110,9 +110,13 @@ class SolucaoOtimoLocalMixin:
         
         return True
         
+class BuscaLocalGPU(ProgramTest, SolucaoValidaMixin, SolucaoOtimoLocalMixin):
+    pass
+
 
 class BuscaLocalParalelaTest(PerformanceTest, SolucaoOtimoLocalMixin, SolucaoValidaMixin):
     pass
+
 
 class BuscaLocalTest(ProgramTest, SolucaoValidaMixin, SolucaoOtimoLocalMixin):
     def test_executa_ITER_vezes(self, test, stdout, stderr):

@@ -1,6 +1,6 @@
 from grading_utils import PerformanceTest, TestConfiguration, RepeaterTest
 import sys
-from validacao_pfe import BuscaLocalTest, TestePFERepeticaoParalela
+from validacao_pfe import BuscaLocalGPU, TestePFERepeticaoParalela
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         check_stderr=False, environ={'ITER': '10000'}, time_limit=2.5)
     tests['Grande'] = teste_grande
 
-    t = BuscaLocalTest(sys.argv[1], tests)
+    t = BuscaLocalGPU(sys.argv[1], tests)
     t.main()
 
     teste_repetido = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False,
