@@ -19,6 +19,6 @@ if __name__ == "__main__":
 
     teste_repetido = TestConfiguration.from_file('entradas/in_local_72_24_5', 'entradas/out_local_72_24_5', check_stderr=False,
                                     environ={'ITER': '10', 'SEED': '10'})
-    r = TestePFERepeticaoParalela(sys.argv[1], [teste_repetido]*10)
+    r = TestePFERepeticaoParalela(sys.argv[1], {'Execucao %d'%i :teste_repetido for i in range(10)})
     r.main()
 
