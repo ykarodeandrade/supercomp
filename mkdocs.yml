@@ -1,10 +1,10 @@
-site_name: 7s - SuperComputação - Insper 2020/1
+site_name: SuperComputação - 2020/2
 site_author: Igor Montagner, Lucianos Soares
 
 extra:
     materia: SuperComputação
     professor: Igor Montagner, Luciano Soares
-    semestre: 2020/1
+    semestre: 2020/2
 
 theme:
   feature:
@@ -28,29 +28,10 @@ site_url: https://insper.github.io/supercomp/
 
 nav:
     - Home: index.md
-    - Sobre: sobre.md
-    - Aulas:
-        - 'Organização do repositório': aulas/00-organizacao.md
-        - '01 - Introdução a C++': aulas/01-intro-cpp.md
-        - '02 - Templates e STL': aulas/02-stl.md
-        - '03 - CMake e Debugging no VSCode': aulas/03-cmake.md
-        - '04 - SIMD: Autovetorização': aulas/04-autovec.md
-        - aulas/05-intro-multi-core.md
-        - aulas/06-intro-openmp.md
-        - aulas/07-openmp-for.md
-        - aulas/08-efeitos-colaterais.md
-        - aulas/09-tarefas.md
-        - aulas/10-gpu-I.md
-        - aulas/11-gpu-II.md
-        - aulas/12-gpu-III.md
-        - aulas/13-gpu-rand.md
-        - aulas/14-gpu-rand-II.md
+    - Burocracias: sobre.md
 
-
-
-    - Projetos:
-        - 'Índice': projetos/index.md
-        - projetos/projeto-pfe.md
+    - Projeto:
+        - projetos/index.md
         - projetos/checklist.md
 
 extra_javascript:
