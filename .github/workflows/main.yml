@@ -25,5 +25,5 @@ jobs:
       with:
         github-token: ${{ github.token }}
         webhook-uri: ${{ secrets.TEAMS_WEBHOOK }}
-        show-on-start: false
+        show-on-start: true
         show-on-exit: false
