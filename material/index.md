@@ -19,9 +19,14 @@ A avaliação da disciplina será composta por provas, projetos e atividades de 
 
 A média final é dada por 
 
-TODO: composição da nota final aqui!
+* 55% Projeto
+* 45% média de Provas
 
 !!! warning "Condições de barreira"
-    TODO: critérios de barreira aqui!
+    * Média de provas >= 4,5
+    * PI, PF >= 4,0
+    * Projeto >= 5 (não serão aceitos projetos atrasados)
+
+    Caso estas condições não sejam cumpridas ver detalhes na [aula 01](aulas/01-introducao/slides.pdf)
 
 !!! failure "Mesmo que todas as condições acima sejam satisfeitas é possível reprovar. Um desempenho abaixo do esperado em uma atividade precisa ser compensado com um desempenho melhor em outra atividade."
