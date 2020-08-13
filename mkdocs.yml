@@ -30,6 +30,9 @@ nav:
     - Home: index.md
     - Burocracias: sobre.md
 
+    - Aulas:
+        - aulas/01-introducao/index.md
+
     - Projeto:
         - projetos/index.md
         - projetos/checklist.md

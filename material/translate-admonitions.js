@@ -33,7 +33,7 @@ counters.forEach(function (admo_type) {
 let nome_aula = window.location.href;
 nome_aula = nome_aula.split("/");
 nome_aula = nome_aula[nome_aula.length - 2];
-nome_aula = site_url + "aulas/" + nome_aula + "-slides.pdf";
+nome_aula = site_url + "aulas/" + nome_aula + "/slides.pdf";
 let xhr = new XMLHttpRequest();
 xhr.addEventListener("load", function(ev) {
     if (xhr.status == 200) {       
