@@ -1,17 +1,22 @@
-# Requisitos básicos de projeto
+# Checklist de projeto 
 
-Os seguintes pontos são obrigatórios para todos projetos entregues na disciplina. Caso eles não sejam satisfeitos a nota final será **D**. Se sua nota for maior que **C** e alguns desses itens for **o único problema** da entrega você pode reentregar sem desconto de nota. 
+Alguns requisitos de projeto básicos serão verificados em todas as entregas. O objetivo aqui é evitar que uma evidência importante de aprendizado deixe de ser enviada e prejudique a avaliação. Não cumprir algum desses requisitos implica em reentrega valendo **D**. 
 
-!!! warning
-	A condição acima não vale para o [projeto 0 - revisão de C++](index#projeto-0), já que grande parte dele é realizar as tarefas abaixo.  
+- [ ] Script de compilação (CMake, Makefile, bash script). 
+- [ ] Relatório feito em Jupyter Notebook ou PWeave. 
+    - [ ] Versão em PDF (ou HTML) do relatório
+    - [ ] Instruções para replicar os testes realizados. Se isto estiver incluso no relatório executável basta indicar no texto. 
+    - [ ] Seção explicando onde está e como usar o script de compilação. 
+    
+## Requisitos de qualidade
 
-- [ ] CMakeLists.txt gera um executável por método testado
-- [ ] Relatório feito em Jupyter Notebook  ou PWeave. Seu relatório deve conter as seguintes seções: 
-    - [ ] Descrição do problema tratado
-    - [ ] Descrição dos testes feitos (tamanho de entradas, quantas execuções são feitas, como mediu tempo, infra usada)
-    - [ ] Organização em alto nível de seu projeto.
-- [ ] Versão já rodada do relatório exportada para *PDF*
-- [ ] README.txt explicando como rodar seus testes (pode estar no relatório).
-- [ ] Conjunto de testes automatizados (via script Python ou direto no relatório)
-- [ ] Respeitar os formatos de entrada e saída definidos nos enunciados.
-- [ ] Seu programa deverá retornar sempre o mesmo resultado. Os tempos serão ligeiramente diferentes em cada execução, mas o resultado final deverá ser sempre o mesmo. 
+Além dos requisitos acima, que são obrigatórios, os seguintes itens procuram medir a **qualidade** da implementação que vocês desenvolveram. Assim como explicado na aula 01, eles não reprovam, mas diminuem a nota de projeto. Cada item que não for cumprido implica em desconto de 1,0 na nota de projeto. 
+
+- [ ] Programa compila sem warnings quando compilado com `g++ -O3 -Wall -pedantic -std=c++11`;
+- [ ] Programa não tem warnings detectados pelo `clang-tidy`. Veja [este vídeo](https://www.youtube.com/watch?v=pXk6xIFWzv4) para um breve tutorial de uso;
+    - usar os checks `read*,performance*,hicpp*,modern*,-modernize-use-trailing-return-type`. 
+- [ ] Não há repetição desnecessária de código;
+    - Implementaremos várias soluções para o mesmo problema. É importante compartilhar o máximo de código possível entre todas as implementações;
+- [ ] Utilizar `struct` ou `class` para agregar grupos de variáveis que sempre são usadas junto (Exemplo: todos os dados de entrada do programa);
+- [ ] Utilizar `typdef` para renomear tipos com nomes grandes. (Exemplo seria um `vector` de um `struct` ou `pair`);
+- [ ] Utilizar corretamente os recursos de C++. Em geral o que for apresentado em aula e não conflitar com os itens acima é OK. Em geral código copiado da internet não passa nesse quesito. Na dúvida pergunte. 
