@@ -1,18 +1,84 @@
-# 02 - Detalhes de implementação
+# 02 - Iniciando C++11
 
 Nesta aula trabalharemos dois objetivos:
 
 1. implementação de algoritmos dada uma descrição de alto nível da tarefa a ser implementada
 2. técnicas de implementação para alto desempenho
 
+## Alocação de memória e vetores em C++
 
-!!! warning "Software"
-    Para esta aula precisaremos dos seguintes pacotes instalados. 
+Em *C* usamos as funções `malloc` e `free` para alocar memória dinamicamente. Um inconveniente dessas funções é que sempre temos que passar o tamanho que queremos em bytes. Em *C++* essas funções também estão disponíveis, mas usá-las é considerado uma má prática. Ao invés, usamos os operadores `new` e `delete` para alocar memória. Existem duas vantagens em usá-los.
 
-    * `valgrind` - ferramenta de análise de código executável
-    * `kcachegrind` - visualizador de resultados do `valgrind`
+1. Podemos escrever diretamente o tipo que queremos, em vez de seu tamanho em bytes. 
+2. A alocação de arrays é feita de maneira natural usando os colchetes `[]`.
 
-## O problema básico
+Vejamos o exemplo abaixo. 
+
+```cpp
+int n;
+std::cin >> n;
+double *values = new double[n];
+
+/* usar values aqui */
+
+delete[] values;
+```
+
+É alocado um vetor de `double` de tamanho `n` (lido do terminal). Após ele ser usado liberamos o espaço alocado usando `delete[]`. 
+
+!!! tip "E se eu quiser alocar um só valor?"
+    É simples! É só usar `new` sem os colchetes `[]`!
+
+!!! example 
+    Crie um programa que lê um número inteiro `n` e depois lê `n` números fracionários $x_i$. Faça os seguintes cálculos e motre-os no terminal com 10 casas decimais. 
+
+    $$\mu = \frac{1}{n} \sum_{i=1}^n x_i$$
+
+
+    $$\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2$$
+
+    ??? details "Resposta" 
+         Use o programa `t1.py` para gerar entradas e saídas de teste para seu programa. 
+
+
+!!! question short
+    Você reconhece as fórmulas acima? Elas calculam quais medidas estatísticas?
+
+    ??? details "Resposta"
+        Média e variância.
+
+Apesar do uso de `new[]` e `delete[]` mostrado na seção anterior já ser mais conveniente, ainda são essencialmente um programa em C com sintaxe ligeiramente mais agradável. Para tornar a programação em C++ mais produtiva sua biblioteca padrão conta com estruturas de dados prontas para uso. 
+
+A estrutura `std::vector` é um vetor dinâmico que tem funcionalidades parecidas com a lista de Python ou o `ArrayList` de Java. O código abaixo exemplifica seu uso e mostra algumas de suas funções. Note que omitimos o uso de `std` no código abaixo.
+
+```cpp
+int n;
+cin >> n;
+vector<double> vec;
+for (int i = 0; i < n; i++) {
+    vec.push_back(i * i)
+}
+cout << "Tamanho do vetor: " << vec.size() << "\n";
+cout << "Primeiro elemento: " << vec.front() << "\n";
+cout << "Último elemento: " << vec.back() << "\n";
+cout << "Elemento 3: " << vec[2] << "\n";
+```
+
+Alguns pontos interessantes deste exemplo:
+
+1. Não sabemos o tamanho de `vec` ao criá-lo. O método `push_back` aumenta ele quando necessário e não precisamos nos preocupar com isso. 
+2. O número de elementos colocados no vetor é retornado pelo método `size()`
+3. O acesso é feito exatamente igual ao array de C, usando os colchetes `[]`
+
+!!! tip "E esse `<double>` na declaração?" 
+    Em C++ tipos passados entre `< >` são usados para parametrizar tipos genéricos. Ou seja, um vetor pode guardar qualquer tipo de dado e precisamos indicar qual ao criá-lo. 
+
+    Note que, portanto, um vetor `vector<int>` e um vetor `vector<double>` são considerados de tipos diferentes e não posso passar o primeiro para uma função esperando o segundo. 
+
+!!! example
+    Modifique sua Tarefa 4 para usar `vector`. Verifique que o programa continua produzindo os mesmos resultados. 
+
+## Matrizes (versão 1)
 
 Dados `N` pontos com coordenadas $(x_i, y_i)_{i=0}^N$, computar a matriz de distâncias $D$ tal que 
 
@@ -20,8 +86,11 @@ $$
 D_{i,j} = \textrm{Distância entre } (x_i, y_i) \textrm{ e } (x_j, y_j)
 $$
 
+!!! tip
+    Use `t3.py` para gerar os arquivos de entrada/saída da tarefa abaixo. 
+
 !!! example
-    Implemente um programa que calcule a matriz `D` acima. Sua entrada deverá estar no formato dos arquivos `t1-in-*.txt` e sua saída no formato dos arquivos `t1-out-*.txt`. 
+    Implemente um programa que calcule a matriz `D` acima. Sua entrada deverá estar no formato dos arquivos `t3-in-*.txt` e sua saída no formato dos arquivos `t3-out-*.txt`. Mostre as distâncias com 2 casas decimais.  
 
     **Dicas**:
     
@@ -44,19 +113,19 @@ $$
 
 
 !!! question medium
-    Anote abaixo o tempo de execução para os arquivos `t1-in-*.txt` e `t1-out-*.txt`
+    Anote abaixo o tempo de execução para os arquivos `t3-in-*.txt` e `t3-out-*.txt`
 
 !!! question 
     Qual é a complexidade computacional de sua implementação? 
 
-## Passagem de dados no programa
+## Referências e passagem de dados
 
 Na parte anterior fizemos nosso programa inteiro no `main`. Vamos agora organizá-lo melhor. 
 
 !!! example
     Crie uma função `calcula_distancias` que recebe a matriz e os dados recebidos na entrada e a preenche. Sua função não deverá retornar nenhum valor. 
 
-    Ao terminar, meça o tempo de execução para o arquivo `t1-out-4.txt`.
+    Ao terminar, meça o tempo de execução para o arquivo `t3-out-4.txt`.
 
     ??? details "Resposta"
         Aqui podem ocorrer dois problemas:
@@ -101,40 +170,16 @@ cout << x << "\n"; // 15
 !!! tip "Dica"
     Em *C++* precisamos estar sempre atentos a maneira que passamos os dados. Se não indicarmos será por cópia. Para compartilhar o mesmo objeto entre várias funções usamos referências `&`. 
 
-## Medição de tempo com KCachegrind
 
-Apesar de podermos medir o tempo que nosso programa demora usando o comando `time`, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de **Profiling**. 
+## Uma primeira otimização
 
-!!! tip "Dica"
-    É preciso compilar um executável com profiling habilitado para medir os tempos. Isso é feito com a flag `-p` do `g++`. Veja abaixo. 
+Nossa primeira implementação é bastante direta da definição e não tenta ser eficiente. 
 
-    ```
-    g++ -p -g euclides-ingenuo.cpp -o euclides-ingenuo
-    ```
+!!! question
+    Analisando a definiçao da Tarefa 1, como seria possível economizar trabalho?
 
-??? quote "Demonstração"
-    adslj
-    lkadj
-
-    ```
-
-    ```
-
-    Para mostrar os resultados usando o `kcachegrind` usamos o seguinte comando. 
-
-    ```
-    kcachegrind callgrind.out.(pid aqui)
-    ```
-
-Na demonstração pudemos ver que grande parte do tempo do programa da Tarefa 1 é gasto mostrando a saída no terminal. Isto nos leva à primeira conclusão da atividade de hoje:
-
-!!! info "Entrada e saída de dados são operações muito lentas"
-
-Com isso em mente, vamos agora otimizar a função `calcula_distancias`. Já sabemos que o efeito no tempo final não será grande. Nosso objetivo então será verificar a seguinte afirmação. 
-
-!!! info "Dois algoritmos de mesma complexidade computacional podem ter tempos de execução muito diferentes"
-
-A otimização que trabalharemos nesse roteiro tentará explorar a **simetria** da matriz `D`. 
+    ??? details "Resposta"
+        Podemos ver que a matriz `D` é simétrica. Ou seja, `D[i,j] == D[j,i]`. Isso significa que poderíamos calcular só um deles e copiar o valor para a outra posição.
 
 !!! question
     Como isso poderia ser usado para melhorar o tempo de execução de `calcula_distancias`?
@@ -146,43 +191,17 @@ A otimização que trabalharemos nesse roteiro tentará explorar a **simetria** 
     ??? note "Resposta"
         Duas respostas são possíveis e corretas aqui:
 
-        1. Preciso checar se o `i < j` e usar o valor já calculado de `D[j,i]`.
+        1. Preciso checar se o `i > j` e usar o valor já calculado de `D[j,i]`.
         
         2. É preciso alocar a matriz inteira antes de começar. Se formos dando `push_back` linha a linha não conseguimos atribuir um valor ao mesmo tempo a `D[i,j]` e `D[j,i]`, já que um deles ainda não terá sido criado. 
 
-Vamos começar implementando resposta 1 da pergunta anterior, já que ela envolve uma pequena modificação no programa. 
-
-!!! question
-    Anote abaixo o consumo absoluto de tempo da função `calcula_distancia`.
+Baseado na resposta acima vamos tentar nossa primeira otimização: só vamos calcular `D[i,j]` para `i <= j` (ou seja, só a metade "de cima" de `D`).
 
 !!! example
-    Adicione uma checagem que verifica se o elemento já foi calculado no "outro lado" da matriz e use esse valor ao invés de 
+    Use a estratégia acima para evitar calcular a matriz inteira. Verifique se houve melhora no tempo do teste `t3-in-3.txt`.
 
-!!! question
-    Anote abaixo o consumo absoluto de tempo da sua nova função `calcula_distancia`. Compare com a pergunta anterior e tente entender seus resultados.
+    **Dica**: tente de novo usar a ideia mais simples possível e implemente adicionando um so `if` no seu programa.
 
-    ??? note "Resposta"
-        Deve ter havido uma pequena melhora, mas longe de ser a metade do tempo. 
-
-!!! question
-    Por que não houve melhora significativa? Você consegue explicar?
-
-    ??? nota "Resposta"
-        A principal razão é que o número absoluto de instruções não mudou muito. O `for` duplo ainda roda `n*n` vezes e o próprio acesso a `mat[i][j]` é apontado como lento pelo `kcachegrind`. 
-
-Com a alternativa 1 descartada, vamos agora para a alternativa 2: atribuir de uma só vez em `D[i,j]` e `D[j,i]`. Ou seja, agora nosso loop vai ser executado metade das vezes! 
-
-!!! question
-    Supondo que a matriz já esteja inteira alocada, como você implementaria a alternativa 2?
-
-    ??? note "Resposta"
-        ```
-        para i=1..N:
-            para j=i..N:
-                DX = X[i] - X[j]
-                DY = Y[i] - Y[j]
-                DIST = sqrt(DX*DX + DY*DY)
-                D[i,j] = DIST
-                D[j,i] = DIST
-        ```
+    ??? details "Resposta"
+            Não deverá haver ganho de desempenho significativo. Veremos exatamente o por que na próxima aula. 
 

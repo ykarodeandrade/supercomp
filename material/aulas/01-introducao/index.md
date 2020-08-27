@@ -1,4 +1,4 @@
-# 01 - Recursos úteis de C++
+# 01 - Aquecimento
 
 A disciplina utilizará a linguagem C++ para implementação dos programas. Ela é muito usada em implementações de alto desempenho e possui recursos muito úteis e que simplificam a programação se comparada com C puro. Nas aulas 01 e 02 aprenderemos alguns desses recursos e os utilizaremos para implementação de algoritmos simples. 
 
@@ -69,78 +69,3 @@ A implementação de algoritmos definidos usando expressões matemáticas é uma
         
         print(s)
         ```
-
-## Alocação de memória
-
-Em *C* usamos as funções `malloc` e `free` para alocar memória dinamicamente. Um inconveniente dessas funções é que sempre temos que passar o tamanho que queremos em bytes. Em *C++* essas funções também estão disponíveis, mas usá-las é considerado uma má prática. Ao invés, usamos os operadores `new` e `delete` para alocar memória. Existem duas vantagens em usá-los.
-
-1. Podemos escrever diretamente o tipo que queremos, em vez de seu tamanho em bytes. 
-2. A alocação de arrays é feita de maneira natural usando os colchetes `[]`.
-
-Vejamos o exemplo abaixo. 
-
-```cpp
-int n;
-std::cin >> n;
-double *values = new double[n];
-
-/* usar values aqui */
-
-delete[] values;
-```
-
-É alocado um vetor de `double` de tamanho `n` (lido do terminal). Após ele ser usado liberamos o espaço alocado usando `delete[]`. 
-
-!!! tip "E se eu quiser alocar um só valor?"
-    É simples! É só usar `new` sem os colchetes `[]`!
-
-!!! example 
-    Crie um programa que lê um número inteiro `n` e depois lê `n` números fracionários $x_i$. Faça os seguintes cálculos e motre-os no terminal com 10 casas decimais. 
-
-    $$\mu = \frac{1}{n} \sum_{i=1}^n x_i$$
-
-
-    $$\sigma^2 = \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2$$
-
-    ??? details "Resposta" 
-         Os arquivos *t4-in-(1,2,3).txt* e *t4-out-(1,2,3).txt* devem ser usados para testar seu programa. 
-
-
-!!! question short
-    Você reconhece as fórmulas acima? Elas calculam quais medidas estatísticas?
-
-    ??? details "Resposta"
-        Média e variância.
-
-## Vetores em C++
-
-Apesar do uso de `new[]` e `delete[]` mostrado na seção anterior já ser mais conveniente, ainda são essencialmente um programa em C com sintaxe ligeiramente mais agradável. Para tornar a programação em C++ mais produtiva sua biblioteca padrão conta com estruturas de dados prontas para uso. 
-
-A estrutura `std::vector` é um vetor dinâmico que tem funcionalidades parecidas com a lista de Python ou o `ArrayList` de Java. O código abaixo exemplifica seu uso e mostra algumas de suas funções. Note que omitimos o uso de `std` no código abaixo.
-
-```cpp
-int n;
-cin >> n;
-vector<double> vec;
-for (int i = 0; i < n; i++) {
-    vec.push_back(i * i)
-}
-cout << "Tamanho do vetor: " << vec.size() << "\n";
-cout << "Primeiro elemento: " << vec.front() << "\n";
-cout << "Último elemento: " << vec.back() << "\n";
-cout << "Elemento 3: " << vec[2] << "\n";
-```
-
-Alguns pontos interessantes deste exemplo:
-
-1. Não sabemos o tamanho de `vec` ao criá-lo. O método `push_back` aumenta ele quando necessário e não precisamos nos preocupar com isso. 
-2. O número de elementos colocados no vetor é retornado pelo método `size()`
-3. O acesso é feito exatamente igual ao array de C, usando os colchetes `[]`
-
-!!! tip "E esse `<double>` na declaração?" 
-    Em C++ tipos passados entre `< >` são usados para parametrizar tipos genéricos. Ou seja, um vetor pode guardar qualquer tipo de dado e precisamos indicar qual ao criá-lo. 
-
-    Note que, portanto, um vetor `vector<int>` e um vetor `vector<double>` são considerados de tipos diferentes e não posso passar o primeiro para uma função esperando o segundo. 
-
-!!! question
-    Modifique sua Tarefa 4 para usar `vector`. Meça o desempenho com o programa `time` e anote abaixo seus resultados. 
