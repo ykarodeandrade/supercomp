@@ -12,20 +12,21 @@ import pandas as pd
     * Atendimento SEX - 15:30
 
 ??? note "Alunos"
-    1. Rachel
-    2. Arthur (F)Olga
-    3. Raphael
-    4. Iago
-    5. Jorge
-    4. Vitor Satyro
-    7. Juan Garcia
-    8. Guilherme Aliperti
-    9. Gabriel Moura
-    10. Bruno
-    11. Matteo
-    12. Sabrina
-    13. Gobetti
-    14. Isabella
+    1. Arthur (F)Olga
+    2. Raphael
+    3. Iago
+    4. Jorge
+    5. Vitor Satyro
+    6. Juan Garcia
+    7. Guilherme Aliperti
+    8. Gabriel Moura
+    9. Matteo
+    10. Isabella
+    11. Victor
+    12. Rachel
+    13. Tarraf
+    14. Bruno 
+
 
 ??? note "Plano de aulas"
 ```{python, results='md', echo=False}
@@ -45,11 +46,14 @@ print('\n'.join(['    %s'%l for l in tabulate.tabulate(t1[['Data', 'Questão/Pro
 
 ??? note "Alunos"
     1. Alessandra
-    2. Tarraf
-    3. Alexandre
-    5. Giulia
-    6. Felippe Teracini
-    7. Guilherme Schoueri
+    2. Alexandre
+    3. Giulia
+    4. Felippe Teracini
+    5. Guilherme Schoueri
+    6. Gobetti
+    7. Sabrina (Remoto?)
+
+
 
 ??? details "Plano de aulas"
 

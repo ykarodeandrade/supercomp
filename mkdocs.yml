@@ -33,6 +33,7 @@ nav:
     - Aulas:
         - aulas/01-introducao/index.md
         - aulas/02-desempenho/index.md
+        - aulas/03-profiling-e-projeto/index.md
 
     - Projeto:
         - projetos/index.md
