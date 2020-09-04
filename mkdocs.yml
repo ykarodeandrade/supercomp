@@ -34,6 +34,8 @@ nav:
         - aulas/01-introducao/index.md
         - aulas/02-desempenho/index.md
         - aulas/03-profiling-e-projeto/index.md
+        - aulas/04-projeto-heuristicas/index.md
+
 
     - Projeto:
         - projetos/index.md
