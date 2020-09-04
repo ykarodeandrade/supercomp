@@ -1,5 +1,7 @@
 # 03 - Profiling
 
+<!-- TODO: desenho da matriz está ruim. Usar algo parecido com o da aula de terça -->
+
 !!! warning "Software"
     Para esta aula precisaremos dos seguintes pacotes instalados. 
 
@@ -12,10 +14,10 @@
 Apesar de podermos medir o tempo que nosso programa demora usando o comando `time`, não conseguimos nenhuma informação importante de qual parte do programa está consumindo mais tempo. Este processo de dissecar um programa e entender exatamente qual parte demora quanto é chamada de **Profiling**. 
 
 ??? quote "Demonstração (Instruções)"
-    É preciso compilar um executável com profiling habilitado para medir os tempos. Isso é feito com a flag `-p` do `g++`. Veja abaixo. 
+    É preciso compilar um executável com profiling habilitado para medir os tempos. 
 
     ```
-    g++ -p -g euclides-ingenuo.cpp -o euclides-ingenuo
+    g++ -g euclides-ingenuo.cpp -o euclides-ingenuo
     ```
 
     Após este passo, devemos executar o programa usando o `valgrind` com as opções abaixo.
@@ -83,7 +85,7 @@ Fazemos isso trabalhando com um layout de memória contínuo. Ou seja, armazenar
 
 A figura abaixo exemplifica esse layout de memória:
 
-![Matriz "deitada" linha a linha](https://insper.github.io/Labs-de-C/imgs/day4-arrays/mem-mat.png)
+![Matriz "deitada" linha a linha](matriz.png)
 
 !!! question
     Em uma matriz de tamanho `4x7` (4 linhas, 7 colunas), qual é o elemento do vetor que representa a posição `2x5` (linha 3, coluna 6)?
