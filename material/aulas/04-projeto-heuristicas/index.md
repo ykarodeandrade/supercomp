@@ -68,7 +68,7 @@ A ideia desta heurística é não deixar nenhum objeto valioso para trás! Por i
 
     **Dica**: 
 
-    * C++ já possui um algoritmo de ordenação implementado no cabeçalho [<algorithm>](http://cplusplus.com/reference/algorithm/sort/). Use-o.
+    * C++ já possui um algoritmo de ordenação implementado no cabeçalho [`<algorithm>`](http://cplusplus.com/reference/algorithm/sort/). Use-o.
     * Busque por ordenação indireta para entender como ordenar os três vetores ao mesmo tempo.
     * Pode ser conveniente organizar os dados usando `struct`.
 
