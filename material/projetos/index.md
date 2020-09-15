@@ -65,8 +65,32 @@ Cada aluno irá adicionar sua solução ao seu repositório, que já irá conter
 
 As etapas do projeto serão disponibilizadas depois de discussões em sala de aula e estarão conectadas com uma aula específica. 
 
-* Atividade 1 TBA
+* Atividade 1 - [heurística da cidade mais próxima](heuristica): **Entrega 18/09**
 
 
+## Verificação de resultados
+
+2. Você receberá um convite para repositório. Todas as atividades serão disponibilizadas neste repositório e suas soluções devem ser adicionadas nos arquivos correspondentes. 
+3. O corretor automático depende do pacote `grading-tools`, que deverá ser instalado como abaixo.
+
+```shell
+$> python3.8 -m pip install --user git+https://github.com/igordsm/grading-tools
+```
+
+??? tip "Python 3.8 no Ubuntu"
+    Se seu `python3` é uma versão inferior ao 3.8, você pode instalá-lo com os pacotes abaixo:
+
+    ```
+    python3.8 python3.8-dev 
+    ``` 
+
+    A partir daí poderá seguir normalmente as instruções desta página.
+
+4. Com isso configurado, é só compilar seu programa e rodar `python3.8 corretor.py executavel`. 
+5. Para baixar os novos exercícios é só rodar `git pull`. 
+6. Os exercícios serão entregues criando um commit com sua resposta e dando `git push`. 
+
+!!! warning
+    Fique atento a atualizações no seu repositório de projeto. Atualizações no corretor serão feitas ao longo do semestre, assim como serão disponibilizados novos arquivos de entrada/saída para cada parte a ser implementada. 
 
 

@@ -36,11 +36,13 @@ nav:
         - aulas/03-profiling-e-projeto/index.md
         - aulas/04-projeto-heuristicas/index.md
         - aulas/05-algoritmos-aleatorios/index.md
+        - aulas/06-busca-local/index.md
 
 
     - Projeto:
         - projetos/index.md
         - projetos/checklist.md
+        - projetos/heuristica.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
