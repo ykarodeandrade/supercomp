@@ -37,12 +37,14 @@ nav:
         - aulas/04-projeto-heuristicas/index.md
         - aulas/05-algoritmos-aleatorios/index.md
         - aulas/06-busca-local/index.md
+        - aulas/07-busca-exaustiva/index.md
 
 
     - Projeto:
         - projetos/index.md
         - projetos/checklist.md
         - projetos/heuristica.md
+        - projetos/busca-local.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML

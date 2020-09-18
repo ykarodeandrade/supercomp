@@ -66,7 +66,7 @@ Cada aluno irá adicionar sua solução ao seu repositório, que já irá conter
 As etapas do projeto serão disponibilizadas depois de discussões em sala de aula e estarão conectadas com uma aula específica. 
 
 * Atividade 1 - [heurística da cidade mais próxima](heuristica): **Entrega 18/09**
-
+* Atividade 2 - [busca local - troca de ordem](busca-local): **Entrega 25/09**
 
 ## Verificação de resultados
 

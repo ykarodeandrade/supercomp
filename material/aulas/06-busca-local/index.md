@@ -47,6 +47,7 @@ Para implementar a *Mochila cheia* iremos adotar a seguinte estratégia:
 !!! question 
     Houve melhoria em relação ao aleatório sozinho? Foi significativa?
 
+<!--
 ### Substituição de objeto
 
 Para implementar a *Substituição de objeto* iremos adotar a seguinte estratégia:
@@ -66,6 +67,7 @@ Para implementar a *Substituição de objeto* iremos adotar a seguinte estratég
 
 !!! question 
     Houve melhoria em relação ao aleatório sozinho? E a *Mochila Cheia*? Foi significativa?
+-->
 
 ## Fechamento
 
