@@ -54,6 +54,7 @@ extra_javascript:
 
 extra_css:
     - css/printing.css
+    - css/extra.css
 
 markdown_extensions:
   - markdown.extensions.tables
