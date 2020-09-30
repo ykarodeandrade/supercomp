@@ -26,7 +26,7 @@ Para uniformizar nossas soluções vamos adotar a seguinte estratégia de desemp
 > `$> SEED=20 ./busca-local < in.txt
 
 * Se não for passada via variável de ambiente, assuma `SEED=10`.
-* O algoritmo deverá gerar `100N` soluções e retornar a melhor delas. 
+* O algoritmo deverá gerar `10N` soluções e retornar a melhor delas. 
 
 ## Correção automática
 
