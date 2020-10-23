@@ -72,7 +72,13 @@ Quando uma região paralela inicia são criadas `OMP_NUM_THREADS` *threads* e ca
     ```
 
 !!! example
-    Rode o código acima (arquivo *exemplo2.cpp*) e veja se suas expectativas se cumprem. Chame o professor se você se surpreender com o resultado.
+    Rode o código acima (arquivo *exemplo2.cpp*) e veja se suas expectativas se cumprem. Aproveite e verifique se o programa retorna o mesmo resultado se executado várias vezes.  Chame o professor se você se surpreender com o resultado.
+
+    ??? details "Resposta"
+        O código dará resultados estranhos, com `res` não assumindo o valor `N * 10000`. Quanto maior o número de threads mais distante do correto o valor resultante será.
+
+!!! example
+    Mude o limite do `for` para `1000`. Os resultados agora são os esperados? Por que?
 
 
 !!! danger
