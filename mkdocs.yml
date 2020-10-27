@@ -41,6 +41,9 @@ nav:
         - aulas/08-busca-exaustiva-II/index.md
         - aulas/09-branch-and-bound/index.md
         - aulas/10-branch-and-bound-II/index.md
+        - "11 - Introdução a paralelismo": aulas/11-introducao-paralelismo/index.ipynb
+        - aulas/12-introducao-omp/index.md
+        - aulas/13-paralelismo-dados/index.md
 
 
     - Projeto:
@@ -49,6 +52,7 @@ nav:
         - projetos/heuristica.md
         - projetos/busca-local.md
         - projetos/busca-exaustiva.md
+        - projetos/desempenho-sequencial.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
@@ -94,3 +98,4 @@ markdown_extensions:
       check_paths: true
 plugins:
     - search
+    - mknotebooks

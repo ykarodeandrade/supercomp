@@ -67,7 +67,8 @@ As etapas do projeto serão disponibilizadas depois de discussões em sala de au
 
 * Atividade 1 - [heurística da cidade mais próxima](heuristica): **Entrega 18/09**
 * Atividade 2 - [busca local - troca de ordem](busca-local): **Entrega 30/09**
-* Atividade 3 - [busca exaustiva](busca-exaustiva): **Entrega 13/09**
+* Atividade 3 - [busca exaustiva](busca-exaustiva): **Entrega 13/10**
+* Atividade 4 - [implementações sequenciais eficientes](desempenho-sequencial): **Entrega 04/11**
 
 
 ## Verificação de resultados
