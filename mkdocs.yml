@@ -55,6 +55,7 @@ nav:
         - projetos/busca-local.md
         - projetos/busca-exaustiva.md
         - projetos/desempenho-sequencial.md
+        - projetos/multi-core.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
