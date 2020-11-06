@@ -21,3 +21,5 @@ Se seu programa for compilado com `-fopenmp` ele deverá rodar usando todas as C
 1. o tempo de execução cai ao menos pela metade ao rodar a versão paralela. Cheque as instruções de contagem de tempo na parte de [/projetos/desempenho-sequencial](desempenho sequencial).
 2. o consumo médio de CPU durante a execução do programa é maior que `75%` para cada core.
 3. as mesmas checagens do algoritmo sequencial serão feitas. Ou seja, seu programa deverá funcionar de maneira idêntica ao algoritmo sequencial. **Os resultados não precisam ser exatamente os mesmos, mas o programa deverá gerar soluções com as mesmas propriedades.**
+
+Execute o corretor de dentro da pasta `busca-local` para ver os resultados do teste multi-core.
