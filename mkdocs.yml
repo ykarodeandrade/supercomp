@@ -47,6 +47,8 @@ nav:
         - aulas/14-efeitos-colaterais/index.md
         - aulas/15-exercicio/index.md
         - aulas/16-intro-gpu/index.md
+        - aulas/17-gpu-iteradores/index.md
+        - aulas/18-transformacoes-customizadas/index.md
 
 
     - Projeto:
