@@ -64,3 +64,17 @@ Vamos agora para o segundo item: "Calcular o aumento médio, considerando soment
     ??? details "Resposta"
         `5,25179`
 
+## Anexo 2
+
+É possível compilar código `thrust` direto na CPU usando OpenMP e o `g++`. Para fazer isto você precisa
+
+1. baixar o código fonte da `thrust` [no github](https://github.com/NVIDIA/thrust).
+2. adicionar as seguintes flags no g++
+    * `-DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP`: diz que a paralelização de `device_vetor` será usando OpenMP
+    * `-I/home/....`: o caminho passado será usado na busca por `include`s. Coloque o caminho do repositório da `thrust`
+    * `-fopenmp`: já conhecemos este ;)
+    * `-x c++`: força a compilação de arquivos `.cu` como código fonte C++
+
+Para testar, compile o arquivo *thrust_cpu.cu* disponível nesta pasta com o seguinte comando:
+
+>$ g++ -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_OMP -I/caminho/para/thrust/  -fopenmp -x c++ thrust_cpu.cu -o thrust_cpu
