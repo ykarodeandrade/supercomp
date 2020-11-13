@@ -134,9 +134,6 @@ As operações que foram usadas no `reduce` também podem ser usadas em um `tran
 
     **Dica**: quebre o problema em duas partes. Primeiro calcule a diferença entre os preços e guarde isto em um vetor. Depois compute a média deste vetor.
 
-!!! example
-    Cada chamada a `reduce` e `transform` tem um custo fixo que pode se acumular caso façamos muitas chamadas. Estude como escrever seu programa usando `transform_reduce`.
-
 ## Anexo 1 - instalação local
 
 **Instruções fáceis**: os repositórios oficiais do *Ubuntu* já contém o pacote `nvidia-cuda-toolkit` pronto para instalação via *apt*. A versão disponibilizada não é a mais atual (`9.1.85` vs `10.0`), mas tudo funciona de maneira integrada e não é necessário instalar nada manualmente. Esta versão será suportada pelo curso.
