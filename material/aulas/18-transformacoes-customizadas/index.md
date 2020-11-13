@@ -11,7 +11,7 @@ struct custom_transform
     // e GPU (device)
     // IMPORTANTE: somente código com a marcação __device__ é compilado para GPU
     __host__ __device__
-        double operator()(const double& x, const double& y) const {
+        double operator()(const double& x, const double& y) {
             // isto pode ser usado com um transform que usa dois vetores 
             // e coloca o resultado em um terceiro.
             
