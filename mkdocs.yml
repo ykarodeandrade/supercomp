@@ -49,6 +49,7 @@ nav:
         - aulas/16-intro-gpu/index.md
         - aulas/17-gpu-iteradores/index.md
         - aulas/18-transformacoes-customizadas/index.md
+        - aulas/19-gpu-random/index.md
 
 
     - Projeto:
@@ -59,6 +60,8 @@ nav:
         - projetos/busca-exaustiva.md
         - projetos/desempenho-sequencial.md
         - projetos/multi-core.md
+        - projetos/gpu.md
+        - projetos/relatorio.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML

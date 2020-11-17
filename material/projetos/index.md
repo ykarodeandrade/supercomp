@@ -70,7 +70,7 @@ As etapas do projeto serão disponibilizadas depois de discussões em sala de au
 * Atividade 3 - [busca exaustiva](busca-exaustiva): **Entrega 13/10**
 * Atividade 4 - [implementações sequenciais eficientes](desempenho-sequencial): **Entrega 04/11**
 * Atividade 5 - [paralelismo multi-core](multi-core): **Entrega 11/11**
-* Atividade 6 - [paralelismo em GPU](gpu): **Entrega 18/11**
+* Atividade 6 - [paralelismo em GPU](gpu): **Entrega 25/11**
 * Atividade 7 - [comparações de desempenho](relatorio): **Entrega 25/11** 
 * Atividade 8 - [medição final de desempenho](desempenho-final): **Entrega 04/12**
 
