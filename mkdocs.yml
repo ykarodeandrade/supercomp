@@ -62,6 +62,7 @@ nav:
         - projetos/multi-core.md
         - projetos/gpu.md
         - projetos/relatorio.md
+        - projetos/desempenho-final.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
