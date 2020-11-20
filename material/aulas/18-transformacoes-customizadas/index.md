@@ -138,6 +138,11 @@ No código acima nossa operação customizada recebe o vetor como parâmetro de 
 !!! danger
     No caso acima o vetor de entrada e saída eram o mesmo. Não há problema pois a operação só acessa o elemento `i`. Porém, se acessasse outros não conseguimos garantir a ordem das operações e os resultados seriam imprevisíveis. Na dúvida, sempre envie os dados para um vetor de saída diferente.
     
+!!! question short
+    Vimos que podemos fazer cópias de um array "puro" em *C++* ao criar um `thrust::device_vector`. Para copiar os dados de volta para a CPU podemos usar a função `thrust::copy`. Consulte [sua documentação](https://thrust.github.io/doc/group__copying.html) e escreva abaixo como você a usaria para fazer a cópia de um `thrust::device_vector<double> a` para um vetor `double *a_cpu`. Você pode supor que o `a_cpu` tem o mesmo tamanho que `a`.
+
+    ??? details "Resposta"
+        Existem várias possibilidades, mas a mais fácil seria `thrust::copy(a.begin(), a.end(), a_cpu)`.
 
 !!! example
     Implemente um programa `media_gpu` que faz o processamento descrito acima usando `thrust`. Seu programa deverá funcionar como abaixo. 
