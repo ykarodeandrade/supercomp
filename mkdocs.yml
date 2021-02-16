@@ -35,6 +35,7 @@ nav:
     - Aulas:
         - "01 - Introdução": aulas/01-introducao/index.ipynb
         - aulas/02-03-implementacao-c++/index.md
+        - aulas/04-profiling/index.md
 
 
     - Projeto:
