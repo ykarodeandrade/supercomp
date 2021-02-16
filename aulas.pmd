@@ -4,7 +4,7 @@ import pandas as pd
 ```
 # Burocracias 
 
-## Turma 1 (remoto) 
+## Turma B
 
 * Horários: 
     * TER - 09:45
@@ -12,20 +12,7 @@ import pandas as pd
     * Atendimento SEX - 15:30
 
 ??? note "Alunos"
-    1. Arthur (F)Olga
-    2. Raphael
-    3. Iago
-    4. Jorge
-    5. Vitor Satyro
-    6. Juan Garcia
-    7. Guilherme Aliperti
-    8. Gabriel Moura
-    9. Matteo
-    10. Isabella
-    11. Victor
-    12. Rachel
-    13. Tarraf
-    14. Bruno 
+    **TBA**    
 
 
 ??? note "Plano de aulas"
@@ -37,7 +24,7 @@ print('\n'.join(['    %s'%l for l in tabulate.tabulate(t1[['Data', 'Questão/Pro
 'Conteúdo/Atividade'], tablefmt='pipe', showindex=False).split('\n')  ]))
 ```
 
-## Turma 2 (presencial)
+## Turma A
 
 * Horários: 
     * QUA - 13:30
@@ -45,13 +32,7 @@ print('\n'.join(['    %s'%l for l in tabulate.tabulate(t1[['Data', 'Questão/Pro
     * Atendimento SEX - 09:30
 
 ??? note "Alunos"
-    1. Alessandra
-    2. Alexandre
-    3. Giulia
-    4. Felippe Teracini
-    5. Guilherme Schoueri
-    6. Gobetti
-    7. Sabrina (Remoto?)
+    **TBA**
 
 
 
@@ -64,7 +45,3 @@ print('\n'.join(['    %s'%l for l in tabulate.tabulate(t2[['Data', 'Questão/Pro
 'Conteúdo/Atividade']], headers=['Data', 'Questão/Problema',
 'Conteúdo/Atividade'], tablefmt='pipe', showindex=False).split('\n')]))
 ```
-
-### Turma Mista (Presencial/Remoto)
-
-1. Hugo (TER 09:45, SEX 7:30)
