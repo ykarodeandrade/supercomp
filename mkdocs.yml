@@ -1,10 +1,12 @@
-site_name: SuperComputação - 2020/2
-site_author: Igor Montagner, Lucianos Soares
+site_name: SuperComputação - 2021/1
+site_author: Igor Montagner, Luciano Soares, Antônio Selvatici
 
 extra:
     materia: SuperComputação
-    professor: Igor Montagner, Luciano Soares
-    semestre: 2020/2
+    professor: Igor Montagner, Antônio Selvatici
+    semestre: 2021/1
+    url_acompanhamentos: http://localhost:8081
+    id_curso: 1
 
 theme:
   feature:
@@ -31,39 +33,12 @@ nav:
     - Burocracias: sobre.md
 
     - Aulas:
-        - aulas/01-introducao/index.md
-        - aulas/02-desempenho/index.md
-        - aulas/03-profiling-e-projeto/index.md
-        - aulas/04-projeto-heuristicas/index.md
-        - aulas/05-algoritmos-aleatorios/index.md
-        - aulas/06-busca-local/index.md
-        - aulas/07-busca-exaustiva/index.md
-        - aulas/08-busca-exaustiva-II/index.md
-        - aulas/09-branch-and-bound/index.md
-        - aulas/10-branch-and-bound-II/index.md
-        - "11 - Introdução a paralelismo": aulas/11-introducao-paralelismo/index.ipynb
-        - aulas/12-introducao-omp/index.md
-        - aulas/13-paralelismo-dados/index.md
-        - aulas/14-efeitos-colaterais/index.md
-        - aulas/15-exercicio/index.md
-        - aulas/16-intro-gpu/index.md
-        - aulas/17-gpu-iteradores/index.md
-        - aulas/18-transformacoes-customizadas/index.md
-        - aulas/19-gpu-random/index.md
+        - "01 - Introdução": aulas/01-introducao/index.ipynb
 
 
     - Projeto:
         - projetos/index.md
-        - projetos/checklist.md
-        - projetos/heuristica.md
-        - projetos/busca-local.md
-        - projetos/busca-exaustiva.md
-        - projetos/desempenho-sequencial.md
-        - projetos/multi-core.md
-        - projetos/gpu.md
-        - projetos/relatorio.md
-        - projetos/desempenho-final.md
-
+        
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
     - translate-admonitions.js
