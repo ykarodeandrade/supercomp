@@ -6,3 +6,7 @@ projetos-alunos/
 code/
 *.pptx
 env-supercomp/
+*-resposta*
+fontes-*
+callgrind.*
+gmon.out

@@ -1,12 +1,11 @@
 # SuperComputação
 
-Bem vindo ao curso de SuperComputação 2020/2. 
+Bem vindo ao curso de SuperComputação 2021/1. 
 
-* **Professor**: Igor Montagner
+* **Professores**: 
+    * Igor Montagner (Turma A)
+    * Antônio Selvatici (Turma B)
 
-## Objetivos
-
-Ao final da disciplina o aluno será capaz de:
 
 ## Avaliação
 
