@@ -5,7 +5,7 @@ A disciplina utilizará a linguagem C++ para implementação dos programas. Ela 
 !!! failure "Gabaritos e respostas"
     Este curso não fornece código de resposta para os exercícios de sala. Cada exercício é acompanhado de um algoritmo em pseudo-código e alguns pares de arquivos entrada/saída. Isto já é suficiente para que vocês verifiquem se sua solução está correta. 
 
-    Boas práticas de programação serão demonstradas em exercícios corrigidos pelo professor durante o semestre. Uma lista (não exaustiva) dessas práticas estará disponíveis na página [Projeto](/projetos/checklist.md).
+    Boas práticas de programação serão demonstradas em exercícios corrigidos pelo professor durante o semestre.
 
 ## Compilação 
 
