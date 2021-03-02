@@ -36,11 +36,13 @@ nav:
         - "01 - Introdução": aulas/01-introducao/index.ipynb
         - aulas/02-03-implementacao-c++/index.md
         - aulas/04-profiling/index.md
+        - aulas/05-heuristicas/index.md
+        - aulas/06-aleatorizacao/index.md
 
 
     - Projeto:
         - projetos/index.md
-        
+
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
     - translate-admonitions.js
