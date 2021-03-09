@@ -38,6 +38,8 @@ nav:
         - aulas/04-profiling/index.md
         - aulas/05-heuristicas/index.md
         - aulas/06-aleatorizacao/index.md
+        - aulas/07-busca-local/index.md
+        - aulas/08-busca-global/index.md
 
 
     - Projeto:

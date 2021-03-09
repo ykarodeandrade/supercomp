@@ -89,5 +89,8 @@ Vamos agora fazer algo mais absurdo: e se criarmos uma solução toda aleatória
 !!! question
     Rode ambos programas acima com vários seeds diferentes e anote abaixo os resultados.
 
+!!! question medium
+    Anote aqui comentários sobre a qualidade das soluções aleatórias. Considere tanto o valor dos objetos selecionados quanto o peso.
+
 !!! warning
     Iremos discutir esses resultados na próxima aula.
