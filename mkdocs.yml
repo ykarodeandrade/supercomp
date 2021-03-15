@@ -42,7 +42,7 @@ nav:
         - aulas/08-busca-global/index.md
 
 
-    - Projeto:
+    # - Projeto:
         - projetos/index.md
         - projetos/heuristico.md
 
