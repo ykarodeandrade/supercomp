@@ -60,9 +60,9 @@ Veja os exemplos de entrada e saída na pasta `entradas` do repositório do proj
 Para cada técnica estudada em aula implementaremos versões básicas e avançadas. Também será necessário implementar versões paralelas em CPU e GPU. Veja abaixo as datas de entrega e descrições de cada técnica implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.
 
 1. [Solução Heurística](heuristico) (23/03)
-2. [Busca local](busca-local) (30/03)
-3. Busca exaustiva (06/04)
-4. Relatório preliminar (06/04)
+2. [Busca local](busca-local) (09/04)
+3. Busca exaustiva (13/04)
+4. Relatório preliminar (13/04)
 
 Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até **15/03** para ser convidado para seu repositório de entregas.
 
