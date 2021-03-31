@@ -42,11 +42,13 @@ nav:
         - aulas/08-busca-global/index.md
         - aulas/09-busca-global-II/index.md
         - aulas/10-branch-and-bound/index.md
+        - aulas/11-branch-and-bound/index.md
 
     - Projeto:
         - projetos/index.md
         - projetos/heuristico.md
         - projetos/busca-local.md
+        - projetos/busca-exaustiva.md
 
 
 extra_javascript:
