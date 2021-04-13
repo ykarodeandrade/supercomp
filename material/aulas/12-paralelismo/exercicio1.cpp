@@ -2,7 +2,7 @@
 #include <unistd.h>
 
 double funcao1() {
-    sleep(1);
+    sleep(4);
     return 47;
 }
 
