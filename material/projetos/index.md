@@ -61,8 +61,8 @@ Para cada técnica estudada em aula implementaremos versões básicas e avançad
 
 1. [Solução Heurística](heuristico) (23/03)
 2. [Busca local](busca-local) (09/04)
-3. [Busca exaustiva](busca-exaustiva) (13/04)
-4. Relatório preliminar (13/04)
+3. [Busca exaustiva](busca-exaustiva) (16/04)
+4. Relatório preliminar (30/04)
 
 Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até **15/03** para ser convidado para seu repositório de entregas.
 

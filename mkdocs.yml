@@ -43,6 +43,7 @@ nav:
         - aulas/09-busca-global-II/index.md
         - aulas/10-branch-and-bound/index.md
         - aulas/11-branch-and-bound/index.md
+        - aulas/12-paralelismo/index.md
 
     - Projeto:
         - projetos/index.md
@@ -53,7 +54,8 @@ nav:
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
-    - translate-admonitions.js
+    - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
+    - js/markdown-enhancer.js
 
 extra_css:
     - css/printing.css
