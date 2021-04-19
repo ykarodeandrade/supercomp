@@ -44,6 +44,7 @@ nav:
         - aulas/10-branch-and-bound/index.md
         - aulas/11-branch-and-bound/index.md
         - aulas/12-paralelismo/index.md
+        - aulas/13-paralelismo-tarefas-dados/index.md
 
     - Projeto:
         - projetos/index.md
