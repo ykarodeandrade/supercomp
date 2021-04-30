@@ -18,7 +18,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  custom_dir: 'custom_theme'
+#  custom_dir: 'custom_theme'
 
 docs_dir: material
 site_dir: docs
@@ -45,6 +45,7 @@ nav:
         - aulas/11-branch-and-bound/index.md
         - aulas/12-paralelismo/index.md
         - aulas/13-paralelismo-tarefas-dados/index.md
+        - aulas/14-exercicios/index.md
 
     - Projeto:
         - projetos/index.md

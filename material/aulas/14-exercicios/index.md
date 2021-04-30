@@ -47,6 +47,8 @@ Vamos agora tentar paralelizar o programa usando as duas técnicas.
 
 !!! example
     Crie uma implementação do *pi_recursivo* usando tarefas. Meça seu tempo e anote.
+    
+    **Dica**: se você precisar esperar tarefas pode usar a diretiva `#pragma omp taskwait`. Ela espera por todas as tarefas criadas pela thread atual.
 
 !!! question short
     Os ganhos de desempenho foram significativos?
