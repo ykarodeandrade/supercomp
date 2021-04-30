@@ -45,6 +45,8 @@ Vamos agora tentar paralelizar o programa usando as duas técnicas.
 
 ### Usando `task`
 
+Agora vamos usar `task`. Neste caso é vamos adotar a seguinte estratégia: usaremos tarefas para paralelizar as chamadas recursivas feitas em *pi_recursivo.cpp*. 
+
 !!! example
     Crie uma implementação do *pi_recursivo* usando tarefas. Meça seu tempo e anote.
     
