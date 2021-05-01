@@ -46,6 +46,7 @@ nav:
         - aulas/12-paralelismo/index.md
         - aulas/13-paralelismo-tarefas-dados/index.md
         - aulas/14-exercicios/index.md
+        - aulas/15-efeitos-colaterais/index.md
 
     - Projeto:
         - projetos/index.md
