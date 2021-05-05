@@ -1,9 +1,9 @@
 #include <vector>
 #include <iostream>
-#include <cstdlib>
+#include <unistd.h>
+
 
 double conta_complexa(int i) {
-	sleep(1);
 	return 2 * i;
 }
 
