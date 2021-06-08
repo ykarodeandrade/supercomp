@@ -51,6 +51,7 @@ nav:
         - aulas/17-intro-gpu/index.md
         - aulas/18-iteradores/index.md
         - aulas/19-transformacoes/index.md
+        - aulas/20-gpu-random/index.md
 
     - Projeto:
         - projetos/index.md
@@ -60,6 +61,7 @@ nav:
         - projetos/relatorio-1.md
         - projetos/paralelismo-multicore.md
         - projetos/paralelismo-gpu.md
+        - projetos/relatorio-2.md
 
 
 extra_javascript:

@@ -65,6 +65,7 @@ Para cada técnica estudada em aula implementaremos versões básicas e avançad
 4. [Relatório preliminar](relatorio-1) (30/04)
 5. [Paralelismo MultiCore](paralelismo-multicore) (21/05)
 5. [Paralelismo GPU](paralelismo-GPU) (14/06)
+6. [Relatório final](relatorio-2) (15/06)
 
 Cada parte de implementação será conferida usando um script de correção checagem de resultados disponível no repositório de entregas do projeto, juntamente com instruções de uso. Registre seu usuário do github até **15/03** para ser convidado para seu repositório de entregas.
 
