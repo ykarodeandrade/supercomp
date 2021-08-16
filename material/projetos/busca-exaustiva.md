@@ -1,22 +1,10 @@
-# Solução Busca exaustiva
+# Solução Busca exaustiva - Branch and Bound
 
-Vamos agora encontrar a melhor solução possível usando uma estratégia de busca global. Nosso trabalho será parecido com o da aula [08-busca-global](/aulas/08-busca-global), mas agora aplicaremos essa estratégia recursiva para o problema de interesse no projeto.
 
-Para ajudar em sua implementação, responda as perguntas abaixo.
+Faça agora uma implementação de busca exaustiva para o problema do min-set-cover. Assuma inicialmente que todos os subconjuntos são necessários. Para cada subconjunto da solução, remova ele a solução em questão e verifique se a propriedade de cobertura é mantida. Faça isso para todos os elementos na ordem do vetor de soluções, enquanto a propriedade for válida. Se a propriedade ficar inválida, você deve interromper essa linha de processamento, executando então uma nova estrutura de possibilidades em que considera esse conjunto vital para a continuidade do problema. 
 
-!!! question
-    Quais são as escolhas que podem ser feitas? Quais as possibilidades de cada escolha?
+Para auxiliar na sua implementação, você pode se basear no pseudocódigo abaixo. Assuma que custos é um vetor unitário de cardinalidade igual ao vetor que armazena os subconjuntos. Há um programa Python disponibilizado neste [link](https://colab.research.google.com/drive/1PdJo7henY_P4BnDBKGm9b0himbm8MPMd?usp=sharing) para que você possa simular a implementação desse pseudocódigo. 
 
-!!! question
-    Quantas soluções válidas existem?
+Avalie: Há garantia de que o resultado ótimo é obtido? Justifique. 
 
-## Variáveis de ambiente
-
-Caso `DEBUG=1` seu programa deverá mostra, na saída de erros, o número de soluções válidas analisadas pelo seu programa.
-
-!!! tip "Tome cuidado com o tamanho da variável usada para guardar este número."
-
-## Validação de resultados
-
-A pasta `busca-global` do repositório de entregas contém arquivos de exemplo `in*.txt/out*.txt/err*.txt` com as entradas e saídas esperadas para esta parte do projeto. Use-os para validar seu programa junto com `corretor.py`.
-
+![bb.png](bb.png)

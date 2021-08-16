@@ -54,3 +54,4 @@ xhr.addEventListener("load", function(ev) {
 });
 xhr.open("head", nome_aula);
 xhr.send();
+ 

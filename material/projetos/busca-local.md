@@ -1,6 +1,6 @@
 # Solução Busca local
 
-Vamos agora implementar uma estratégia de **Busca local** como fizemos na [aula 07](/aulas/07-busca-local). Nossa estratégia de busca local será composta por três passos:
+<!-- Vamos agora implementar uma estratégia de **Busca local** como fizemos na [aula 07](/aulas/07-busca-local). Nossa estratégia de busca local será composta por três passos:
 
 !!! quote "Passo 1"
     Cada objeto é atribuído para uma pessoa aleatória.
@@ -55,4 +55,18 @@ A validação testará se seu programa tem as seguintes propriedades:
 * as soluções de cada busca local mostradas quando `DEBUG=1` também são ótimos locais
 * a solução final é a melhor entre todas as soluções calculadas
 * soluções diferentes são geradas quando valores de `SEED` diferentes são passados
-* são mostradas `ITER` linhas na saída de erros e cada linha corresponde a uma solução válida
+* são mostradas `ITER` linhas na saída de erros e cada linha corresponde a uma solução válida -->
+
+
+A busca local consiste em uma metaheurística usada para resolver problemas de otimização computacionalmente difíceis. Esse tipo de algoritmo percorre o espaço de busca movendo-se iterativamente de uma solução candidata para outra, seguindo um caminho através da relação de vizinhança, até que uma solução considerada boa o suficiente seja encontrada ou um limite de tempo decorrido. Normalmente todo candidato possui mais de uma solução de vizinho e a escolha entre elas é feita com o auxílio de informações locais e experiência anterior.
+
+A solução por busca local  tenta maximizar o número de elementos com o mínimo de subconjuntos possível. Precisamos capturar esse critério por meio de uma função de *fitness*. Uma maneira possível de fazer isso é construir uma função de *fitness* calculando o número de elementos capturados pelos subconjuntos de uma solução candidata e, em seguida, dividindo-o pelo número de subconjuntos que contém. Essa função de pontuação favorecerá as soluções que acumulam a maioria dos elementos do universo U com o mínimo de subconjuntos.
+
+
+Para isso, implemente as seguintes alterações em seu projeto:
+
+1. Gerar uma solução aleatória para o problema do min-set-cover;
+2. Percorra novamente os conjuntos os elementos da sua solução e, de maneira randômica, troque até r (r entre 1 e 3) elementos da sua solução por subconjuntos que ficaram de fora da solução. 
+3. Se a solução tiver melhor escore, mantenha ela. 
+
+Para verificar o desempenho, construa um cenário com ao menos 200 elementos e 80 subconjuntos, de até 40 elementos cada.  Faça três variações desse cenário (elementos, subconjuntos, número de elementos em subconjuntos) e avalie o desempenho e a efetividade em encontrar uma solução ótima.

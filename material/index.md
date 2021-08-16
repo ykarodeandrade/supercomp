@@ -1,10 +1,10 @@
 # SuperComputação
 
-Bem vindo ao curso de SuperComputação 2021/1. 
+Bem vindo ao curso de SuperComputação 2021/2. 
 
-* **Professores**: 
-    * Igor Montagner (Turma A)
-    * Antônio Selvatici (Turma B)
+* **Professor**: 
+    * André Filipe M. Batista
+   
 
 
 ## Avaliação

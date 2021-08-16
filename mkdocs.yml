@@ -1,10 +1,10 @@
-site_name: SuperComputação - 2021/1
-site_author: Igor Montagner, Luciano Soares, Antônio Selvatici
+site_name: SuperComputação - 2021/2
+site_author: 
 
 extra:
     materia: SuperComputação
-    professor: Igor Montagner, Antônio Selvatici
-    semestre: 2021/1
+    professor: Andre Filipe de M. Batista
+    semestre: 2021/2
     url_acompanhamentos: http://localhost:8081
     id_curso: 1
 
@@ -34,40 +34,35 @@ nav:
 
     - Aulas:
         - "01 - Introdução": aulas/01-introducao/index.ipynb
-        - aulas/02-03-implementacao-c++/index.md
-        - aulas/04-profiling/index.md
-        - aulas/05-heuristicas/index.md
-        - aulas/06-aleatorizacao/index.md
-        - aulas/07-busca-local/index.md
-        - aulas/08-busca-global/index.md
-        - aulas/09-busca-global-II/index.md
-        - aulas/10-branch-and-bound/index.md
-        - aulas/11-branch-and-bound/index.md
-        - aulas/12-paralelismo/index.md
-        - aulas/13-paralelismo-tarefas-dados/index.md
-        - aulas/14-exercicios/index.md
-        - aulas/15-efeitos-colaterais/index.md
-        - aulas/16-efeitos-colaterais-II/index.md
-        - aulas/17-intro-gpu/index.md
-        - aulas/18-iteradores/index.md
-        - aulas/19-transformacoes/index.md
-        - aulas/20-gpu-random/index.md
+        # - aulas/02-03-implementacao-c++/index.md
+        # - aulas/04-profiling/index.md
+        # - aulas/05-heuristicas/index.md
+        # - aulas/06-aleatorizacao/index.md
+        # - aulas/07-busca-local/index.md
+        # - aulas/08-busca-global/index.md
+        # - aulas/09-busca-global-II/index.md
+        # - aulas/10-branch-and-bound/index.md
+        # - aulas/11-branch-and-bound/index.md
+        # - aulas/12-paralelismo/index.md
+        # - aulas/13-paralelismo-tarefas-dados/index.md
+        # - aulas/14-exercicios/index.md
+        # - aulas/15-efeitos-colaterais/index.md
+        # - aulas/16-efeitos-colaterais-II/index.md
 
     - Projeto:
         - projetos/index.md
-        - projetos/heuristico.md
-        - projetos/busca-local.md
-        - projetos/busca-exaustiva.md
-        - projetos/relatorio-1.md
-        - projetos/paralelismo-multicore.md
-        - projetos/paralelismo-gpu.md
-        - projetos/relatorio-2.md
+        # - projetos/heuristico.md
+        # - projetos/busca-local.md
+        # - projetos/busca-exaustiva.md
+        # - projetos/relatorio-1.md
+        # - projetos/paralelismo-multicore.md
 
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML
     - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js
     - js/markdown-enhancer.js
+    - js/slides.js
 
 extra_css:
     - css/printing.css
