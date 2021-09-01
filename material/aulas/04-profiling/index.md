@@ -180,7 +180,7 @@ O que você pode dizer sobre o desempenho do programa? Por que há diferença de
     Dica: Verifique a discussão no StackOverflow sobre isso. Neste link https://stackoverflow.com/questions/9936132/why-does-the-order-of-the-loops-affect-performance-when-iterating-over-a-2d-arra
 
 
-## Distância: Euclides ingênuo Preparação
+## Distância: Euclides ingênuo 
 
 Compile o código-fonte da implementação ingênua que fizemos na aula passada, com profiling habilitado para medir os tempos de execução. 
 
