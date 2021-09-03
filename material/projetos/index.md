@@ -42,7 +42,6 @@ onde `solucao1.txt` contém:
 1 3 6 10
 4 6 7 9 10
 1 2 8 10
-1 2 8 10
 1 3 4 5
 ```
 
@@ -81,7 +80,7 @@ Neste [link](https://colab.research.google.com/drive/16MSMeqDoZF3zBFIQw_Yt7Y601v
 
 Para cada técnica estudada em aula implementaremos versões básicas e avançadas. Também será necessário implementar versões paralelas em CPU e GPU. Veja abaixo as datas de entrega e descrições de cada técnica implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.
 
-1. Solução Heurística
+1. [Solução Heurística](heuristico) (15/08)
 2. Busca Local
 3. Busca Exaustiva
 4. Relatório Preliminar
