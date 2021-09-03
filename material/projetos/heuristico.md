@@ -5,7 +5,7 @@ Um dos melhores estratégias para resolução do problema min-set-cover é a est
 Sua tarefa: implemente a estratégia gulosa para o problema do min-set-cover. A cada iteração, **o algoritmo deve selecionar o subconjunto de F que irá cobrir o maior número de elementos de U que estavam descobertos**.
 
 
-Veja abaixo um pseudo-código de implementação da estratégia gulosa que você deve implementar.
+Veja abaixo um pseudo-código da estratégia gulosa que você deve implementar.
 
 ![greedy](https://i.stack.imgur.com/v55Gn.png)
 
