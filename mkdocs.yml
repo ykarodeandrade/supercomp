@@ -51,7 +51,7 @@ nav:
 
     - Projeto:
         - projetos/index.md
-        # - projetos/heuristico.md
+        - projetos/heuristico.md
         # - projetos/busca-local.md
         # - projetos/busca-exaustiva.md
         # - projetos/relatorio-1.md
