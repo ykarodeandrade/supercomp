@@ -70,3 +70,6 @@ Para isso, implemente as seguintes alterações em seu projeto:
 3. Se a solução tiver melhor escore, mantenha ela. 
 
 Para verificar o desempenho, construa um cenário com ao menos 200 elementos e 80 subconjuntos, de até 40 elementos cada.  Faça três variações desse cenário (elementos, subconjuntos, número de elementos em subconjuntos) e avalie o desempenho e a efetividade em encontrar uma solução ótima.
+
+
+Para a entrega, usaremos o site **codePost**, você recebeu na sala de aula o link para criar sua conta. A submissão será feita unicamente por ele. Caso tenha alguma dúvida, entre em contato.

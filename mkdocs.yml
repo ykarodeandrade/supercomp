@@ -38,7 +38,7 @@ nav:
         - "04 - Profiling": aulas/04-profiling/index.md
         - "05 - Heurísticas": aulas/05-heuristicas/index.md
         - "06 - Aleatorização": aulas/06-aleatorizacao/index.md
-        # - aulas/07-busca-local/index.md
+        - "07 - Busca Local": aulas/07-busca-local/index.md
         # - aulas/08-busca-global/index.md
         # - aulas/09-busca-global-II/index.md
         # - aulas/10-branch-and-bound/index.md
@@ -52,7 +52,7 @@ nav:
     - Projeto:
         - projetos/index.md
         - projetos/heuristico.md
-        # - projetos/busca-local.md
+        - projetos/busca-local.md
         # - projetos/busca-exaustiva.md
         # - projetos/relatorio-1.md
         # - projetos/paralelismo-multicore.md

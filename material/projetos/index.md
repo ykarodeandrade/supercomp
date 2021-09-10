@@ -81,7 +81,7 @@ Neste [link](https://colab.research.google.com/drive/16MSMeqDoZF3zBFIQw_Yt7Y601v
 Para cada técnica estudada em aula implementaremos versões básicas e avançadas. Também será necessário implementar versões paralelas em CPU e GPU. Veja abaixo as datas de entrega e descrições de cada técnica implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.
 
 1. [Solução Heurística](heuristico) (15/08)
-2. Busca Local
+2. [Busca Local](busca-local)(22/09)
 3. Busca Exaustiva
 4. Relatório Preliminar
 5. Paralelismo Multicore
