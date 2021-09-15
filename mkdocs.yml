@@ -39,7 +39,7 @@ nav:
         - "05 - Heurísticas": aulas/05-heuristicas/index.md
         - "06 - Aleatorização": aulas/06-aleatorizacao/index.md
         - "07 - Busca Local": aulas/07-busca-local/index.md
-        - "08 - Busca Exaustiva": - aulas/08-busca-global/index.md
+        - "08 - Busca Exaustiva": aulas/08-busca-global/index.md
         # - aulas/09-busca-global-II/index.md
         # - aulas/10-branch-and-bound/index.md
         # - aulas/11-branch-and-bound/index.md
