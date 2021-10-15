@@ -54,7 +54,7 @@ nav:
         - projetos/heuristico.md
         - projetos/busca-local.md
         - projetos/busca-exaustiva.md
-        # - projetos/relatorio-1.md
+        - projetos/relatorio-1.md
         # - projetos/paralelismo-multicore.md
 
 
