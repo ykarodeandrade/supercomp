@@ -45,6 +45,7 @@ nav:
         - "11 - Paralelismo": aulas/11-paralelismo/index.md
         - "12 - Paralelismo - Exercício / Efeitos Colaterais" : aulas/12-efeitos-colaterais/index.md
         - "13 - Paralelismo - Efeitos Colaterais II":  aulas/13-efeitos-colaterais-II/index.md
+        - "14 - GPU - Introdução":  aulas/14-intro-gpu/index.md
         # - aulas/12-paralelismo/index.md
         # - aulas/13-paralelismo-tarefas-dados/index.md
         # - aulas/14-exercicios/index.md
