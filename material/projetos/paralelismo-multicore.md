@@ -13,7 +13,7 @@ Seu programa multi-core deverá ser gerado a partir do mesmo código fonte do se
     // código específico para sequencia aqui
 #endif
 ```
-
+<!-- 
 ## Correção automática
 
 Se seu programa for compilado com `-fopenmp` ele deverá rodar usando todas as CPUs pelo máximo de tempo possível. O corretor automático checará as seguintes condições:
@@ -21,4 +21,4 @@ Se seu programa for compilado com `-fopenmp` ele deverá rodar usando todas as C
 1. o consumo médio de CPU durante a execução do programa é maior que `75%` para cada core.
 2. as mesmas checagens do algoritmo sequencial serão feitas. Ou seja, seu programa deverá funcionar de maneira idêntica ao algoritmo sequencial. **Os resultados não precisam ser exatamente os mesmos, mas o programa deverá gerar soluções com as mesmas propriedades.**
 
-Execute o corretor com o argumento `multi-core` para rodar somente estes testes.
+Execute o corretor com o argumento `multi-core` para rodar somente estes testes. -->
