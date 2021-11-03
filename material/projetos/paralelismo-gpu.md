@@ -5,6 +5,13 @@ Seu trabalho nesta atividade será criar uma implementação paralela em GPU do 
 ## Compilação do programa
 
 Você deverá colocar o código de seu programa em um arquivo com extensão *.cu* na pasta da busca local. Este programa será compilado com `nvcc -O3`. 
+
+Para a entrega, usaremos o site **codePost**.
+
+
+
+
+
 <!-- 
 ## Correção automática
 

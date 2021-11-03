@@ -13,6 +13,8 @@ Seu programa multi-core deverá ser gerado a partir do mesmo código fonte do se
     // código específico para sequencia aqui
 #endif
 ```
+
+Para a entrega, usaremos o site **codePost**.
 <!-- 
 ## Correção automática
 

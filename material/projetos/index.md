@@ -83,8 +83,10 @@ Para cada técnica estudada em aula implementaremos versões básicas e avançad
 1. [Solução Heurística](heuristico) (15/09)
 2. [Busca Local](busca-local)(22/09)
 3. [Busca Exaustiva](busca-exaustiva)(27/09)
-4. Relatório Preliminar
-5. Paralelismo Multicore
+4. [Relatório Preliminar](relatorio-1) (02/11)
+5. [Paralelismo Multicore](paralelismo-multicore) (15/11)
+6. [Paralelismo GPU](paralelismo-gpu) (22/11)
+7. [Relatório Final](relatorio-2) (06/12)
 
 <!-- 1. [Solução Heurística](heuristico) (23/03)
 2. [Busca local](busca-local) (09/04)
