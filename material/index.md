@@ -1,10 +1,14 @@
 # SuperComputação
 
-Bem vindo ao curso de SuperComputação 2021/2. 
+Bem vindo ao curso de SuperComputação 2022/1. 
 
-* **Professor**: 
+* **Professores**: 
     * André Filipe M. Batista
-   
+    * Luciano Silva
+
+* **Horário das aulas**:
+    * Turma A - Prof. André Filipe:  Terça - 9h45, Sexta - 07h30
+    * Turma B - Prof. Luciano Silva:  Quarta - 13h30, Sexta - 13h30
 
 
 ## Avaliação
