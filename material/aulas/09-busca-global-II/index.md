@@ -56,7 +56,7 @@ Vamos agora tentar implementar seu plano acima de maneira reprodutível. Ou seja
 
     **Dicas**:
 
-    * reveja a nossa [aula 01](/aulas/01-introducao/) e relembre como criar testes reprodutíveis.
+    * reveja a nossa [aula 01](https://insper.github.io/supercomp/aulas/01-introducao/) e relembre como criar testes reprodutíveis.
 
 !!! example
     Salve os resultados acima em um dataframe do *Pandas*. Se quiser, salve seus resultados correntes para um arquivo *CSV*.
