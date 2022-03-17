@@ -62,12 +62,12 @@ AGC-TCTCTTC--ATT--CAC-TACACCGACA-CGC-G-A
 
 
 
-## Estratégias a serem estudadas e correção automática
+## Estratégias a serem estudadas
 
 Para cada estratégia que vamos estudar, implementaremos um programa correspondente no projeto. Veja abaixo as datas de entrega e descrições de cada estratégia a ser implementada. Em geral, o enunciado de uma parte é liberado após a data de entrega da parte anterior.
 
-1. Solução Heurística (18/03)
-2. Busca Local (01/04)
+1. [Solução Heurística](heuristico) (18/03)
+2. [Busca Local](local) (01/04)
 3. Busca Exaustiva (15/04)
 4. Relatório Preliminar (29/04)
 5. Paralelismo Multicore (13/05)

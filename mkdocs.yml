@@ -40,7 +40,7 @@ nav:
         - "06 - Aleatorização": aulas/06-aleatorizacao/index.md
         - "07 - Busca Local": aulas/07-busca-local/index.md
         - "08 - Busca Exaustiva": aulas/08-busca-global/index.md
-        # - "09 - Comparação de desempenho": aulas/09-busca-global-II/index.md
+        - "09 - Comparação de desempenho": aulas/09-busca-global-II/index.md
         # - "10 - Branch and Bound": aulas/10-branch-and-bound/index.md
         # - "11 - Paralelismo": aulas/11-paralelismo/index.md
         # - "12 - Paralelismo - Exercício / Efeitos Colaterais" : aulas/12-efeitos-colaterais/index.md
@@ -57,7 +57,7 @@ nav:
     - Projeto:
         - projetos/index.md
         - projetos/heuristico.md
-        # - projetos/busca-local.md
+        - projetos/local.md
         # - projetos/busca-exaustiva.md
         # - projetos/relatorio-1.md        
         # - projetos/paralelismo-multicore.md
