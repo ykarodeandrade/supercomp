@@ -14,9 +14,9 @@ Entrada: Duas sequencias de DNA a[i] e b[j], de tamanhos n e m respectivamente,p
 Saída: Score de um alinhamento das sequencias
        Subsequencias alinhadas
 
-    1. Gerar uma subsequencia sb=b[j,j+1,...,j+k] de b, de tamanho aleatório k, 1<=k<=m
+    1. Gerar uma subsequencia sb=b[j,j+1,...,j+k] de b, de tamanho aleatório k, 1<=k<=m, e 0<=j<=m 
     2. Gerar um número aleatório inteiro positivo p
-    3. Gerar p subsequencias sa=a[i,i+1,...,i+k] de a, com tamanho k calculado no passo (1)
+    3. Gerar p subsequencias sa=a[i,i+1,...,i+k] de a, com tamanho k calculado no passo (1), 0<=i<=n
     4. Calcular os scores de cada par (sa,sb) com os pesos wmat, wmis e wgap
     5. Devolver o score máximo m entre os scores do passo (4) e as subsequencias associadas a ele
 
