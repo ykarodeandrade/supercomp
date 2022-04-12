@@ -68,7 +68,7 @@ Para cada estratégia que vamos estudar, implementaremos um programa corresponde
 
 1. [Solução Heurística](heuristico) (18/03)
 2. [Busca Local](local) (01/04)
-3. Busca Exaustiva (15/04)
+3. [Busca Exaustiva](exaustiva) (22/04)
 4. Relatório Preliminar (29/04)
 5. Paralelismo Multicore (13/05)
 6. Paralelismo GPU (27/05)
