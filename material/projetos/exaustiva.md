@@ -3,17 +3,17 @@
 A busca exaustiva, conforme vista aula, gera todas as soluções viáveis para um problema e, de acordo com um critério de otimalidade, elege uma
 solução ótima para o problema. Especificamente para o problema de alinhamento de sequencias, ele pode ser especificado da seguinte forma:
 
-<pre>
-ALGORITMO BUSCA EXAUSTIVA
-Entrada: Duas sequencias de DNA a e b
-         Pesos wmat, wmis e wgap para match, mismatch e gap respectivamente
-Saída: Score de um alinhamento das sequencias
-       Subsequencias alinhadas
 
-1. Gerar todas as subsequencias a´ e b´ não-nulas de a e b, respectivamente.
-2. Calcular os alinhamentos de cada par de subsequencias (a´, b´) com os pesos wmat, wmis e wgap
-3. Devolver o score máximo m entre os scores do passo (2) e as subsequencias associadas a ele
-</pre>
+    ALGORITMO BUSCA EXAUSTIVA
+    Entrada: Duas sequencias de DNA a e b
+            Pesos wmat, wmis e wgap para match, mismatch e gap respectivamente
+    Saída: Score de um alinhamento das sequencias
+          Subsequencias alinhadas
+
+    1. Gerar todas as subsequencias a´ e b´ não-nulas de a e b, respectivamente.
+    2. Calcular os alinhamentos de cada par de subsequencias (a´, b´) com os pesos wmat, wmis e wgap
+    3. Devolver o score máximo m entre os scores do passo (2) e as subsequencias associadas a ele
+
 
 Observe que, no passo (2), as subsequencias podem não ter o mesmo tamanho. Assim, não será possível calcular diretamente um score simples. Podemos usar, por exemplo:
 
