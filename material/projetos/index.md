@@ -70,7 +70,7 @@ Para cada estratégia que vamos estudar, implementaremos um programa corresponde
 2. [Busca Local](local) (01/04)
 3. [Busca Exaustiva](exaustiva) (22/04)
 4. Relatório Preliminar (29/04)
-5. Paralelismo Multicore (13/05)
+5. [Paralelismo Multicore](openmp) (13/05)
 6. Paralelismo GPU (27/05)
 7. Relatório Final (03/06)
 
