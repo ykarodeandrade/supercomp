@@ -1,6 +1,6 @@
 # Paralelismo com GPU
 
-Neste último projeto, vamos explorar os mecanismos de paralelismo multicore com GPU. Para tanto, vamos considerar a implemen`tação da busca exaustiva que vimos, na análise realizada 
+Neste último projeto, vamos explorar os mecanismos de paralelismo multicore com GPU. Para tanto, vamos considerar a implementação da busca exaustiva que vimos, na análise realizada 
 no relatório parcial, ter o desempenho bastante comprometido quando trabalhamos com tamanhos de sequencias de DNA muito grandes.
 
 Na busca exaustiva, existe um procedimento básico que é realizado para cada par de subsequencias que estão sendo analisadas: cálculo do score. Relembrando o algoritmo de Smith-Waterman, nós temos que o score de alinhamento entre duas sequências S1 e S2 é dado por:
