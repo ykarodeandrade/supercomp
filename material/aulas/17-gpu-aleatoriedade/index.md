@@ -93,7 +93,7 @@ Note que em ambos os casos os resultados dependem do número de threads usadas! 
 
 
 !!! example
-    Implemente a abordagem 1 no exercício da parte anterior. Para isto você pode usar a estratégia de acesso direto aos dados (como foi feito no exercício da imagem) e usar o índice recebido como *seed*. Lembre-se que a seed é definida ao criar o `default_random_engine`. No exemplo abaixo, você pode ver que ela é definida com o valor `10`. 
+    Implemente a abordagem 1 no exercício da parte anterior. Para isto você pode usar a estratégia de acesso direto aos dados e usar o índice recebido como *seed*. Lembre-se que a seed é definida ao criar o `default_random_engine`. No exemplo abaixo, você pode ver que ela é definida com o valor `10`. 
 ```c++
     thrust::default_random_engine eng(10);
 ```
