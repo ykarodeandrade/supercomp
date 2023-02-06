@@ -4,85 +4,80 @@
 
 
 * Horários: 
-    * Turma A - Prof. André Filipe:  Terça - 9h45, Sexta - 07h30
-    * Turma B - Prof. Luciano Silva:  Quarta - 13h30, Sexta - 13h30
+    * Turma A - Prof. André Filipe:  Quarta - 13h30, Sexta - 07h30
+    * Turma B - Prof. Luciano Silva:  Terça - 09h45, Sexta - 13h30
 
 
 ??? note "Plano de aulas - Turma A"
     | Data       | Questão/Problema                                                     | Conteúdo/Atividade                                                                                                              |
     |------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-    | 15/02/22 | Introdução ao curso e a tecnologias de alto desempenho               | Introdução ao curso; Princípios de C++                                                                                          |
-    | 18/02/22 | Introdução ao curso e a tecnologias de alto desempenho               | Implementação de algoritmos simples; Passagem de argumentos por referência e valor; Recursos de C++                             |
-    | 22/02/22 | Considerações na implementação de programas de alto desempenho       | C++, Vectors                                                                                                                    |
-    | 25/02/22 | Considerações na implementação de programas de alto desempenho       | Utilização de ferramentas de profiling para identificar pontos quentes em um programa                                           |
-    | 04/03/22 | Estratégias para solução de problemas difíceis                       | Apresentação do projeto da disciplina; Heurística, busca local e global                                                         |
-    | 08/03/22 | Soluções sub-ótimas usando a busca local                             | Propriedades da solução ótima; vizinhança de soluções                                                                           |
-    | 11/03/22 | Soluções sub-ótimas usando a busca local                             | Propriedades de geradores de números pseudo-aleatórios; Algoritmos baseados em sorteios aleatórios; Exploration vs Exploitation |
-    | 15/03/22 | Buscando uma solução globalmente ótima                               | Busca global vs Busca local; Enumeração exaustiva e sua classe de problemas computacionais; Backtracking                        |
-    | 18/03/22   | Buscando uma solução globalmente ótima                               | gap de otimalidade; Simetrias; Comunicação de resultados de desempenho                                                          |
-    | 22/03/22 | Acelerando a busca local                                             | Estimando a qualidade de uma solução parcial; Medindo a efetividade de uma estimativa                                           |
-    | 25/03/22   | Indo além: best-first search, simetrias, competição de desempenho    | Aula expositiva sobre melhorias possívies além do branch-and-bound                                                              |
-    | 29/03/22 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 01/04/22   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
-    | 05/04/22   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
-    | 08/04/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 12/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a OpenMP                                                                                                             |
-    | 19/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Código thread-safe e reentrância                                                                                                |
-    | 26/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
-    | 29/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
-    | 03/05/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
-    | 06/05/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
-    | 10/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
-    | 13/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
-    | 17/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
-    | 20/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
-    | 24/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Exercícios de programação em GPGPU                                                                                              |
-    | 27/05/22   | Quiz para a PF                                                       | Quiz para a PF                                                                                                                  |
-    | 31/05/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 03/06/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 07/06/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto   
-    | 10/06/22   | Prova Final                                                          | Prova Final                                                                                                          |
-    | 14/06/22   | Prova Final                                                          | Prova Final     
+    | 08/02/23 | Introdução ao curso e a tecnologias de alto desempenho               | Introdução ao curso; Princípios de C++                                                                                          |
+    | 10/02/23 | Introdução ao curso e a tecnologias de alto desempenho               | Implementação de algoritmos simples; Passagem de argumentos por referência e valor; Recursos de C++                             |
+    | 15/02/23 | Considerações na implementação de programas de alto desempenho       | C++, Vectors                                                                                                                    |
+    | 17/02/23 | Considerações na implementação de programas de alto desempenho       | Utilização de ferramentas de profiling para identificar pontos quentes em um programa                                           |
+    | 24/02/23 | Estratégias para solução de problemas difíceis                       | Apresentação do projeto da disciplina; Heurística, busca local e global                                                         |
+    | 01/03/23 | Soluções sub-ótimas usando a busca local                             | Propriedades da solução ótima; vizinhança de soluções                                                                           |
+    | 03/03/23 | Soluções sub-ótimas usando a busca local                             | Propriedades de geradores de números pseudo-aleatórios; Algoritmos baseados em sorteios aleatórios; Exploration vs Exploitation |
+    | 08/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 10/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 15/03/23 | Buscando uma solução globalmente ótima                               | Busca global vs Busca local; Enumeração exaustiva e sua classe de problemas computacionais; Backtracking                        |
+    | 17/03/23   | Buscando uma solução globalmente ótima                               | gap de otimalidade; Simetrias; Comunicação de resultados de desempenho                                                          |
+    | 22/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 29/03/23   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
+    | 31/03/23   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
+    | 05/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a OpenMP                                                                                                             |
+    | 12/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Código thread-safe e reentrância                                                                                                |
+    | 14/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
+    | 19/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
+    | 26/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
+    | 28/04/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
+    | 03/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
+    | 05/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
+    | 10/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
+    | 12/05/23   | Programação Distribuída com MPI | Exercícios de programação em MPI                                                                                             |
+    | 17/05/23   | Programação Distribuída com MPI | Exercícios de programação em MPI                                                                                             |
+    | 19/05/23   | Programação Distribuída com MPI | Exercícios de programação em MPI  |
+    | 24/05/23   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 02/06/23   | Prova Final                                                          | Prova Final                                                                                                          |
+    | 07/06/23   | Prova Final                                                          | Prova Final     
 
 
 
 ??? note "Plano de aulas - Turma B"
     | Data       | Questão/Problema                                                     | Conteúdo/Atividade                                                                                                              |
     |------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-    | 16/02/22 | Introdução ao curso e a tecnologias de alto desempenho               | Introdução ao curso; Princípios de C++                                                                                          |
-    | 18/02/22 | Introdução ao curso e a tecnologias de alto desempenho               | Implementação de algoritmos simples; Passagem de argumentos por referência e valor; Recursos de C++                             |
-    | 23/02/22 | Considerações na implementação de programas de alto desempenho       | C++, Vectors                                                                                                                    |
-    | 25/02/22 | Considerações na implementação de programas de alto desempenho       | Utilização de ferramentas de profiling para identificar pontos quentes em um programa                                           |
-    | 04/03/22 | Estratégias para solução de problemas difíceis                       | Apresentação do projeto da disciplina; Heurística, busca local e global                                                         |
-    | 09/03/22 | Soluções sub-ótimas usando a busca local                             | Propriedades da solução ótima; vizinhança de soluções                                                                           |
-    | 11/03/22 | Soluções sub-ótimas usando a busca local                             | Propriedades de geradores de números pseudo-aleatórios; Algoritmos baseados em sorteios aleatórios; Exploration vs Exploitation |
-    | 16/03/22 | Buscando uma solução globalmente ótima                               | Busca global vs Busca local; Enumeração exaustiva e sua classe de problemas computacionais; Backtracking                        |
-    | 18/03/22   | Buscando uma solução globalmente ótima                               | gap de otimalidade; Simetrias; Comunicação de resultados de desempenho                                                          |
-    | 23/03/22 | Acelerando a busca local                                             | Estimando a qualidade de uma solução parcial; Medindo a efetividade de uma estimativa                                           |
-    | 25/03/22   | Indo além: best-first search, simetrias, competição de desempenho    | Aula expositiva sobre melhorias possívies além do branch-and-bound                                                              |
-    | 30/03/22 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 01/04/22   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
-    | 06/04/22   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
-    | 08/04/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 13/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a OpenMP                                                                                                             |
-    | 20/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Código thread-safe e reentrância                                                                                                |
-    | 27/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Contruções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
-    | 29/04/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
-    | 04/05/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
-    | 06/05/22   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
-    | 11/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
-    | 13/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
-    | 18/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
-    | 20/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
-    | 25/05/22   | Programação em GPU e quais problemas são massivamente paralelizáveis | Exercícios de programação em GPGPU                                                                                              |
-    | 27/05/22   | Quiz para a PF                                                       | Quiz para a PF                                                                                                                  |
-    | 01/06/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 03/06/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
-    | 08/06/22   | Aula estúdio para projeto                                            | Aula estúdio para projeto   
-    | 10/06/22   | Prova Final                                                          | Prova Final                                                                                                          |
-    | 15/06/22   | Prova Final                                                          | Prova Final                                                                                                                    
-   
+    | 07/02/23 | Introdução ao curso e a tecnologias de alto desempenho               | Introdução ao curso; Princípios de C++                                                                                          |
+    | 10/02/23 | Introdução ao curso e a tecnologias de alto desempenho               | Implementação de algoritmos simples; Passagem de argumentos por referência e valor; Recursos de C++                             |
+    | 14/02/23 | Considerações na implementação de programas de alto desempenho       | C++, Vectors                                                                                                                    |
+    | 17/02/23 | Considerações na implementação de programas de alto desempenho       | Utilização de ferramentas de profiling para identificar pontos quentes em um programa                                           |
+    | 24/02/23 | Estratégias para solução de problemas difíceis                       | Apresentação do projeto da disciplina; Heurística, busca local e global                                                         |
+    | 28/02/23 | Soluções sub-ótimas usando a busca local                             | Propriedades da solução ótima; vizinhança de soluções                                                                           |
+    | 03/03/23 | Soluções sub-ótimas usando a busca local                             | Propriedades de geradores de números pseudo-aleatórios; Algoritmos baseados em sorteios aleatórios; Exploration vs Exploitation |
+    | 07/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 10/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto      
+    | 14/03/23 | Buscando uma solução globalmente ótima                               | Busca global vs Busca local; Enumeração exaustiva e sua classe de problemas computacionais; Backtracking                        |
+    | 17/03/23   | Buscando uma solução globalmente ótima                               | gap de otimalidade; Simetrias; Comunicação de resultados de desempenho                                                          |
+    | 21/03/23 | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 31/03/23   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
+    | 04/04/23   | Prova intermediária                                                  | Prova intermediária                                                                                                             |
+    | 11/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a OpenMP                                                                                                             |
+    | 14/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Código thread-safe e reentrância                                                                                                |
+    | 18/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
+    | 25/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Introdução a problemas IO bound; Construções de alto nível do OpenMP; Sincronização usando mutex e semáforos                    |
+    | 28/04/23   | Programação multi-core: como dividir tarefas e ganhar tempo          | Aula estúdio para projeto                                                                                                       |
+    | 02/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
+    | 05/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Introdução a GPGPU                                                                                                              |
+    | 10/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
+    | 12/05/23   | Programação em GPU e quais problemas são massivamente paralelizáveis | Programando para GPU, Nvidia Thrust                                                                                             |
+    | 17/05/23   | Programação Distribuída com MPI | Exercícios de programação em MPI                                                                                             |
+    | 19/05/23   | Programação Distribuída com MPI | Exercícios de programação em MPI                                                                                             |
+    | 23/05/23   | Aula estúdio para projeto                                            | Aula estúdio para projeto                                                                                                       |
+    | 02/06/23   | Prova Final                                                          | Prova Final                                                                                                          |
+    | 07/06/23   | Prova Final                                                          | Prova Final     
 
 
+
+
+               
                                                                                                               
    
