@@ -36,7 +36,7 @@ nav:
         - "01 - Introdução": aulas/01-introducao/index.ipynb
         - "02 e 03 - C++": aulas/02-03-implementacao-c++/index.md
         - "04 - Profiling": aulas/04-profiling/index.md
-        # - "05 - Heurísticas": aulas/05-heuristicas/index.md
+        - "05 - Heurísticas": aulas/05-heuristicas/index.md
         # - "06 - Aleatorização": aulas/06-aleatorizacao/index.md
         # - "07 - Busca Local": aulas/07-busca-local/index.md
         # - "08 - Busca Exaustiva": aulas/08-busca-global/index.md
