@@ -58,8 +58,8 @@ nav:
     - Projeto:
         - projetos/index.md
         - projetos/heuristico.md
-        # - projetos/local.md
-        # - projetos/exaustiva.md
+        - projetos/local.md
+        - projetos/relatorio_parcial.md
         # - projetos/openmp.md
         # - projetos/gpu.md
         # - projetos/relatorio-1.md        
