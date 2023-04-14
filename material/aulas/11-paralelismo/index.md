@@ -1,4 +1,4 @@
-# 12 - Introdução a paralelismo
+# 10 - Introdução a paralelismo
 
 OpenMP é uma tecnologia de computação multi-core usada para paralelizar programas. Sua principal vantagem é oferecer uma transição suave entre código sequencial e código paralelo.
 
