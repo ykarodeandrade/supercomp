@@ -1,29 +1,7 @@
 # Paralelismo com OpenMP
 
-Experimentamos, até agora, três estratégias sequenciais para o problema de alinhamento de sequencias de DNA: busca heurística, busca local e busca exaustiva.
-Com os experimentos do primeiro relatório, pudemos comparar o desempenho sequencial de cada um deles. Agora vamos começar a explorar estratégias de paralelismo nos dois projetos finais.
-Faremos isto com dois modelos paralelos: multicore(CPU) e manycore(GPU).
+Até agora experimentamos heurísticas que buscaram resolver o nosso problema em um tempo razoável, sem garantias de otimalidade. É chegado o momento de incorporar o paralelismo de tarefas em nossas alternativas de resolução.
 
-No presente projeto, exploraremos estratégias de programação multicore com OpenMP. Para tanto, você terá as seguintes tarefas:
+Para isso, você deve modificar a versão **exaustiva** de sua implementação. Você pode fazer uso da diretiva `#pragma omp parallel for` para distribuir as iterações de um loop entre as threads disponíveis. Dentro do loop, você pode fazer a verificação de cada filme e, caso ele esteja dentro das restrições de horário e categoria, incrementar uma variável compartilhada `count`. Observe que por ser uma variável compartilhada, você precisa preservar essa região crítica entre as threads. 
 
-<ul>
-  <li> analisar as suas três implementações de estratégias sequenciais para identificar pontos passíveis de paralelização com OpenMP
-  <li> escolher, dentre uma das três estratégias que você implementou, aquela que poderia produzir o melhor speedup com OpenMP
-  <li> implementar a paralelização com OpenMP, explorando mecanismos como parallel for, parallel task, scheduling ou outro mecanismo que você tenha estudado em OpenMP
-</ul>
-
-O que entregar:
-
-<ul>
-  <li> código-fonte da implementação sequencial e da implementação paralela
-  <li> arquivos de testes utilizados
-  <li> pequeno relatório justificando a escolha da implementação sequencial que foi paralelizada
-  <li> resultados dos testes
-</ul>
-
-Um detalhe importante é que, como agora estamos trabalhando com paralelismo, os tamanhos dos arquivos de testes precisam ser bem maiores. Muitas vezes, os resultados de speedup 
-aparecem a partir de grandes instâncias do problema.
-
-Caso você considere necessário, pode refatorar a sua implementação sequencial para poder explorar mais mecanismos de OpenMP.
-
-
+Vale ressaltar que o uso do OpenMP não necessariamente irá garantir um desempenho melhor, pois a paralelização tem um overhead que pode acabar diminuindo a performance do programa em alguns casos. É importante fazer testes para verificar se a utilização do OpenMP é realmente benéfica para o problema em questão.
