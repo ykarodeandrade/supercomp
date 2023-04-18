@@ -1,4 +1,4 @@
-# 16 - efeitos colaterais II
+# Efeitos colaterais II
 
 Na aula de hoje iremos trabalhar com um algoritmo de sorteios aleatórios para calcular o `pi`. Ele é baseado em uma técnica de Otimização, Simulação e Estimação Paramétrica chamada [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method).
 
