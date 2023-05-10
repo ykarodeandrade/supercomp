@@ -68,4 +68,4 @@ A ideia do algoritmo é criar uma matriz dp de tamanho (N+1) x (M+1) para armaze
 
 Para cada célula (i,j) da matriz dp, o algoritmo verifica se é possível adicionar o filme i à categoria j, respeitando as restrições de horário e limite máximo de filmes por categoria. Em seguida, o algoritmo verifica se é melhor adicionar o filme i à categoria j ou manter a solução anterior sem o filme i. O número máximo de filmes que podem ser assistidos é o valor da célula (N, j) da matriz dp, onde j é a categoria que maximiza o número de filmes assistidos.
 
-Sua tarefa é realizar essa implantação em C++ com a Thrust e comparar o desempenho frente as demais implementações. 
+Sua tarefa é realizar essa implementação em C++ com a Thrust e comparar o desempenho frente as demais implementações. 
