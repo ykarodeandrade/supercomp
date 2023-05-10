@@ -61,7 +61,7 @@ nav:
         - projetos/local.md
         - projetos/relatorio_parcial.md
         - projetos/openmp.md
-        # - projetos/gpu.md
+        - projetos/gpu.md
         # - projetos/relatorio-1.md        
         # - projetos/paralelismo-multicore.md
         # - projetos/paralelismo-gpu.md
