@@ -51,6 +51,7 @@ nav:
         - "15 - GPU - Customização": aulas/16-gpu-customizacao/index.md
         - "16 - MPI - Introdução": aulas/18-Introducao-mpi/index.md
         - "17 - MPI - Reduções": aulas/19-MPI_REDUCE-mpi/index.md
+        - "18 - MPI - Broadcasting": aulas/20 - Broadcasting-mpi/index.md
         # - "17 - GPU - Aleatoriedade": aulas/17-gpu-aleatoriedade/index.md
         # - aulas/13-paralelismo-tarefas-dados/index.md
         # - aulas/14-exercicios/index.md
