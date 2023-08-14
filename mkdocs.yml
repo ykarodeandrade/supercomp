@@ -30,7 +30,7 @@ site_url: https://insper.github.io/supercomp/
 
 nav:
     - Home: index.md
-#- Burocracias: sobre.md
+    #- Burocracias: sobre.md
 
     - Aulas:
         - "01 - Introdução": aulas/01-introducao/index.ipynb
@@ -60,13 +60,13 @@ nav:
         # - aulas/15-efeitos-colaterais/index.md
         # - aulas/16-efeitos-colaterais-II/index.md
 
-    - Projeto:
-        # - projetos/index.md
-        # - projetos/heuristico.md
-        # - projetos/local.md
-        # - projetos/relatorio_parcial.md
-        # - projetos/openmp.md
-        # - projetos/gpu.md 
+    # - Projeto:
+    #     - projetos/index.md
+    #     - projetos/heuristico.md
+    #     - projetos/local.md
+    #     - projetos/relatorio_parcial.md
+    #     - projetos/openmp.md
+    #     - projetos/gpu.md 
         # - projetos/relatorio-1.md        
         # - projetos/paralelismo-multicore.md
         # - projetos/paralelismo-gpu.md
