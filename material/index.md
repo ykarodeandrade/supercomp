@@ -1,14 +1,15 @@
 # SuperComputação
 
-Bem vindo ao curso de SuperComputação 2023/1. 
+Bem vindo ao curso de SuperComputação 2023/2 
 
 * **Professores**: 
     * André Filipe M. Batista
-    * Luciano Silva
+    * Michel Fornaciai
 
 * **Horário das aulas**:
-    * Turma A - Prof. André Filipe:  Quarta - 13h30, Sexta - 07h30
-    * Turma B - Prof. Luciano Silva:  Terça - 09h45, Sexta - 13h30
+    * Turma 1 - Prof. Michel Fornaciali:  Terça - 09h45, Sexta - 13h30
+     * Turma 2 - Prof. André Batista: Quarta - 13h30, Sexta - 07h30
+    
 
 
 ## Avaliação
